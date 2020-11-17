@@ -1,0 +1,36 @@
+//Table File (c) 2004 4head studios
+//Modified by RUNEFORGE Game Studio
+
+Table Description:
+"id" INT -1 |"filename" STRING  0 |"modes" INT  0 |"name" STRING  0 |"maxplayers" INT  0 |"multiplayer" INT  0 |"lordship" STRING  0 |
+
+Data:
+
+1   "ulm"					 0   "Ulm"					 8   3   "germany"      |
+2   "magathaburg"            0   "magathaburg"          8    3   "germany"      |
+3   "holyblood"              0   "Holyblood"            16   3   "austria"      |
+4   "seatown"                0   "Seatown"              6    3   "hansa"        |
+5   "fichtenhain"            0   "Fichtenhain"          12   3   "germany"      |
+6   "bingenheim"             0   "Bingenheim"           12   3   "germany"      |
+7   "weilerthal"             0   "Weilerthal"           16   3   "germany"      |
+8   "Novaesium"              0   "Novaesium"            14   3   "germany"      |
+9   "dracula"                0   "dracula"              2    3   "hungary"      |
+10  "herzogenfurt"           0   "Herzogenfurt"         4    3   "dragenthal"   |
+11  "dragenthal"             0   "Dragenthal"           6    3   "dragenthal"   |
+12  "hanse"                  0   "Hanse"                12   3   "hansa"        | 
+13  "danzig"                 0   "Danzig"               6    3   "hansa"        |
+14  "Britain"                0   "Britain"              4    3   "england"      |
+15  "Northsea"               0   "Northsea"             8    3   "hansa"        |
+16  "vienna"                 0   "vienna"               16   3   "austria"      |
+17  "vienna_2c"              0   "Vienna_2c"             8   3   "austria"      |
+18  "calenberg"              0   "Calenberg"            12   3   "germany"      |
+19  "hannover"				 0	 "Hannover"              6   3   "germany"      |
+20  "duel"                   0   "Duel"                 2    3   "germany"      |
+21  "newark"                 0   "Newark"               8    3   "england"      | 
+22  "nottingham_capital"     0   "Nottingham_Capital"   12   3   "england"      |
+23  "augsburg"               0   "South_Germany"        12   3   "germany"      |
+24  "lyon"                   0   "France"               12   3   "france"       |
+25  "lyon_3s"                0   "France_3s"            16   3   "france"       |
+1000 "" 0  ""  0  0  "germany"
+
+

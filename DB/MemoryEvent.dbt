@@ -1,0 +1,30 @@
+//Table File, Version 1.02 (c) 2004 4head studios
+//Exported 
+
+Table Description:
+"id" INT -1 |"name" STRING  0               |"favormodifier" INT  0 |"alignment" INT  0 |"max_steps" INT  0 |"weight" INT  0 |"baselifetime" FLOAT  0 |"type" INT  0 |"impact_type" INT  0 |"alignmentmodifier" INT  0 |"isevidence" INT  0 |
+
+Data: 
+0            "none"                          0                       25                  0                   0                0                        0              0                     0                           0                    | 
+1            "SABOTAGE"                      -30                     100                 4                   5                6                        0              0                     1                           1                    | 
+2            "propel"                        0                       50                  1                   0                6                        0              0                     1                           0                    | 
+3            "attack"                        -50                     50                  3                   0                6                        0              0                     1                           0                    | 
+4            "BRIBERY"                       -5                      60                  3                   0                6                        0              0                     1                           0                    | 
+5            "defendattack"                  0                       50                  4                   0                6                        0              0                     0                           0                    | 
+6            "blackmail"                     -20                     65                  3                   3                6                        0              0                     1                           1                    | 
+7            "SLUGGING"                      -20                     75                  4                   6                6                        0              0                     3                           1                    | 
+8            "blackdeath"                    -25                     50                  6                   0                6                        0              0                     0                           0                    | 
+9            "gauntlet"                      -10                     50                  4                   0                6                        0              0                     3                           0                    | 
+10           "CALUMNY"                       0                       0                   0                   4                6                        0              0                     0                           1                    | 
+11           "POISON"                        0                       0                   0                   6                6                        0              0                     3                           1                    | 
+12           "RAIDING"                       -15                     80                  4                   5                6                        0              0                     8                           1                    | 
+13           "REVOLT"                        0                       0                   0                   6                6                        0              0                     0                           1                    | 
+14           "MARAUDING"                     0                       0                   0                   6                6                        0              0                     0                           1                    | 
+15           "ABDUCTION"                     0                       0                   0                   8                6                        0              0                     3                           1                    | 
+16           "MURDER"                        0                       0                   0                   15               6                        0              0                     15                          1                    | 
+17           "SHARED"                        0                       0                   0                   0                6                        0              0                     0                           1                    | 
+18           "attackcivilian"                0                       100                 4                   8                6                        0              0                     3                           1                    | 
+19           "attackcart"                    0                       80                  4                   6                6                        0              0                     0                           1                    | 
+20           "THEFT"                         -5                      50                  4                   6                6                        0              0                     1                           1                    | 
+21           "attackship"                    0                       75                  4                   6                6                        0              0                     1                           1                    | 
+22           "charity"                       0                       0                   4                   0                6                        0              0                     25                          0                    |
