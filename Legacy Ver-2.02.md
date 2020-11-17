@@ -1,3 +1,5 @@
+Download link : https://github.com/Vire7777/TG2-Legacy/archive/master.zip
+
 Fixes Provided in Legacy 2.02
 - Possible hospital bug where workers are going to hospital when not sick [Finished] <---Needs testing. Mostly Vanilla code should be fixed.
 - Fix Tutorial #6 - Power & influence [Finished]
