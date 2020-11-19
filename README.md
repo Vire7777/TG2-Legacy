@@ -2,6 +2,19 @@
 
 Download link : https://github.com/Vire7777/TG2-Legacy/archive/master.zip
 
+In Progress
+- No entry for court date in journal. Judge always no shows --Fixed
+- If attacking building and someone attacks you. Character keeps throwing torch (dumb)
+- Watched thug attack bank and guard just stood there watching
+- Accuse Witch broken (weird) --Fixed
+- Hedge tavern girl assigned to dance always stops dancing and needs to be reassigned
+- Waylay issues
+- Watch tower balancing
+- Pest house bugs -- Fixed (can attack all building except state) 
+- Mead not working -- Fixed (no bug but added experience reward) 
+- Officesession vote draw should go to current officeholder
+- Dynasty AI are voting against own dynasty in officesesstion
+
 Fixes Provided in Legacy 2.02
 - Possible hospital bug where workers are going to hospital when not sick [Finished] <---Needs testing. Mostly Vanilla code should be fixed.
 - Fix Tutorial #6 - Power & influence [Finished]
