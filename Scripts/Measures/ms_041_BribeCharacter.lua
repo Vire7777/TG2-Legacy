@@ -274,6 +274,7 @@ function Normal()
 		chr_ModifyFavor("Destination","",ModifyFavor)
 		--show message
 		chr_GainXP("",GetData("BaseXP"))
+		Sleep(1)
 		MsgNewsNoWait("","Destination","","intrigue",-1,
 			"@L_INTRIGUE_041_BRIBECHARACTER_MSG_SUCCESS_HEAD_+0",
 			"@L_INTRIGUE_041_BRIBECHARACTER_MSG_SUCCESS_BODY_+0",ReplacementLabel,GetID("Destination"))
