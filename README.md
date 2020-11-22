@@ -9,8 +9,10 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
-- Hedge tavern girl assigned to dance always stops dancing and needs to be reassigned
+- When a preacher with a church and sending money to cardinals, we receive a strange message after
 - [Add] In Important person book, can find the guild masters and the alderman (only after their election from day 1-2)
+- [Fixed] Hedge tavern girl assigned to dance always stops dancing and needs to be reassigned
+- [Fixed] Assassin outlaw text is fixed
 - [Fixed] Can not ride a horse if not owned a castle (country estate or more)
 - [Fixed] No entry for court date in journal. Judge always no shows
 - [Fixed] Accuse Witch broken (weird)

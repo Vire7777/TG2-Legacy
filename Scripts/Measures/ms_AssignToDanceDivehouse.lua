@@ -70,10 +70,11 @@ function Run()
 		TimeOut = GetGametime() + TimeOut
 	end		
 
-	--while true do
-	local CurrentTime = GetGametime()
-	local EndTime = CurrentTime + mdata_GetDuration(MeasureID)
-	while CurrentTime < EndTime do
+	while true do
+	--the measure ll always process until you stop it, if we want a certain max time, uncomment the following commented codes
+	--local CurrentTime = GetGametime()
+	--local EndTime = CurrentTime + mdata_GetDuration(MeasureID)
+	--while CurrentTime < EndTime do
 		SetProperty("Divehouse", "DanceShow", 1)
 		local SearchSimFilter = "__F((Object.GetObjectsByRadius(Sim) == 10000) AND NOT(Object.BelongsToMe()))"
 		local NumGuests = Find("", SearchSimFilter,"Guests", -1)
@@ -91,7 +92,7 @@ function Run()
 		end
 
 		IncrementXPQuiet("",15)
-		CurrentTime = GetGametime()
+		--CurrentTime = GetGametime()
 		Sleep(1)
 	end
 	f_EndUseLocator("","MovePos",GL_STANCE_STAND)
