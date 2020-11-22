@@ -48,9 +48,10 @@ function ImportantPersonsSetupSections()
 	CreateImportantPersonSection("DuellGegner", "@L_IMPORTANTPERSONS_TOPICS_+5")
 	CreateImportantPersonSection("ProcessMember", "@L_IMPORTANTPERSONS_TOPICS_+6")
 	CreateImportantPersonSection("OfficeSession", "@L_IMPORTANTPERSONS_TOPICS_+7")
+  CreateImportantPersonSection("GuildMasters", "@L_IMPORTANTPERSONS_TOPICS_+11")
 
 	-- gunst
-	CreateImportantPersonSection("TopCandidates", "@L_IMPORTANTPERSONS_TOPICS_+11")
+	--CreateImportantPersonSection("TopCandidates", "@L_IMPORTANTPERSONS_TOPICS_+12") This doesn t refer to nothing so i put it in comment for the moment
 	CreateImportantPersonSection("Alliance", "@L_IMPORTANTPERSONS_TOPICS_+3")
 	CreateImportantPersonSection("Nap", "@L_IMPORTANTPERSONS_TOPICS_+9")
 	CreateImportantPersonSection("Neutral", "@L_IMPORTANTPERSONS_TOPICS_+10")
@@ -144,6 +145,29 @@ function ImportantPersonsGather_TopTenCLs()
 end
 
 
+function ImportantPersonsGather_GuildMasters()
+  GetSettlement("", "City")
+  
+  if (gameplayformulas_CheckPublicBuilding("City", GL_BUILDING_TYPE_BANK)[1]>0) then
+    if CityGetRandomBuilding("City", -1, GL_BUILDING_TYPE_BANK, -1, -1, FILTER_IGNORE, "guildhouse") then 
+      gathering_FindMaster(GetProperty("guildhouse", "ScholarMaster"))
+      gathering_FindMaster(GetProperty("guildhouse", "ArtisanMaster"))
+      gathering_FindMaster(GetProperty("guildhouse", "PatronMaster"))
+      gathering_FindMaster(GetProperty("guildhouse", "ChiselerMaster"))
+    end
+  end
+
+  local AldermanId = chr_GetAlderman()
+  if AldermanId>0  then
+    SetImportantPersonToSection(AldermanId, "GuildMasters", GetDynastyID(""))
+  end
+end
+
+function FindMaster(MasterId)
+  if MasterId~=nil and MasterId>0 and GetAliasByID(MasterId,"Master")==true and not GetState("Master", STATE_DEAD)then
+    SetImportantPersonToSection(MasterId, "GuildMasters", GetDynastyID(""))
+  end
+end
 
 
 
