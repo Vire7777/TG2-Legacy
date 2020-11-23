@@ -442,7 +442,7 @@ Data:
 608   "CanUseStonesoldier"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(Stonesoldier)>0)AND NOT(Object.HudIsInCutscene())AND NOT(Object.GetState(fighting)))"   |
 609   "IsMyChildForStonerotary"   "__F((Object.BelongsToMe())AND(Object.HasBehavior(Childness))OR(Object.HasBehavior(Schooldays))OR(Object.HasBehavior(Apprenticeship))AND(Object.LacksProperty('Stonerotary')))"   |
 610   "IsMyChildForStonesoldier"   "__F((Object.BelongsToMe())AND(Object.HasBehavior(Childness))OR(Object.HasBehavior(Schooldays))OR(Object.HasBehavior(Apprenticeship))AND(Object.LacksProperty('Stonesoldier')))"   |
-612   "CanUseHorse"   "__F((Object.CanBeControlled())AND(Object.GetOwnedBuildings())AND(Object.IsType(111))AND NOT(Object.IsInBuilding())AND NOT(Object.HudIsInCutscene())AND NOT(Object.GetState(fighting)))"   |
+612   "CanUseHorse"   "__F((Object.CanBeControlled())AND NOT(Object.IsInBuilding())AND NOT(Object.HudIsInCutscene())AND NOT(Object.GetState(fighting)))"   |
 613   "IsAlderman"   "__F((Object.CanBeControlled())AND NOT(Object.HudIsInCutscene())AND NOT(Object.GetState(fighting))AND(Object.Property.Alderman>0))"   |
 1456   "CanUsePddv"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(Pddv)>0)AND NOT(Object.GetState(fighting)))"   |
 1461   "CanUseRobe"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(Robe)>0)AND NOT(Object.GetState(fighting)))"   |
