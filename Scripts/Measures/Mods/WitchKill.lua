@@ -1,4 +1,5 @@
 function Run()
+  MsgQuick("WitchKill")
 	SetState("", STATE_LOCKED, true)
 	SetState("Destination",STATE_LOCKED,true)
 	Find("", "__F((Object.GetObjectsOfWorld(Sim))AND(Object.MinAge(16))AND(Object.HasProperty(WitchBurner)))","Dude", 1)
@@ -65,13 +66,13 @@ function Run()
 	StartSingleShotParticle("particles/bonfire.nif","Position",5,7)
 	if AliasExists("Dude") then
 		feedback_MessageCharacter("Dude",
-			"@L_GENERAL_MEASURES_AccuseWitch_HEAD_+0",
-			"@L_GENERAL_MEASURES_AccuseWitch_BODY_+0",GetID("Destination"))
+			"@L_GENERAL_MEASURES_ACCUSEWITCHCRAFT_HEAD_+0",
+			"@L_GENERAL_MEASURES_ACCUSEWITCHCRAFT_BODY_+0",GetID("Destination"))
 	end
 	
 	feedback_MessageCharacter("Destination",
-		"@L_GENERAL_MEASURES_AccuseWitch_HEAD_+0",
-		"@L_GENERAL_MEASURES_AccuseWitch_BODY_+1",GetID(""))
+		"@L_GENERAL_MEASURES_ACCUSEWITCHCRAFT_HEAD_+0",
+		"@L_GENERAL_MEASURES_ACCUSEWITCHCRAFT_BODY_+1",GetID(""))
 	SetState("", STATE_LOCKED, false)
 	SetState("Destination",STATE_LOCKED,false)
 	CarryObject("", "" ,true)

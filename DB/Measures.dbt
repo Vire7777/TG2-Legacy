@@ -564,7 +564,7 @@ Data:
 15006   "Mods\GiveMoney.lua"   "-"   "GiveMoney"   42   "hud/buttons/btn_Pay_Bonus.tga"   0   4   0   ""   ""   7   0   0   "none"   0   0   |
 15007   "Mods\RaiseDisposition.lua"   "-"   "DonateMoney"   42   "hud/buttons/btn_BestechenGarde.tga"   0   4   0   ""   ""   6   4   0   "none"   0   0   |
 15008   "Mods\QuickPoliticalBribe.lua"   "-"   "QuickBribe"   42   "hud/buttons/btn_041_bribeCharacter.tga"   0   4   0   "PoliticsOverview"   ""   5   1   0   "none"   0   0   |
-15009   "Mods\AccuseWitch.lua"   "-"   "AccuseWitch"   999   "hud/buttons/btn_FlamingSpeech.tga"   0   1   0   ""   ""   2   24   0   "none"   0   0   |
+15009   "Mods\AccuseWitchcraft.lua"   "-"   "AccuseWitchcraft"   999   "hud/buttons/btn_FlamingSpeech.tga"   0   1   0   ""   ""   2   24   6   "none"   0   0   |
 15010   "Mods\WitchKill.lua"   "-"   "WitchKill"   999   ""   0   0   0   ""   ""   0   0   0   "none"   0   0   |
 15011   "Mods\ImperialGuard.lua"   ""   "ImperialGuard"   90   "hud/buttons/btn_RoyalGuard.tga"   0   4   50   ""   ""   0   24   0   "particles/radius.nif"   30   0   | 
 15012   "Mods\PapalGuard.lua"   ""   "PapalGuard"   90   "hud/buttons/btn_RoyalGuard.tga"   0   4   50   ""   ""   0   24   0   "particles/radius.nif"   30   0   | 

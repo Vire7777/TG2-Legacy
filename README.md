@@ -13,7 +13,7 @@ In Progress
 - [Fixed] When a preacher with a church and sending money to cardinals, we receive a strange message after (The messages are corrected in the script to have the good message sent. Also code is rewrote to be clearer)
 - [Fixed] Hedge tavern girl assigned to dance always stops dancing and needs to be reassigned
 - [Fixed] Assassin outlaw text is fixed
-- [Fixed] Can not ride a horse if not owned a castle (country estate or more)
+- [Fixed] Can not ride a horse if not owned a castle (country estate or more) or you have to pay
 - [Fixed] No entry for court date in journal. Judge always no shows
 - [Fixed] Accuse Witch broken (weird)
 - [Fixed] Pest house bugs -- can attack all building except state

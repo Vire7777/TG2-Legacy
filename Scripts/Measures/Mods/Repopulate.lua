@@ -824,8 +824,8 @@ function AIAggressive()
 																					SetState(SimAlias, STATE_LOCKEDALT, true)
 																					f_MoveTo(SimAlias,"PriestPos")
 																					SetState(SimAlias, STATE_LOCKEDALT, false)
-																					LogMessage("Log Message: AccuseWitch"..GetID("Jerk"))
-																					MeasureRun(SimAlias,"Jerk","AccuseWitch",true)
+																					LogMessage("Log Message: AccuseWitchcraft"..GetID("Jerk"))
+																					MeasureRun(SimAlias,"Jerk","AccuseWitchcraft",true)
 																				end
 																			end
 																		end
@@ -841,8 +841,8 @@ function AIAggressive()
 																					SetState(SimAlias, STATE_LOCKEDALT, true)
 																					f_MoveTo(SimAlias,"PriestPos")
 																					SetState(SimAlias, STATE_LOCKEDALT, false)
-																					LogMessage("Log Message: AccuseWitch"..GetID("Jerk"))
-																					MeasureRun(SimAlias,"Jerk","AccuseWitch",true)
+																					LogMessage("Log Message: AccuseWitchcraft"..GetID("Jerk"))
+																					MeasureRun(SimAlias,"Jerk","AccuseWitchcraft",true)
 																				end
 																			end
 																		end
