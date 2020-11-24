@@ -4,10 +4,10 @@ function Run()
 
   
 	if GetProperty("Actor", "perfume") == 6 then
-	 --if (SimGetFaith("")==SimGetFaith("Actor")) then
-			modval = 7
-			modval2 = 7
-	 --end
+	MsgQuick("Actor", "test")
+			modval = -Rand(5)-5
+			modval2 = -Rand(5)-5
+			MsgQuick("Actor", modval)
 	elseif GetProperty("Actor", "perfume") == 5 then
       modval = 5
       modval2 = 3
@@ -24,14 +24,10 @@ function Run()
 			modval = 1
 	end
 
-	if SimGetGender("") == SimGetGender("Actor") then
-		if modval2 > 0 then
+	if SimGetGender("") == SimGetGender("Actor") and modval2 ~= 0 then
 			chr_ModifyFavor("","Actor",modval2)
-		end
-	else
-		if modval > 0 then
+	elseif modval ~= 0 then
 			chr_ModifyFavor("","Actor",modval)
-		end
 	end
 
 	return ""

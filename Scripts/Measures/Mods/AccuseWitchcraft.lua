@@ -61,17 +61,7 @@ function Run()
 	
 	local combatOfFaith = yourFaith + yourPriestFavor + yourCharisma * 0.33 * 10 + yourRhetoric * 0.66 * 10 - victimFaith - victimPriestFavor - priestEmpathy * 0.66 * 10 - victimCharisma * 0.33 * 10
 	--MsgQuick("",combatOfFaith)
-  feedback_MessageCharacter("",
-        "@L_ACCUSEWITCHCRAFT_FAILURE_HEAD_+0",
-        "@L_ACCUSEWITCHCRAFT_FAILURE_BODY_+1",GetID(""))
-    ModifyFavorToSim("Priest","",-Rand(20)-10)
-    ModifyFavorToSim("Destination","",-Rand(20)-10)
-    
-    local duration = mdata_GetDuration(MeasureID)
-    MsgQuick("",duration)
-    AddImpact("","perfume",1,duration)
-    SetState("",STATE_CONTAMINATED,true)
-    SetProperty("","perfume",6)
+	accusewitchcraft_BurnYou()
 end
 
 function ChoiceIsYours()
@@ -84,10 +74,10 @@ function ChoiceIsYours()
     feedback_MessageCharacter("",
         "@L_ACCUSEWITCHCRAFT_FAILURE_HEAD_+0",
         "@L_ACCUSEWITCHCRAFT_FAILURE_BODY_+1",GetID(""))
-        
     ModifyFavorToSim("Priest","",-Rand(20)-10)
     ModifyFavorToSim("Destination","",-Rand(20)-10)
     
+    local MeasureID = GetCurrentMeasureID("")
     local duration = mdata_GetDuration(MeasureID)
     AddImpact("","perfume",1,duration)
     SetState("",STATE_CONTAMINATED,true)
@@ -108,36 +98,28 @@ function BurnYou()
   end 
   
   MoveStop("")
-  SetState("",STATE_LOCKEDALT,true)
+  SetState("",STATE_LOCKED,true)
   Sleep(1)
   SimCreate(20, "Church", "Church", "Priest")
-  SimCreate(715, "Church", "Church", "Executioner")
   
-  SetState("Priest",STATE_LOCKEDALT,true)
+  SetState("Priest",STATE_LOCKED,true)
+  f_MoveTo("Priest","",GL_MOVESPEED_WALK,10)
   AlignTo("","Priest")
   AlignTo("Priest","")
-  
-  SetState("Executioner",STATE_LOCKEDALT,true)
-  AlignTo("","Executioner")
-  AlignTo("Executioner","")
   Sleep(1) 
   
   if (SimGetGender("") == GL_GENDER_FEMALE) then
-    MsgSay("Executioner","@L_ACCUSEWITCHCRAFT_PRIEST_FEMALE")
     MsgSay("Priest","@L_ACCUSEWITCHCRAFT_PRIEST_FEMALE")
   else
-    MsgSay("Executioner","@L_ACCUSEWITCHCRAFT_PRIEST_MALE")
     MsgSay("Priest","@L_ACCUSEWITCHCRAFT_PRIEST_FEMALE")
   end 
   
-  SetProperty("Executioner","WitchBurner",1)
   SetProperty("Church","PriestChurch",1)
   SetFavorToSim("ChurchPriest","",0)
 
   MeasureRun("Priest","","WitchKill",true)
-  SetState("", STATE_LOCKEDALT, false)
-  SetState("Executioner", STATE_LOCKEDALT, false)
-  SetState("Priest", STATE_LOCKEDALT, false)
+  SetState("", STATE_LOCKED, false)
+  SetState("Priest", STATE_LOCKED, false)
   local MeasureID = GetCurrentMeasureID("")
   local TimeOut = mdata_GetTimeOut(MeasureID)
   SetRepeatTimer("", GetMeasureRepeatName(), TimeOut)
@@ -149,15 +131,15 @@ function BurnWitch()
 	end	
 	SimStopMeasure("Destination")
 	MoveStop("Destination")
-	SetState("Destination",STATE_LOCKEDALT,true)
-	SetState("",STATE_LOCKEDALT,true)
+	SetState("Destination",STATE_LOCKED,true)
+	SetState("",STATE_LOCKED,true)
 	GetPosition("","Spawn")
 	f_MoveToNoWait("","Home")
 	Sleep(2)
 	MoveStop("")
 	Sleep(1)
 	SimCreate(20, "Church", "Spawn", "Priest")
-	SetState("Priest",STATE_LOCKEDALT,true)
+	SetState("Priest",STATE_LOCKED,true)
 	AlignTo("","Priest")
 	AlignTo("Priest","")
 	Sleep(1)
@@ -186,9 +168,9 @@ function BurnWitch()
 	--end	
 
 	MeasureRun("Priest","Destination","WitchKill",false)
-	SetState("", STATE_LOCKEDALT, false)
-	SetState("Priest", STATE_LOCKEDALT, false)
-	SetState("Destination",STATE_LOCKEDALT,false)
+	SetState("", STATE_LOCKED, false)
+	SetState("Priest", STATE_LOCKED, false)
+	SetState("Destination",STATE_LOCKED,false)
 	local MeasureID = GetCurrentMeasureID("")
 	local TimeOut = mdata_GetTimeOut(MeasureID)
 	SetRepeatTimer("", GetMeasureRepeatName(), TimeOut)
