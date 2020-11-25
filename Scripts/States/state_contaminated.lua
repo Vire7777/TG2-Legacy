@@ -80,6 +80,19 @@ function Run()
 			return
 		end
 	end
+	
+	--contaminated for bad reputation on sims
+  if IsType("","Sim") then
+    if GetImpactValue("","BlackSheep")==1 then
+      CommitAction("BlackSheep","","")
+      while GetImpactValue("","BlackSheep")>0 do
+        Sleep(5)
+      end
+      StopAction("BlackSheep", "")
+      SetState("",STATE_CONTAMINATED,false)
+      return
+    end
+  end
 
 	--contaminated also works for perfume on sims
 	if IsType("","Sim") then

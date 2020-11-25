@@ -3,12 +3,7 @@ function Run()
 	local modval2 = 0 --same gender
 
   
-	if GetProperty("Actor", "perfume") == 6 then
-	MsgQuick("Actor", "test")
-			modval = -Rand(5)-5
-			modval2 = -Rand(5)-5
-			MsgQuick("Actor", modval)
-	elseif GetProperty("Actor", "perfume") == 5 then
+	if GetProperty("Actor", "perfume") == 5 then
       modval = 5
       modval2 = 3
 	elseif GetProperty("Actor", "perfume") == 4 then
@@ -24,9 +19,9 @@ function Run()
 			modval = 1
 	end
 
-	if SimGetGender("") == SimGetGender("Actor") and modval2 ~= 0 then
+	if SimGetGender("") == SimGetGender("Actor") and modval2 > 0 then
 			chr_ModifyFavor("","Actor",modval2)
-	elseif modval ~= 0 then
+	elseif modval > 0 then
 			chr_ModifyFavor("","Actor",modval)
 	end
 
