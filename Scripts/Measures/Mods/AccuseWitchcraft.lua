@@ -61,18 +61,19 @@ function Run()
 	
 	-- Calculate the amount of the different parameters
 	local combatOfFaith = yourFaith + yourPriestFavor + yourCharisma * 0.33 * 10 + yourRhetoric * 0.66 * 10 - victimFaith - victimPriestFavor - priestEmpathy * 0.66 * 10 - victimCharisma * 0.33 * 10
+	combatOfFaith = combatOfFaith / 4
 	
   -- let s see who won
   local MeasureID = GetCurrentMeasureID("") 
   if (combatOfFaith < -30) then
     -- you lost and you will burn
     accusewitchcraft_AccuserBurn()
-  elseif (combatOfFaith > -30 and combatOfFaith < 0) then
-    -- you lost and the priest is really angry
-    accusewitchcraft_BecomeABlackSheep()
   elseif (combatOfFaith > 30) then
     -- you won and the victim would burn in hell
     accusewitchcraft_AccusedBurn()
+  elseif (combatOfFaith > -30 and combatOfFaith < 0) then
+    -- you lost and the priest is angry
+    accusewitchcraft_BecomeABlackSheep()
   else
     -- you lost and the priest is not too angry
     accusewitchcraft_PriestNotConvinced()
