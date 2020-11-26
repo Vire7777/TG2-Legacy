@@ -60,8 +60,8 @@ function Run()
   -- local EvidenceValue   = GetData("evidence0value")
 	
 	-- Calculate the amount of the different parameters
-	local combatOfFaith = yourFaith + yourPriestFavor + yourCharisma * 0.33 * 10 + yourRhetoric * 0.66 * 10 - victimFaith - victimPriestFavor - priestEmpathy * 0.66 * 10 - victimCharisma * 0.33 * 10
-	combatOfFaith = combatOfFaith / 4
+	local combatOfFaith = yourFaith + yourPriestFavor + (yourCharisma * 0.33 + yourRhetoric * 0.66) * 10 - victimFaith - victimPriestFavor - (priestEmpathy * 0.66 - victimCharisma * 0.33) * 10
+	combatOfFaith = combatOfFaith / 3
 	
   -- let s see who won
   local MeasureID = GetCurrentMeasureID("") 
