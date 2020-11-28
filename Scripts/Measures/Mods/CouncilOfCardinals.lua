@@ -34,17 +34,16 @@ function Run()
           "@L_INTRIGUE_COUNCILOFCARDINALS_SCREENPLAY_ACTOR_BODY_+0", 
           GetID(""),Amount[CardinalFavor+1]) 
 	
-	 -- Pay your money
-  SpendMoney("",Amount[CardinalFavor+1],"CostAdministration")
-  
-  -- Add more favor
-	SetProperty("","CardinalFavor", CardinalFavor + 1)
-	
-	-- Give a percentage to the church owner
+-- Give a percentage to the church owner
 	GetInsideBuilding("","Church")
   BuildingGetOwner("Church","COwner")
   if AliasExists("COwner") then
+    SpendMoney("",Amount[CardinalFavor+1],"CostAdministration")
+    SetProperty("","CardinalFavor", CardinalFavor + 1)
     CreditMoney("COwner",Amount[CardinalFavor+1]/10,"IncomeOther")
+  else
+    MsgQuick("","@L _MERCENARY_RAZZIA_FILTER_NOOWNER_+0")
+    StopMeasure()
   end 
 	
 	-- Send feedback for the donation
