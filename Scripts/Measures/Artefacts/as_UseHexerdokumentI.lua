@@ -52,6 +52,7 @@ function Run()
   end
   
   AddEvidence("","Destination","",Evidence)
+  AddImpact("","PerformingWitchcraft",1,1)
 
 	StopMeasure()
 	

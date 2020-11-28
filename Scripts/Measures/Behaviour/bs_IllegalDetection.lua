@@ -49,6 +49,21 @@ function Run()
 		SetProperty("","DontLeave",1)
 	end
 	
+	 if GetCurrentMeasureID("")==11984 or GetCurrentMeasureID("")==11985 or GetCurrentMeasureID("")==1886 then  --witchcraft
+	   local duration = 0
+	   local strengh = 0
+	   if GetCurrentMeasureID("")==11984 then
+	     duration = 7
+	     strengh = 1
+	   elseif GetCurrentMeasureID("")==11985 then
+       duration = 7
+       strengh = 2
+     end
+     
+     
+    AddImpact("","WitchcraftEvidence",strengh.."9"..GetID("Actor"),duration)
+  end
+  
 	--put this code here so that it will only be called on affected Sim. Also got rid of the Empathy factor. Only someone trained in the arts of stealth can see through it. How would empathy even play a role? just too stupid to fathom lol
 	local ActorStealth = GetSkillValue("Actor","SHADOW_ARTS") 
 	local WatcherStealth = GetSkillValue("","SHADOW_ARTS")
