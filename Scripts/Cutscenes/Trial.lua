@@ -28,22 +28,22 @@ function Start()
 			ListGetElement("assessor_candidates",index,"assessor2")
 			ListRemove("assessor_candidates","assessor2")
 		end
+
 	-- ein termin wird festgelegt: event_alias, settlement, cutscene, function
-		
-		--CityScheduleCutsceneEvent("settlement","trial_date","","EverybodySitDown",9,8,"@L_LAWSUIT_DIARY_CITY_+0",GetID("accuser"),GetID("accused"))	-- hourofday=9,mintimeinfuture=8
-		
-		local EventTime = 1980 --1980/60 = 33 **** 33-24 = 9 <---9am is when we want to set the trial for :)
+		CityScheduleCutsceneEvent("settlement","trial_date","","EverybodySitDown",9,8,"@L_LAWSUIT_DIARY_CITY_+0",GetID("accuser"),GetID("accused"))	-- hourofday=9,mintimeinfuture=8
+		local EventTime = SettlementEventGetTime("trial_date")
 
 		local GameTime = GetGametime()*60
 		local WaitTime = EventTime - GameTime - (6*60)
 		--		local day = math.floor(GetGametime()/24)
 		local hour = math.mod(GetGametime(),24)
-		
+
 		if (WaitTime<0) then
 			trial_SetBuildingInfo()
 		else
 			CutsceneAddEvent("","SetBuildingInfo",WaitTime)
 		end
+
 		local Evidences = 0+CutsceneCollectEvidences("","accuser","accused")
 
 		-- an den Richter
@@ -56,7 +56,7 @@ function Start()
 		end
 		SetData("judge",GetID("judge"))
 
-		-- an den Ankläger
+		-- an den Anklger
 		if GetID("accuser")>0 then
 
 			feedback_MessagePolitics("accuser",
@@ -74,7 +74,7 @@ function Start()
 			feedback_MessagePolitics("accused",
 					"@L_LAWSUIT_2_MESSAGES_2A_SEND_ANGEKLAGTER_+0",
 					"@L_LAWSUIT_2_MESSAGES_2A_SEND_ANGEKLAGTER_+1",
-					GetID("accused"),GetID("accuser"),GetID("settlement"),EventTime,EventTime)
+					GetID("accused"),GetID("accuser"),GetID("settlement"),SettlementEventGetTime("trial_date"),SettlementEventGetTime("trial_date"))
 
 			SetProperty("accused","trial_destination_ID",GetID(""))
 			SetProperty("accused","HaveCutscene",1)
@@ -95,7 +95,7 @@ function OfferLightJudgement()
 	local VictimID			= GetData("evidence0victim")
 	local EvidenceStrength  = GetData("evidence0quality")
 	local EvidenceValue		= GetData("evidence0value") 
-	local EventTime         = 1980 --SettlementEventGetTime("trial_date")  **Event has not been created since we cannot delete it once it has been intiated
+	local EventTime         = SettlementEventGetTime("trial_date")
 	local SurrenderOffer = 0
 	local SurrenderAnswer = 0
 	local PenaltyType = 0
@@ -254,12 +254,12 @@ function OfferLightJudgement()
 end
 
 function AiGetJudgeOffer()
-	local NumEvidences = CutsceneCollectEvidences("","accuser","accused")
+	local NumEvidences = 0+CutsceneCollectEvidences("","accuser","accused")
 	local EvidenceType		= GetData("evidence0type")
 	local VictimID			= GetData("evidence0victim")
 	local EvidenceStrength  = GetData("evidence0quality")
 	local EvidenceValue		= GetData("evidence0value") 
-	local EventTime         = 1980 --SettlementEventGetTime("trial_date")
+	local EventTime         = SettlementEventGetTime("trial_date")
 	local SurrenderOffer = 0
 	
 	if NumEvidences == nil then
@@ -334,7 +334,7 @@ function SetBuildingInfo()
 	SetProperty("judgeroom","NextCutsceneID",GetID(""))
 end
 
--- Beisitzer erzeugen / Auf die Plätze
+-- Beisitzer erzeugen / Auf die Plze
 function EverybodySitDown()
 		RoomLockForCutscene("judgeroom","") 
 		BuildingLockForCutscene("courtbuilding","")
@@ -413,7 +413,7 @@ function EverybodySitDown()
 		trial_BeamIfNPCNotInside("accuser","AccuserStandPos")
 		trial_BeamIfNPCNotInside("accused","AccusedStandPos")
 
-	-- Gebäude und darinstehende Sims locken
+	-- Gebde und darinstehende Sims locken
 		trial_StopAllMeasures()
 		RoomLockForCutscene("judgeroom","") 
 		-- PATCH TODO
@@ -723,7 +723,7 @@ function GetFavorModifier(Sim)
 	return v
 end
 
--- Eröffnung, Beweisaufnahme
+-- Erfnung, Beweisaufnahme
 function Go()
 	BuildingGetRoom("courtbuilding", "Judge", "judgeroom")
 	
@@ -1034,8 +1034,8 @@ function Go()
 	MsgSay("judge","@L_LAWSUIT_3_INTRO_EVERYONE_ABORD_2",GetID("accuser"),GetID("accused"))
 	StopAnimation("judge")
 
-	-- MsgSay("judge", "@LTRIAL_GO@THiermit erkläre ich den Prozeß %1SN gegen %2SN für eröffnet.",GetID("accuser"),GetID("accused"))
-	-- MsgSay("judge", "@LTRIAL_GO@TKläger, was habt ihr gegen %1SN vorzubringen?",GetID("accused"))
+	-- MsgSay("judge", "@LTRIAL_GO@THiermit erklre ich den Proze %1SN gegen %2SN f erfnet.",GetID("accuser"),GetID("accused"))
+	-- MsgSay("judge", "@LTRIAL_GO@TKlger, was habt ihr gegen %1SN vorzubringen?",GetID("accused"))
 
 	local NumEvidences = 0+CutsceneCollectEvidences("","accuser","accused")
 
@@ -1217,7 +1217,7 @@ function Go()
 
 		local TEV = GetData("TotalEvidenceValue")
 
-		-- Der Richter kommentiert die angewendete Härte der Rechtssprechung und ändert den TEV entsprechend
+		-- Der Richter kommentiert die angewendete Hte der Rechtssprechung und dert den TEV entsprechend
 		local SeverityOfLaw = GetProperty("settlement","SeverityOfLaw")
 		local LawReplace
 		if SeverityOfLaw==0 then
@@ -1230,10 +1230,15 @@ function Go()
 			trial_ModifyTotalEvidenceValue(8)
 		end
 
+		if (GetNobilityTitle("accused")>=NOBILITY_LANDGRAF) then
+			PlayAnimationNoWait("judge", "sit_talk")
+			MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD",GetID("accused"))
+			trial_ModifyTotalEvidenceValue(-3)
+		end
 		PlayAnimationNoWait("judge", "sit_talk")
 		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_LAW"..LawReplace)
 
-		-- Kläger darf Strafmaß wählen
+		-- Klger darf Strafma hlen
 		trial_Cam("JudgeFromBelowCam")
 		PlayAnimationNoWait("judge", "talk_sit_short")
 		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_TO_ACCUSER")
@@ -1251,7 +1256,7 @@ function Go()
 			trial_AccuserDecideSentence, --AIFunc
 			"@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+0",GetID("accused")) --Message Text
 
-		-- Berechne default-Strafmaß
+		-- Berechne default-Strafma
 		local SentenceLevel = GetData("TotalEvidenceValue") / 3
 		SetData("DefaultSentence",math.floor(SentenceLevel))	-- for judge AI func
 		camera_CutsceneDialogCam("","accuser",0,0)
@@ -1362,7 +1367,7 @@ function Go()
 		PlayAnimation("judge", "sit_write_in")
 		LoopAnimation("judge","sit_write_loop",-1)
 
-		--accused und accuser dürfen bestechen
+		--accused und accuser dfen bestechen
 
 		local SleepTime = 30
 		local Actions = 5
@@ -1424,7 +1429,7 @@ function Go()
 		trial_UpdatePanelTrial(0)
 
 		if confession==2 then
-			-- "Das gericht wird jetzt entscheiden, ob das vom Kläger geforderte Strafmaß angemessen ist."
+			-- "Das gericht wird jetzt entscheiden, ob das vom Klger geforderte Strafma angemessen ist."
 			trial_PlayRelevantJuryAni("judge",60)
 			MsgSay("judge","@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_INTRO")
 			DecisionTextLabel = "@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_SCREENPLAYER_"
@@ -1438,7 +1443,7 @@ function Go()
 
 		-- Entscheidungen Jury
 		local conviction_cnt = 0
-		--richter und beisitzer dürfen sich entscheiden, wenn sie spieler sind
+		--richter und beisitzer drfen sich entscheiden, wenn sie spieler sind
 		SetData("DecisionParam","judge")
 		SetData("JudgeDecision",-1)
 		
@@ -1509,7 +1514,7 @@ function Go()
 		local TrialCosts = 250 + GetNobilityTitle("accused") * 250
 		local DecisionForFinalComment = 0
 		trial_Cam("JudgeFromBelowCam")
-		-- Urteilsverkündung--------------------------------------------
+		-- Urteilsverkndung--------------------------------------------
 
 --		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_+0") -- Rausgenommen weil keine Speech aufnahme..
 		if confession==2 or conviction_cnt>=2 then
@@ -1566,7 +1571,7 @@ function Go()
 					GetHomeBuilding("accused","home")
 					BuildingGetCity("home","homecity")				
 					CityRemoveFromOffice("homecity","accused")
-					CityRemoveApplicant("homecity","accused") --löscht auch eine Bewerbung
+					CityRemoveApplicant("homecity","accused") --lscht auch eine Bewerbung
 				elseif (GetNobilityTitle("accused")>1) then
 					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+5",GetID("accused"))
 				else
@@ -1574,12 +1579,14 @@ function Go()
 					PlayAnimationNoWait("judge", "sit_talk")
 					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"))
 					PenaltyType = PENALTY_PRISON
+					local YearsPerRound = Options:GetValueInt("YearsPerRound")
 					PenaltyValue = 96 / YearsPerRound
 				end
 			elseif SentenceLevel==5 then
 				PlayAnimationNoWait("judge", "sit_talk")
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"),PenaltyValue)
 				PenaltyType = PENALTY_PRISON
+				local YearsPerRound = Options:GetValueInt("YearsPerRound")
 				PenaltyValue = 96 / YearsPerRound
 			elseif SentenceLevel==6 then
 				PlayAnimationNoWait("judge", "sit_talk")
@@ -1598,7 +1605,7 @@ function Go()
 				xp_ChargeCharacter("accuser", SentenceLevel)
 			end
 
-		else -- gerichtskosten trägt die anklage
+		else -- gerichtskosten trt die anklage
 			trial_PlayRelevantJuryAni("judge",0)
 			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY"..GenderType,GetID("accused"))
 			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY_TOBOTH",TrialCosts)
@@ -1863,7 +1870,7 @@ end
 
 function BeamIfNPCNotInside(SimAlias, LocatorName)
 	BuildingGetRoom("courtbuilding", "Judge", "judgeroom")
-	--feststellen ob der sim im gerichtsgebäude ist
+	--feststellen ob der sim im gerichtsgebude ist
 	local IsPresent = false
 	local IsPresentButInWrongRoom = false
 	if GetInsideRoom(SimAlias,"currentroom") then
@@ -2163,7 +2170,7 @@ function RemoveAllSessionMeasures(Sim)
 	--RemoveProperty(Sim,"CutsceneThreatCharacter")
 end
 
--- abfrage: es gibt einen Spieler, der entweder kläger oder angeklagten kontrolliert
+-- abfrage: es gibt einen Spieler, der entweder klger oder angeklagten kontrolliert
 function HumanPlayerWantsInteraction()
 	if DynastyIsPlayer("accuser") then
 		return true
