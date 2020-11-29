@@ -94,6 +94,18 @@ function Run()
     end
   end
 
+  --contaminated by bounty hunt
+  if IsType("","Sim") then
+    if GetImpactValue("","BountyHunt")>0 then
+      CommitAction("BountyHunt","","")
+      while GetImpactValue("","BountyHunt")>0 do
+        Sleep(5)
+      end
+      StopAction("BountyHunt", "")
+      SetState("",STATE_CONTAMINATED,false)
+      return
+    end
+  end
 	--contaminated also works for perfume on sims
 	if IsType("","Sim") then
 		if GetImpactValue("","perfume")==1 then
