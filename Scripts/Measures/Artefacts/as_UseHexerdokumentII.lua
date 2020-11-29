@@ -16,10 +16,12 @@ function Run()
 	SetMeasureRepeat(TimeOut)	
 	GetPosition("", "ParticleSpawnPos")
 	RemoveItems("","HexerdokumentII",1)
+	CommitAction("PerformingWitchcraft","","Destination","Destination")
+	AddImpact("","PerformingWitchcraft",3,0.2)
 	PlayAnimation("","watch_for_guard")
 	PlaySound3D("","Locations/wear_clothes/wear_clothes+1.wav", 1.0)
   CarryObject("","Handheld_Device/ANIM_openscroll.nif",false)
-	Sleep(1)
+	Sleep(2)
   
   PlayAnimationNoWait("","pray_standing")
 	if SimGetGender("Destination") == 1 then
@@ -31,7 +33,7 @@ function Run()
 	
 	StartSingleShotParticle("particles/rage.nif", "ParticleSpawnPos",1,5)
 	PlaySound3D("","Effects/mystic_gift+0.wav", 1.0)
-	Sleep(1)
+	Sleep(2)
 	CarryObject("","",false)
 
   for k=1,2 do
@@ -62,7 +64,8 @@ function Run()
     end
 		AddEvidence("","Destination","",Evidence)
   end
-
+  Sleep(2)
+  StopAction("PerformingWitchcraft","")
 	StopMeasure()
 	
 end

@@ -46,24 +46,47 @@ function Run()
 	end
 	
 	if GetCurrentMeasureID("")==3505 then  --SquadWaylayMember
-		SetProperty("","DontLeave",1)
+	    SetProperty("","DontLeave",1)
 	end
-	
-	 if GetCurrentMeasureID("")==11984 or GetCurrentMeasureID("")==11985 or GetCurrentMeasureID("")==1886 then  --witchcraft
-	   local duration = 0
-	   local strengh = 0
-	   if GetCurrentMeasureID("")==11984 then
-	     duration = 7
-	     strengh = 1
-	   elseif GetCurrentMeasureID("")==11985 then
-       duration = 7
-       strengh = 2
-     end
-     
-     
-    AddImpact("","WitchcraftEvidence",strengh.."9"..GetID("Actor"),duration)
-  end
-  
+    	
+	 if GetImpactValue("Actor","PerformingWitchcraft") > 0 then --quick check if witchcraft is being performed. No Witchcraft = 0 Voodoo=1 | HexOne=2 | HexTwo=3 | Spindel=4
+	     local WCType = GetImpactValue ("Actor","PerformingWitchcraft")
+	     local Witch = GetID("Actor")
+	     if WCType == 1 then --Voodoo | DefaulWeight = 8 | DefaultDuration = 96hrs (4 turns) | Duration/12 = Current Crime Weight
+	         local TimeLeft = math.ceil(ImpactGetMaxTimeleft("","WCEVoodoo"))
+	         if TimeLeft == -1 or GetImpactValue("","WCEVoodoo") ~= Witch then
+	             AddImpact("","WCEVoodoo",Witch,96)
+	         else
+	             local NewValue = TimeLeft + 96
+	             AddImpact("","WCEVoodoo",Witch,NewValue) --not possible and not necessary to delete old impacts as the code pulls max time left which we use for reference
+	         end  
+	     elseif WCType == 2 then --Hex1 | DefaultWeight = 6 | DefaultDuration = 72hrs (3 turns) | Duration/12 = Current Crime Weight
+	         local TimeLeft = math.ceil(ImpactGetMaxTimeleft("","WCEHexOne"))
+           if TimeLeft == -1 or GetImpactValue("","WCEHexOne") ~= Witch then
+               AddImpact("","WCEHexOne",Witch,72)
+           else
+               local NewValue = TimeLeft + 72
+               AddImpact("","WCEHexOne",Witch,NewValue)
+           end 
+	     elseif WCType == 3 then --Hex2 | DefaultWeight = 8 | DefaultDuration = 96hrs (4 turns) | Duration/12 = Current Crime Weight
+	         local TimeLeft = math.ceil(ImpactGetMaxTimeleft("","WCEHexTwo"))
+           if TimeLeft == -1 or GetImpactValue("","WCEHexTwo") ~= Witch then
+               AddImpact("","WCEHexTwo",Witch,96)
+           else
+               local NewValue = TimeLeft + 96
+               AddImpact("","WCEHexTwo",Witch,NewValue)
+           end   
+	     elseif WCType == 4 then --Pendel | DefaultWeight = 4 | DefaultDuration = 48 (2 Turns) | Duration/12 = Current Crime Weight
+	         local TimeLeft = math.ceil(ImpactGetMaxTimeleft("","WCEPendel"))
+           if TimeLeft == -1 or GetImpactValue("","WCEPendel") ~= Witch then
+               AddImpact("","WCEPendel",Witch,48)
+           else
+               local NewValue = TimeLeft + 48
+               AddImpact("","WCEPendel",Witch,NewValue)
+           end 
+	     end
+	 end
+	 
 	--put this code here so that it will only be called on affected Sim. Also got rid of the Empathy factor. Only someone trained in the arts of stealth can see through it. How would empathy even play a role? just too stupid to fathom lol
 	local ActorStealth = GetSkillValue("Actor","SHADOW_ARTS") 
 	local WatcherStealth = GetSkillValue("","SHADOW_ARTS")

@@ -275,4 +275,7 @@ Data:
 // Forged Epic Items v2.0 end ---------------------------------------------------------------------------------------------------------
 800   1   2   0   "BlackSheep"   0   "Hud/state/Excommed.tga"   |
 801   1   2   0   "PerformingWitchcraft"   0   ""   |
-802   1   2   0   "WitchcraftEvidence"   0   ""   |
+802   1   2   0   "WCEVoodoo"   0   ""   |
+803   1   2   0   "WCEHexOne"   0   ""   |
+804   1   2   0   "WCEHexTwo"   0   ""   |
+805   1   2   0   "WCEPendel"   0   ""   |

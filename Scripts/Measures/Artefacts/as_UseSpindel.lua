@@ -22,6 +22,8 @@ function Run()
 
 	SetMeasureRepeat(TimeOut)
 	MeasureSetNotRestartable()
+	CommitAction("PerformingWitchcraft","","Destination","Destination")
+  AddImpact("","PerformingWitchcraft",4,0.2)
 	AlignTo("Owner", "Destination")
 	Sleep(0.5)
 	PlayAnimationNoWait("Owner", "attack_middle")
@@ -89,7 +91,8 @@ function Run()
         end
 		PlayAnimation("Owner","cheer_01")
     end
-
+  Sleep(2)
+  StopAction("PerformingWitchcraft","")
 	StopMeasure()
 
 end

@@ -19,6 +19,8 @@ function Run()
 
 	MeasureSetNotRestartable()
 	SetMeasureRepeat(TimeOut)	
+	CommitAction("PerformingWitchcraft","","Destination","Destination")
+  AddImpact("","PerformingWitchcraft",3,0.2)
 	GetPosition("", "ParticleSpawnPos")
 	RemoveItems("","UniqueHexerdokumentIII",1)
 	PlayAnimation("","watch_for_guard")
@@ -67,7 +69,8 @@ function Run()
     end
 		AddEvidence("Owner","Destination","Owner",Evidence)
   end
-
+  Sleep(2)
+  StopAction("PerformingWitchcraft","")
 	StopMeasure()
 	
 end
