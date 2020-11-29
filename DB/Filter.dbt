@@ -598,3 +598,4 @@ Data:
 2572   "CanUseUniqueAboutTalentsIII"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(UniqueAboutTalentsIII)>0)AND NOT(Object.GetState(fighting)))"   |
 2573   "CanUseUniqueHexerdokumentIII"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(UniqueHexerdokumentIII)>0)AND NOT(Object.GetState(fighting)))"   |
 // Forged Epic Items v2.0 end ---------------------------------------------------------------------------------------------------------
+2574   "CanUsePlaceBounty"   "__F((Object.CanBeControlled())AND(Object.GetInsideBuilding())AND(Object.IsType(21)))"   |
