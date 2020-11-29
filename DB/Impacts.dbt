@@ -273,9 +273,11 @@ Data:
 706   1   2   0   "UniqueAboutTalentsIII"   0   "Hud/state/UniqueAboutTalentsIII.tga"   |
 //707   1   2   0   "UniqueHexerdokumentIII"   0   "Hud/state/UniqueHexerdokumentIII.tga"   |
 // Forged Epic Items v2.0 end ---------------------------------------------------------------------------------------------------------
+799   1   2   0   "BountyHunt"   0   "Hud/state/banned.tga"   |
 800   1   2   0   "BlackSheep"   0   "Hud/state/Excommed.tga"   |
-801   1   2   0   "PerformingWitchcraft"   0   ""   |
-802   1   2   0   "WCEVoodoo"   0   ""   |
-803   1   2   0   "WCEHexOne"   0   ""   |
-804   1   2   0   "WCEHexTwo"   0   ""   |
-805   1   2   0   "WCEPendel"   0   ""   |
+801   1   2   0   "WitchcraftEvidence"   0   ""   |
+802   1   2   0   "PerformingWitchcraft"   0   ""   |
+803   1   2   0   "WCEVoodoo"   0   ""   |
+804   1   2   0   "WCEHexOne"   0   ""   |
+805   1   2   0   "WCEHexTwo"   0   ""   |
+806   1   2   0   "WCEPendel"   0   ""   |
