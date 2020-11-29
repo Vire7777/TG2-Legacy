@@ -49,9 +49,9 @@ function Run()
 	    SetProperty("","DontLeave",1)
 	end
     	
-	 if GetImpactValue("Actor","PerformingWitchcraft") > 0 then --quick check if witchcraft is being performed. No Witchcraft = 0 Voodoo=1 | HexOne=2 | HexTwo=3 | Spindel=4
+	 local Witch = GetID("Actor")
+	 if GetImpactValue("Actor","PerformingWitchcraft") > 0 and GetImpactValue ("","Timer") ~= Witch then --quick check if witchcraft is being performed. No Witchcraft = 0 Voodoo=1 | HexOne=2 | HexTwo=3 | Spindel=4
 	     local WCType = GetImpactValue ("Actor","PerformingWitchcraft")
-	     local Witch = GetID("Actor")
 	     if WCType == 1 then --Voodoo | DefaulWeight = 8 | DefaultDuration = 96hrs (4 turns) | Duration/12 = Current Crime Weight
 	         local TimeLeft = math.ceil(ImpactGetMaxTimeleft("","WCEVoodoo"))
 	         if TimeLeft == -1 or GetImpactValue("","WCEVoodoo") ~= Witch then
@@ -85,6 +85,7 @@ function Run()
                AddImpact("","WCEPendel",Witch,NewValue)
            end 
 	     end
+	     AddImpact("","Timer",Witch,0.2)
 	 end
 	 
 	--put this code here so that it will only be called on affected Sim. Also got rid of the Empathy factor. Only someone trained in the arts of stealth can see through it. How would empathy even play a role? just too stupid to fathom lol
