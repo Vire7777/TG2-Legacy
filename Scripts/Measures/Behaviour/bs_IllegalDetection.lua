@@ -1,47 +1,57 @@
 function Run()
 	
 	if IsType("","Cart") then
+		Sleep(2)
 		return "-"
 	end
 	
 	if HasProperty("", "NotAffectable") then
+		Sleep(2)
 		return "-"
 	end
 	
 	if ActionIsStopped("Action") then
 		-- Check if its a city guard
 		if not GetState("", STATE_SCANNING) then
+			Sleep(1)
 			return ""
 		end
 	end
 	
 	if GetState("",STATE_NPC) then
+		Sleep(1)
 		return "-"
 	end
 	
 	if GetImpactValue("","spying") == 1 then
+		Sleep(1)
 		return ""
 	end
 	
-	if BattleIsFighting("") then
+	if BattleIsFighting("") or GetState("",STATE_FIGHTING) then
 		if not HasProperty("","AttBld") then
+			Sleep(1)
 			return ""
 		end
 	end
 	
 	if GetState("",STATE_ROBBERGUARD) then
+		Sleep(1)
 		return ""
 	end
 	
 	if GetCurrentMeasureID("")==660 then  --burglary
+		Sleep(1)
 		return ""
 	end
 
 	if GetCurrentMeasureID("")==680 then  --pickpocketing
+		Sleep(1)
 		return ""
 	end
 	
 	if GetCurrentMeasureID("")==360 then  --attackenemy
+		Sleep(1)
 		return ""
 	end
 	
@@ -109,6 +119,7 @@ function Run()
 					RemoveEvidences("","Actor")
 				end
 				--LogMessage("LogMessage: This Happened")
+				Sleep(1)
 				return "" --Did not see anything! Stealth Skill Worked :)
 			end
 		end
@@ -135,12 +146,12 @@ function Run()
 	local ADistance = CalcDistance("","Actor")
 	if GetImpactValue("Actor","CommandCityGuard")==0 and GetImpactValue("Actor","BribeGuard")==0 and GuardOffice==0 then
 		-- Attack Aggressor if victim is same dynasty
-		if VictimID == WatcherID and AliasExists("Actor") and not GetState("Actor",STATE_UNCONSCIOUS) then
+		if VictimID == WatcherID then
 			if ADistance ~= -1 and ADistance < 4001 then
 				if HasProperty("Actor","AttBld") then
-					f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-					CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-					return
+					SimStopMeasure("Actor")
+					SetState("Actor",STATE_FIGHTING,false)
+					RemovePropery("Actor","AttBld")
 				end
 				f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 				CopyAlias("Actor", "Destination")
@@ -148,14 +159,14 @@ function Run()
 			end
 		end
 		-- Attack Victim if aggressor is same dynasty
-		if AggressorID == WatcherID and AliasExists("Victim") and not GetState("Victim",STATE_UNCONSCIOUS) then
+		if AggressorID == WatcherID then
 			if AliasExists("") then
 				if VDistance ~= -1 and VDistance < 4001 then
 					if HasProperty("","AttBld") then
 						if not IsType("Victim","Building") then
-							f_Follow("","Victim",GL_MOVESPEED_RUN,100,true)
-							CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","","Victim")
-							return
+							SimStopMeasure("")
+							SetState("",STATE_FIGHTING,false)
+							RemovePropery("","AttBld")
 						end
 					end
 					f_Follow("","Victim",GL_MOVESPEED_RUN,100,true)
@@ -171,8 +182,9 @@ function Run()
 				if VDistance ~= -1 and VDistance < 4001 then
 					if HasProperty("","AttBld") then
 						if not IsType("Victim","Building") then
-							BattleLeave("")
+							SimStopMeasure("")
 							SetState("",STATE_FIGHTING,false)
+							RemovePropery("","AttBld")
 						end
 					end
 					f_Follow("","Victim",GL_MOVESPEED_RUN,100,true)
@@ -182,15 +194,14 @@ function Run()
 			elseif VictimID == SimGetServantDynastyId("") then
 				if ADistance ~= -1 and ADistance < 4001 then
 					if HasProperty("Actor","AttBld") then
-						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-						CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-						return
+						SimStopMeasure("Actor")
+						SetState("Actor",STATE_FIGHTING,false)
+						RemovePropery("Actor","AttBld")
 					end
+					f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
+					CopyAlias("Actor", "Destination")
+					return "Attack"
 				end
-			else
-				f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-				CopyAlias("Actor", "Destination")
-				return "Attack"
 			end
 		end
 		
@@ -210,9 +221,9 @@ function Run()
 				if DynastyGetDiplomacyState("", "Actor") <= DIP_NEUTRAL then
 					if ADistance ~= -1 and ADistance < 4001 then
 						if HasProperty("Actor","AttBld") then
-							f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-							CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-							return
+							SimStopMeasure("Actor")
+							SetState("Actor",STATE_FIGHTING,false)
+							RemovePropery("Actor","AttBld")
 						end
 						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 						CopyAlias("Actor", "Destination")
@@ -234,12 +245,9 @@ function Run()
 					if (iRobberID == iRobberProtHouseDynID) then
 						if IsType("Victim","Building") and IsType("","Sim") and GetCurrentMeasureID("Actor") == 360 then
 							f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-							CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-							return
+						    CopyAlias("Actor", "Destination")
+						    return "Attack"
 						end
-						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-						CopyAlias("Actor", "Destination")
-						return "Attack"
 					end
 				end
 			end
@@ -250,17 +258,15 @@ function Run()
 				if ActorID<1 or ActorID~=SimGetServantDynastyId("") then
 					if ADistance ~= -1 and ADistance < 4001 then
 						if HasProperty("Actor","AttBld") then
-							f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-							CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-							return
+							SimStopMeasure("Actor")
+							SetState("Actor",STATE_FIGHTING,false)
+							RemovePropery("Actor","AttBld")
 						end
 						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 						CopyAlias("Actor", "Destination")
 						return "Attack"
 					end
 				end
-				SetData("Distance", 2500)
-				return "-Flee"
 			end
 			
 			-- attack if i am the victim to protect myself
@@ -270,9 +276,9 @@ function Run()
 				end
 				if ADistance ~= -1 and ADistance < 4001 then
 					if HasProperty("Actor","AttBld") then
-						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-						CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-						return
+						SimStopMeasure("Actor")
+						SetState("Actor",STATE_FIGHTING,false)
+						RemovePropery("Actor","AttBld")
 					end
 					f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 					CopyAlias("Actor", "Destination")
@@ -285,9 +291,9 @@ function Run()
 				if DynastyGetDiplomacyState("", "Actor") <= DIP_NEUTRAL then
 					if ADistance ~= -1 and ADistance < 4001 then	
 						if HasProperty("Actor","AttBld") then
-							f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-							CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-							return
+							SimStopMeasure("Actor")
+							SetState("Actor",STATE_FIGHTING,false)
+							RemovePropery("Actor","AttBld")
 						end
 						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 						CopyAlias("Actor", "Destination")
@@ -309,7 +315,7 @@ function Run()
 		end
 		
 		if Status < DIP_NEUTRAL then
-			return "-Gape:8"
+			return ""
 			--return ""   --this might be needed again if this measure is too disruptive
 		end
 		
@@ -332,12 +338,12 @@ function Run()
 	else
 		MeasureSetNotRestartable()
 		-- Attack Aggressor if victim is same dynasty
-		if VictimID == WatcherID and AliasExists("Actor") and not GetState("Actor",STATE_UNCONSCIOUS) then
+		if VictimID == WatcherID then
 			if ADistance ~= -1 and ADistance < 4001 then
 				if HasProperty("Actor","AttBld") then
-					f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-					CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-					return
+					SimStopMeasure("Actor")
+					SetState("Actor",STATE_FIGHTING,false)
+					RemovePropery("Actor","AttBld")
 				end
 				f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
 				CopyAlias("Actor", "Destination")
@@ -346,13 +352,14 @@ function Run()
 		end
 		
 		-- Attack Victim if aggressor is same dynasty
-		if AggressorID == WatcherID and AliasExists("Victim") and not GetState("Victim",STATE_UNCONSCIOUS) then
+		if AggressorID == WatcherID then
 			if AliasExists("") then
 				if VDistance ~= -1 and VDistance < 4001 then
 					if HasProperty("","AttBld") then
 						if not IsType("Victim","Building") then
-							BattleLeave("")
+							SimStopMeasure("")
 							SetState("",STATE_FIGHTING,false)
+							RemovePropery("","AttBld")
 						end
 					end
 					f_Follow("","Victim",GL_MOVESPEED_RUN,100,true)
@@ -367,8 +374,9 @@ function Run()
 				if VDistance ~= -1 and VDistance < 4001 then
 					if HasProperty("","AttBld") then
 						if not IsType("Victim","Building") then
-							BattleLeave("")
+							SimStopMeasure("")
 							SetState("",STATE_FIGHTING,false)
+							RemovePropery("","AttBld")
 						end
 					end
 					f_Follow("","Victim",GL_MOVESPEED_RUN,100,true)
@@ -378,15 +386,14 @@ function Run()
 			elseif VictimID == SimGetServantDynastyId("") then
 				if ADistance ~= -1 and ADistance < 4001 then
 					if HasProperty("Actor","AttBld") then
-						f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-						CreateScriptcall("AttackDem",0.05,"Measures/Behaviour/bs_IllegalDetection.lua","AttackThem","Actor","")
-						return
+						SimStopMeasure("Actor")
+						SetState("Actor",STATE_FIGHTING,false)
+						RemovePropery("Actor","AttBld")
 					end
+					f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
+					CopyAlias("Actor", "Destination")
+					return "Attack"
 				end
-			else
-				f_Follow("","Actor",GL_MOVESPEED_RUN,100,true)
-				CopyAlias("Actor", "Destination")
-				return "Attack"
 			end
 		end
 		
@@ -479,7 +486,7 @@ function Run()
 		end
 		
 		if Status < DIP_NEUTRAL then
-			return "-Gape:8"
+			return
 			--return ""   --this might be needed again if this measure is too disruptive
 		end
 		
@@ -498,6 +505,7 @@ function Run()
 		--end
 		
 		--return "-Gape:8"
+		Sleep(0.5)
 		return ""
 	end
 end
