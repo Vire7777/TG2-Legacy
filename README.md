@@ -9,7 +9,11 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
+- [Add] You can bounty hunt people in mercenary camp
+- [Add] If you accuse for witchcraft, you can be burned instead
+- [Add] If you accuse for witchcraft, you can become a blacksheep if the priest think you are a lier
 - [Add] In Important person book, can find the guild masters and the alderman (only after their election from day 1-2)
+- [Remake] Remake of the contamined system, now you can have different impacts at the same time (like perfume AND blacksheep) 
 - [Fixed] When a preacher with a church and sending money to cardinals, we receive a strange message after (The messages are corrected in the script to have the good message sent. Also code is rewrote to be clearer)
 - [Fixed] Hedge tavern girl assigned to dance always stops dancing and needs to be reassigned
 - [Fixed] Assassin outlaw text is fixed

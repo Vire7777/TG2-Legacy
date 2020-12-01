@@ -3,211 +3,133 @@ function Init()
 		SetStateImpact("no_enter")
 	end
 end
-
+ 
 function Run()
-	--Toad Slime
-	if IsType("","Building") then
-		if GetImpactValue("","toadslime")==1 then
-			while GetImpactValue("","toadslime")>0 do
-				--monitor building traffic (enter/exit)
-				BuildingGetInsideSimList("", "OldSimList")	--get a list of everyone inside
-				Sleep(1) --wait one second
-				BuildingGetInsideSimList("", "NewSimList")	--get a list of everyone inside one second later	
-				--compare the lists, anyone on new list and not on old list just entered
-				local count = ListSize("NewSimList")
-				for i=0, count-1 do
-					ListGetElement("NewSimList", i, "Sim")
-					if not ListContains("OldSimList", "Sim") then	--sim just entered, do stuff on Sim
-						--ShowOverheadSymbol("Sim",false,true,0,"Toadslime Enter!") --for testing
-						if CheckSkill("Sim",1,4) then
-							if IsDynastySim("Sim") then
-								if not (GetImpactValue("Sim","Cold")==1) then
-									diseases_Cold("Sim",true)
-								end
-							else
-								if not GetState("Sim",STATE_BLACKDEATH) then
-									diseases_Fever("Sim",true)
-								end
-							end			
-						end
-					end
-				end
-				--compare the lists, anyone on old list and not on new list just exited	 
-				count = ListSize("OldSimList")
-				for i=0, count-1 do
-					ListGetElement("OldSimList", i, "Sim")
-					if not ListContains("NewSimList", "Sim") then	--sim just exited, do stuff on Sim
-						--ShowOverheadSymbol("Sim",false,true,0,"Toadslime Exit!")--for testing
-						if CheckSkill("Sim",1,4) then
-							if IsDynastySim("Sim") then
-								if not (GetImpactValue("Sim","Cold")==1) then
-									diseases_Cold("Sim",true)
-								end
-							else
-								if not GetState("Sim",STATE_BLACKDEATH) then
-									diseases_Fever("Sim",true)
-								end
-							end			
-						end
-					end
-				end
-			end
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
-	end
+	-- Variables for every impacts
+	local impactNames = {"BlackSheep", "perfume", "BountyHunt", "UnterHypnose", "moschusduft", "kamm", "schaerpe", "FaustBad"}
+	local impactActives={}	 
 
---Negative effect for Dr Faust's Elixer
-	if IsType("","Sim") then
-		if GetImpactValue("","FaustBad")==1 then
-			local Delay = 2
-			Sleep(5)
-			while GetImpactValue("","FaustBad")>0 do
-				CommitAction("FaustBad","","")
-				GetPosition("", "EffectPosition")
-				StartSingleShotParticle("particles/toadexcrements_hit.nif", "EffectPosition",4,5)
-				PlaySound3D("", "CharacterFX/nasty/Furzen+1.wav", 1.0)
-				PlaySound3D("", "CharacterFX/nasty/Furzen+1.wav", 1.0)
-				
-				Sleep(3)
-				StopAction("FaustBad", "")
-				
-				Sleep(Rand(10)+Rand(Delay))
-				Delay = Delay + 1
-			end
-			
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
+	-- Code to initialize the impactActives at 0 for each Impact
+	local count = 1
+	while impactNames[count] do
+		impactActives[count]=0
+		count = count + 1
 	end
 	
-	--contaminated for bad reputation on sims
-  if IsType("","Sim") then
-    if GetImpactValue("","BlackSheep")==1 then
-      CommitAction("BlackSheep","","")
-      while GetImpactValue("","BlackSheep")>0 do
-        Sleep(5)
-      end
-      StopAction("BlackSheep", "")
-      SetState("",STATE_CONTAMINATED,false)
-      return
-    end
-  end
-  
-  --contaminated by bounty hunt
-  if IsType("","Sim") then
-    if GetImpactValue("","BountyHunt")>0 then
-      CommitAction("BountyHunt","","")
-      while GetImpactValue("","BountyHunt")>0 do
-        Sleep(5)
-      end
-      StopAction("BountyHunt", "")
-      SetState("",STATE_CONTAMINATED,false)
-      return
-    end
-  end
-
-  --contaminated by bounty hunt
-  if IsType("","Sim") then
-    if GetImpactValue("","BountyHunt")>0 then
-      CommitAction("BountyHunt","","")
-      while GetImpactValue("","BountyHunt")>0 do
-        Sleep(5)
-      end
-      StopAction("BountyHunt", "")
-      SetState("",STATE_CONTAMINATED,false)
-      return
-    end
-  end
-	--contaminated also works for perfume on sims
+	--Launch the verify impacts method
 	if IsType("","Sim") then
-		if GetImpactValue("","perfume")==1 then
-			CommitAction("perfume","","")
-			while GetImpactValue("","perfume")>0 do
-				Sleep(5)
-			end
-			StopAction("perfume", "")
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
-	end
-
-	--die Schärpe wirkt auf die Sims (beide Geschlechter)
-	if IsType("","Sim") then
-		if GetImpactValue("","schaerpe")==2 then
-			CommitAction("schaerpe","","")
-			while GetImpactValue("","schaerpe")>1 do
-				Sleep(5)
-			end
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
-	end
-
-	--die Hypnose zur Belustigung beider Geschlechter
-	if IsType("","Sim") then
-		if GetImpactValue("","UnterHypnose")==1 then
-			CommitAction("bard","","")
-			while GetImpactValue("","UnterHypnose")>0 do
-				Sleep(5)
-			end
-                        SetState("", STATE_CONTAMINATED, false)
-			return
-		end
-	end
-
-	--der Moschus macht mit
-	if IsType("","Sim") then
-		if GetImpactValue("","moschusduft")==1 then
-			CommitAction("moschusduft","","")
-			while GetImpactValue("","moschusduft")>0 do
-				Sleep(5)
-			end
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
-	end
-
-	--der Kamm wirkt bei Amtskollegen
-	if IsType("","Sim") then
-		if GetImpactValue("","kamm")==1 then
-			CommitAction("kamm","","")
-			while GetImpactValue("","kamm")>0 do
-				Sleep(5)
-			end
-			SetState("",STATE_CONTAMINATED,false)
-			return
-		end
-	end
-	
-	if HasProperty("","IsStinkBomb") then
-		RemoveProperty("","IsStinkBomb")
-		GetPosition("","ParticleSpawnPos")
-		PlaySound3D("","measures/toadexcrements+0.wav", 1.0)
-		StartSingleShotParticle("particles/toadexcrements_hit.nif", "ParticleSpawnPos",6,5)
-		GfxAttachObject("stinkbomb", "Handheld_Device/ANIM_Bomb_02.nif")
-		GfxSetPositionTo("stinkbomb", "ParticleSpawnPos")
-		GfxMoveToPosition("stinkbomb",0,20,0,0.1,false)
-		GfxStartParticle("Smoke", "particles/toadexcrements.nif", "ParticleSpawnPos", 7)
+		-- for sims, the impacts are check all the time
 		while true do
-			Sleep(4)
-		end
-		return
-	end
-	
-	-- Solange der State contaminated gesetzt ist, immer alle Leute aus dem Gebäude schmeissen
-	-- Der State wird aufgehoben, sobald der impact zurueckgesetzt wird
-	if (BuildingGetType("")==GL_BUILDING_TYPE_WELL) then
-		GetPosition("","ParticleSpawnPos")
-		GfxStartParticle("Smoke", "particles/toadexcrements.nif", "ParticleSpawnPos", 4)
-		while (GetImpactValue("","polluted")==1) do
-			if GetImpactValue("","toadexcrements")==1 then
-				Evacuate("")
+			if state_contaminated_SimImpacts(impactNames, impactActives) then
+				-- if true, we leave the loop
+				return
 			end
 			Sleep(5)
 		end
+	elseif IsType("","Building") then
+		state_contaminated_BuildingImpacts()
+		state_contaminated_OtherImpacts()
+	end
+end
+
+-- Standard impacts for sims
+function SimImpacts(impactNames, impactActives)
+	local count = 1
+	local inactive = 1
+	while impactNames[count] do
+		-- Verify each impact one by one (should we start or stop it)
+		if (GetImpactValue("",impactNames[count])>0 and impactActives[count] == 0) then	
+			-- put active and commit action
+			impactActives[count] = 1
+			state_contaminated_SpecificCommitSimImpacts()
+			CommitAction(impactNames[count],"","")
+		elseif (GetImpactValue("",impactNames[count])==0 and impactActives[count]>0) then 
+			-- put inactive and stop action
+			impactActives[count] = 0
+			state_contaminated_SpecificCloseSimImpacts()
+			StopAction(impactNames[count], "")
+		elseif (GetImpactValue("",impactNames[count])==0 and impactActives[count]==0) then 
+			inactive = inactive + 1
+		end
+		count = count + 1
+	end
+	
+	-- if every impact is inactive, quit the contaminated state
+	if (inactive == count) then
+		return true
+	end
+	
+	return false
+end
+
+function SpecificCommitSimImpacts()
+	if GetImpactValue("","FaustBad")>0 then
+		GetPosition("", "EffectPosition")
+		StartSingleShotParticle("particles/toadexcrements_hit.nif", "EffectPosition",4,5)
+		PlaySound3D("", "CharacterFX/nasty/Furzen+1.wav", 1.0)
+		PlaySound3D("", "CharacterFX/nasty/Furzen+1.wav", 1.0)
+	end
+end
+
+-- function to add specific code when closing action
+function SpecificCloseSimImpacts()
+	if GetImpactValue("","perfume")==0 and HasProperty("", "perfume") then
+		RemoveProperty("","perfume")
+	end
+end
+
+-- Only for building impacts
+function BuildingImpacts()
+	--Toad Slime
+	if GetImpactValue("","toadslime")==1 then
+		while GetImpactValue("","toadslime")>0 do
+			--monitor building traffic (enter/exit)
+			BuildingGetInsideSimList("", "OldSimList")	--get a list of everyone inside
+			Sleep(1) --wait one second
+			BuildingGetInsideSimList("", "NewSimList")	--get a list of everyone inside one second later	
+			--compare the lists, anyone on new list and not on old list just entered
+			local count = ListSize("NewSimList")
+			for i=0, count-1 do
+				ListGetElement("NewSimList", i, "Sim")
+				if not ListContains("OldSimList", "Sim") then --sim just entered, do stuff on Sim
+					--ShowOverheadSymbol("Sim",false,true,0,"Toadslime Enter!") --for testing
+					if CheckSkill("Sim",1,4) then
+						if IsDynastySim("Sim") then
+							if not (GetImpactValue("Sim","Cold")==1) then
+								diseases_Cold("Sim",true)
+							end
+						else
+							if not GetState("Sim",STATE_BLACKDEATH) then
+								diseases_Fever("Sim",true)
+							end
+						end		 
+					end
+				end
+			end
+			--compare the lists, anyone on old list and not on new list just exited	
+			count = ListSize("OldSimList")
+			for i=0, count-1 do
+				ListGetElement("OldSimList", i, "Sim")
+				if not ListContains("NewSimList", "Sim") then --sim just exited, do stuff on Sim
+					--ShowOverheadSymbol("Sim",false,true,0,"Toadslime Exit!")--for testing
+					if CheckSkill("Sim",1,4) then
+						if IsDynastySim("Sim") then
+							if not (GetImpactValue("Sim","Cold")==1) then
+								diseases_Cold("Sim",true)
+							end
+						else
+							if not GetState("Sim",STATE_BLACKDEATH) then
+								diseases_Fever("Sim",true)
+							end
+						end		 
+					end
+				end
+			end
+		end
+		SetState("",STATE_CONTAMINATED,false)
 		return
 	end
+	
 	-- count the fire locator
 	FireLocatorCount = 1
 	while GetFreeLocatorByName("Owner", "Fire"..FireLocatorCount, -1, -1, "SmokeLocator"..FireLocatorCount) do
@@ -217,23 +139,37 @@ function Run()
 	-- create the smoke particles, size and position them
 	SmokeCount = FireLocatorCount-1
 	while(SmokeCount > 0) do
-	
 		GfxStartParticle("Smoke"..SmokeCount, "particles/toadexcrements.nif", "SmokeLocator"..SmokeCount, 7)
 		SmokeCount = SmokeCount -1	
 	end
 	
-	while (GetImpactValue("","toadexcrements")==1)  do
-		Evacuate("Owner")
-		Sleep(2)
+	-- Solange der State contaminated gesetzt ist, immer alle Leute aus dem Gebäude schmeissen
+	-- Der State wird aufgehoben, sobald der impact zurueckgesetzt wird
+	if (GetImpactValue("","toadexcrements")>0) then
+		GetPosition("","ParticleSpawnPos")
+		GfxStartParticle("Smoke", "particles/toadexcrements.nif", "ParticleSpawnPos", 4)
+		while (GetImpactValue("","toadexcrements")==1)	do
+			Evacuate("Owner")
+			Sleep(5)
+		end
 	end
 end
 
-function CleanUp()
-	
-	SetState("Owner", STATE_CONTAMINATED, false)
-	if HasProperty("Owner", "perfume") then
-		RemoveProperty("Owner","perfume")
+-- Only for... whatever impacts
+function OtherImpacts()
+	if HasProperty("","IsStinkBomb") then
+		RemoveProperty("","IsStinkBomb")
+		GetPosition("","ParticleSpawnPos")
+		PlaySound3D("","measures/toadexcrements+0.wav", 1.0)
+		StartSingleShotParticle("particles/toadexcrements_hit.nif", "ParticleSpawnPos",6,5)
+		GfxAttachObject("stinkbomb", "Handheld_Device/ANIM_Bomb_02.nif")
+		GfxSetPositionTo("stinkbomb", "ParticleSpawnPos")
+		GfxMoveToPosition("stinkbomb",0,20,0,0.1,false)
+		GfxStartParticle("Smoke", "particles/toadexcrements.nif", "ParticleSpawnPos", 7)
 	end
-	
+end
+
+function CleanUp()	
+	SetState("Owner", STATE_CONTAMINATED, false)
 end
 
