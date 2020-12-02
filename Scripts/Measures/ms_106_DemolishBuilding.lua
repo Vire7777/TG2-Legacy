@@ -77,7 +77,7 @@ function Run()
 		end
 	end
 	chr_GainXP("",GetData("BaseXP"))
-	ModifyHP("Destination",-GetHP("Destination"),false)
+	SetState(buildingAlias,STATE_DEAD,true)
 
 end
 

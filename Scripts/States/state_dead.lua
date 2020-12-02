@@ -215,112 +215,111 @@ function Run()
 			return
 		end
 		Evacuate("")
-		if not ((GetRound()==0) and (math.mod(GetGametime(),24)<8)) then
-			-- add particles
-		 	PlaySound3D("","measures/76_TearDownBuilding+0.wav", 1.0)
-		 	GetPosition("", "ParticleSpawnPos")
-		 	PlaySound3D("Owner","fire/Explosion_s_04.wav",0.9)
-			StartSingleShotParticle("particles/smoketrail2.nif", "ParticleSpawnPos",2.5,3)
-			StartSingleShotParticle("particles/wreckage.nif", "ParticleSpawnPos",2,3)
-		 	StartSingleShotParticle("particles/big_crash.nif", "ParticleSpawnPos",4,20)
-	
-			--initiate
-			local i = 1
-			local Locatorcount
-			local WreckageType
-			local WreckageCount
-			local LocatorType = "Bomb"
-			local ParticleCount
-			local SmokeCount = 0
-			local RotateValue
-	
-	
-			--go through all types of locators
-			for i=1,3 do
-				if (i==1) then
-					LocatorType = "Bomb"
-				elseif (i==2) then
-					LocatorType = "Fire"
-				elseif (i==3) then
-					LocatorType = "Entry"
-				end
-				LocatorCount = 1
-				while GetLocatorByName("Owner", LocatorType..LocatorCount, LocatorType.."Locator"..LocatorCount) do
-					LocatorCount = LocatorCount + 1
-				end
-	
-	
-				--run through all locators of one type
-				WreckageCount = LocatorCount-1
-				while(WreckageCount > 0) do
-	
-					WreckageValue = Rand(4)
-					if (WreckageValue == 0) then
-						WreckageType = "buildings/Building_Ruins/Ruin_1.nif"
-					elseif (WreckageValue == 1) then
-						WreckageType = "buildings/Building_Ruins/Ruin_2.nif"
-					elseif (WreckageValue == 2) then
-						WreckageType = "buildings/Building_Ruins/Ruin_3.nif"
-					elseif (WreckageValue == 3) then
-						WreckageType = "buildings/Building_Ruins/Ruin_4.nif"
-					end
-	
-					--create the wreckage, size and position them
-					RotateValue = Rand(359)
-					GfxAttachObject(LocatorType.."Truemmer"..WreckageCount, WreckageType)
-					GfxScale(LocatorType.."Truemmer"..WreckageCount,0.8)
-					GfxRotateNoWait(LocatorType.."Truemmer"..WreckageCount, 0, RotateValue, 0, 360)
-					GfxSetPositionTo(LocatorType.."Truemmer"..WreckageCount, LocatorType.."Locator"..WreckageCount)
-					GfxDropToFloor(LocatorType.."Truemmer"..WreckageCount)
-					WreckageCount = WreckageCount -1
-					if (LocatorType == "Fire") then
-						SmokeCount = SmokeCount +1
-					end
-	
-				end
+		
+		-- add particles
+	 	PlaySound3D("","measures/76_TearDownBuilding+0.wav", 1.0)
+	 	GetPosition("", "ParticleSpawnPos")
+	 	PlaySound3D("Owner","fire/Explosion_s_04.wav",0.9)
+		StartSingleShotParticle("particles/smoketrail2.nif", "ParticleSpawnPos",2.5,3)
+		StartSingleShotParticle("particles/wreckage.nif", "ParticleSpawnPos",2,3)
+	 	StartSingleShotParticle("particles/big_crash.nif", "ParticleSpawnPos",4,20)
+
+		--initiate
+		local i = 1
+		local Locatorcount
+		local WreckageType
+		local WreckageCount
+		local LocatorType = "Bomb"
+		local ParticleCount
+		local SmokeCount = 0
+		local RotateValue
+
+
+		--go through all types of locators
+		for i=1,3 do
+			if (i==1) then
+				LocatorType = "Bomb"
+			elseif (i==2) then
+				LocatorType = "Fire"
+			elseif (i==3) then
+				LocatorType = "Entry"
 			end
-	
-			--start another nice particle smoke
-			ParticleCount = 1
-			LocatorType = "Fire"
-	
-			while (ParticleCount < SmokeCount) do
-				GetPosition(LocatorType.."Truemmer"..ParticleCount,"ParticleSpawnPos"..ParticleCount)
-		 		GfxStartParticle("BigSmoke"..ParticleCount, "particles/smoke_light.nif", "ParticleSpawnPos"..ParticleCount, 3)
-		 		ParticleCount = ParticleCount + 1
-		 	end
-	
-	
-			-- pull the building under the ground
-			-- needed fixed value to avoid possible async form GfxGetHeight
-			Height = 2500		--GfxGetHeight("")
-			Duration = Height/100
-			GfxMoveToPositionNoWait("", 0, -Height, 0, Duration, false)
-			Sleep(45)
-	
-			--remove particles
-			while (ParticleCount > 0) do
-				GfxStopParticle("BigSmoke"..ParticleCount)
-				ParticleCount = ParticleCount -1
+			LocatorCount = 1
+			while GetLocatorByName("Owner", LocatorType..LocatorCount, LocatorType.."Locator"..LocatorCount) do
+				LocatorCount = LocatorCount + 1
 			end
-	
-			--remove wreckage
-			i = 1
-			for i=1, 3 do
-				if (i==1) then
-					LocatorType = "Bomb"
-				elseif (i==2) then
-					LocatorType = "Fire"
-				elseif (i==3) then
-					LocatorType = "Entry"
+
+
+			--run through all locators of one type
+			WreckageCount = LocatorCount-1
+			while(WreckageCount > 0) do
+
+				WreckageValue = Rand(4)
+				if (WreckageValue == 0) then
+					WreckageType = "buildings/Building_Ruins/Ruin_1.nif"
+				elseif (WreckageValue == 1) then
+					WreckageType = "buildings/Building_Ruins/Ruin_2.nif"
+				elseif (WreckageValue == 2) then
+					WreckageType = "buildings/Building_Ruins/Ruin_3.nif"
+				elseif (WreckageValue == 3) then
+					WreckageType = "buildings/Building_Ruins/Ruin_4.nif"
 				end
-	
-				WreckageCount = 1
-				while AliasExists(LocatorType.."Truemmer"..WreckageCount,"Result"..WreckageCount) do
-					GfxMoveToPosition(LocatorType.."Truemmer"..WreckageCount, 0, -300, 0, 10, false)
-					WreckageCount = WreckageCount +1
-				end			
+
+				--create the wreckage, size and position them
+				RotateValue = Rand(359)
+				GfxAttachObject(LocatorType.."Truemmer"..WreckageCount, WreckageType)
+				GfxScale(LocatorType.."Truemmer"..WreckageCount,0.8)
+				GfxRotateNoWait(LocatorType.."Truemmer"..WreckageCount, 0, RotateValue, 0, 360)
+				GfxSetPositionTo(LocatorType.."Truemmer"..WreckageCount, LocatorType.."Locator"..WreckageCount)
+				GfxDropToFloor(LocatorType.."Truemmer"..WreckageCount)
+				WreckageCount = WreckageCount -1
+				if (LocatorType == "Fire") then
+					SmokeCount = SmokeCount +1
+				end
+
 			end
+		end
+
+		--start another nice particle smoke
+		ParticleCount = 1
+		LocatorType = "Fire"
+
+		while (ParticleCount < SmokeCount) do
+			GetPosition(LocatorType.."Truemmer"..ParticleCount,"ParticleSpawnPos"..ParticleCount)
+	 		GfxStartParticle("BigSmoke"..ParticleCount, "particles/smoke_light.nif", "ParticleSpawnPos"..ParticleCount, 3)
+	 		ParticleCount = ParticleCount + 1
+	 	end
+
+
+		-- pull the building under the ground
+		-- needed fixed value to avoid possible async form GfxGetHeight
+		Height = 2500		--GfxGetHeight("")
+		Duration = Height/100
+		GfxMoveToPositionNoWait("", 0, -Height, 0, Duration, false)
+		Sleep(45)
+
+		--remove particles
+		while (ParticleCount > 0) do
+			GfxStopParticle("BigSmoke"..ParticleCount)
+			ParticleCount = ParticleCount -1
+		end
+
+		--remove wreckage
+		i = 1
+		for i=1, 3 do
+			if (i==1) then
+				LocatorType = "Bomb"
+			elseif (i==2) then
+				LocatorType = "Fire"
+			elseif (i==3) then
+				LocatorType = "Entry"
+			end
+
+			WreckageCount = 1
+			while AliasExists(LocatorType.."Truemmer"..WreckageCount,"Result"..WreckageCount) do
+				GfxMoveToPosition(LocatorType.."Truemmer"..WreckageCount, 0, -300, 0, 10, false)
+				WreckageCount = WreckageCount +1
+			end			
 		end
 
 	---------------------------
