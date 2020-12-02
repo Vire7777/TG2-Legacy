@@ -281,3 +281,5 @@ Data:
 804   1   2   0   "WCEHexOne"   0   ""   |
 805   1   2   0   "WCEHexTwo"   0   ""   |
 806   1   2   0   "WCEPendel"   0   ""   |
+807   1   2   0   "ReligionDisclaim"   0   "Hud/state/ReligionDisclaim.tga"   |
+808   1   2   0   "ReligionSchism"   0   "Hud/state/ReligionDisclaim.tga"   |

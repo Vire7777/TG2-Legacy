@@ -9,6 +9,7 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
+- [Add] Religion wars
 - [Add] You can bounty hunt people in mercenary camp
 - [Add] If you accuse for witchcraft, you can be burned instead
 - [Add] If you accuse for witchcraft, you can become a blacksheep if the priest think you are a lier
