@@ -41,8 +41,23 @@ function Run()
 		local RhetoricSkillActor = GetSkillValue("Actor",7)
 		local MoneyToGet = RhetoricSkillActor * 10 + Rand(10)
 		
-		if not CheckSkill("",8,RhetoricSkillActor) then
+		-- only for farmers
+    	if (SimGetProfession("Actor") == 1 or SimGetClass("Actor") == 1) then
+    		if GetSkillValue("", "EMPATHY") >= GetSkillValue("Actor", "RHETORIC") and Rand(5) == 1 then
+        		behavior_listenquacksalver_NotConvinced()
+    			local modval = -Rand(5)-1
+        		chr_ModifyFavor("","Actor",modval)
+    		else
+				-- How much you got
+        		MoneyToGet = (GetSkillValue("Actor","RHETORIC")+GetSkillValue("Actor","BARGAINING"))*10
+        		
+				PlayAnimation("","nod")
+        		CreditMoney("Actor",MoneyToGet,"SellMagicBeans")
+        		ShowOverheadSymbol("Actor",false,true,0,"%1t",MoneyToGet)
+    		end
+    	elseif not CheckSkill("",8,RhetoricSkillActor) then
 			PlayAnimation("","nod")
+			
 			if RemoveItems("Actor", "MiracleCure", 1, INVENTORY_STD)==1 then
 				MoneyToGet = MoneyToGet + 100
 				CreditMoney("Actor",MoneyToGet,"Offering")
@@ -51,16 +66,20 @@ function Run()
 				SatisfyNeed("", 6, -0.5)
 			end
 		else
-			if SimGetGender("")==GL_GENDER_MALE then
-				PlaySound3DVariation("","CharacterFX/male_hoot",1)
-			else
-				PlaySound3DVariation("","CharacterFX/female_hoot",1)
-			end
-			PlayAnimation("","shake_head")
+			behavior_listenquacksalver_NotConvinced()
 		end
 	end
 	
 	Sleep(2.0)
+end
+
+function NotConvinced()
+	if SimGetGender("")==GL_GENDER_MALE then
+		PlaySound3DVariation("","CharacterFX/male_hoot",1)
+	else
+		PlaySound3DVariation("","CharacterFX/female_hoot",1)
+	end
+	PlayAnimation("","shake_head")
 end
 
 function CleanUp()

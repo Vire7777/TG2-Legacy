@@ -60,26 +60,30 @@ function Run()
 	SetProperty("","MyQuacksalvePosX",x)
 	SetProperty("","MyQuacksalvePosZ",z)
 
-	local MeasureID = GetCurrentMeasureID("")
-	local duration = mdata_GetDuration(MeasureID)
-	local EndTime = GetGametime() + duration
 	SetRepeatTimer("", GetMeasureRepeatName(), 1)
 
 	CommitAction("quacksalver", "", "")
-	while GetGametime() < EndTime do
+	
+	local maxStages = Rand(5)+5
+	SetProcessMaxProgress("",Rand(5)+5)
+	local progress = 0
+	SetProcessProgress("",0)
+	while progress < maxStages do
 	
 		if SimGetGender("")==GL_GENDER_MALE then
 			PlaySound3DVariation("","CharacterFX/male_jolly",1)
 		else
 			PlaySound3DVariation("","CharacterFX/female_jolly",1)
 		end
+		local random = Rand(4)
+		
 		PlayAnimation("","pray_standing")
+		MsgSay("", "@L_MEASURE_SELLMAGICBEANS_CONVINCE_+"..random)
 		PlayAnimation("","preach")
 		
-		-- How much you got
-		local earning = GetSkillValue("","RHETORIC")*50
-		CreditMoney("Farm",Rand(earning),"SellMagicBeans")
-		
+		-- increase progress
+		progress = progress + 1
+		SetProcessProgress("",progress)
 		Sleep( 1 + 0.1*Rand(20) )
 	end
 	

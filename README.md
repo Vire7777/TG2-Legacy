@@ -9,6 +9,7 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
+- [Add] Patron and peasants can become quaksalver and try selling magic beans (if you have a farm)
 - [Add] Religion wars
 - [Add] You can bounty hunt people in mercenary camp
 - [Add] If you accuse for witchcraft, you can be burned instead
