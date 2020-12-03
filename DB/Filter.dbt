@@ -599,3 +599,5 @@ Data:
 2573   "CanUseUniqueHexerdokumentIII"   "__F((Object.CanBeControlled())AND(Object.GetItemCnt(UniqueHexerdokumentIII)>0)AND NOT(Object.GetState(fighting)))"   |
 // Forged Epic Items v2.0 end ---------------------------------------------------------------------------------------------------------
 2574   "CanUsePlaceBounty"   "__F((Object.CanBeControlled())AND(Object.GetInsideBuilding())AND(Object.IsType(21)))"   | 
+2575   "CanSellMagicBeansDynSim"   "__F((Object.CanBeControlled())AND(Object.IsClass(1))AND(Object.MinAge(16))AND(Object.GetOwnedBuildings())AND(Object.IsType(3)))"   |
+2576   "CanSellMagicBeans"   "__F((Object.CanBeControlled())AND(Object.GetProfession()==1)AND(Object.MinAge(16)))"   |
