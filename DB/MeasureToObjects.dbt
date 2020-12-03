@@ -564,5 +564,5 @@ Data:
 3052   15029   0   0   406   1   "hud/cursors/Cursor_Attack.tga"   (1 6)   "MEASUREINIT_SELECTION"   0   0   |
 3053   15029   0   0   407   6   "hud/cursors/Cursor_Attack.tga"   (1 6)   "MEASUREINIT_SELECTION"   0   0   |
 3054   15030   0   200   2574   6   "hud/cursors/Cursor_Attack.tga"   (6)   "MEASUREINIT_SELECTION"   0   0   | 
-3055   15031   0   106   2575   1   ""   (4)   ""   0   0   |
-3056   15031   0   106   2576   6   ""   (4)   ""   0   0   |
+3055   15031   0   106   450   6   ""   (4)   ""   0   0   |
+3056   15031   0   106   264   1   ""   (4)   ""   0   0   |
