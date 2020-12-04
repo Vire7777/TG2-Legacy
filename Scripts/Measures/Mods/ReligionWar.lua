@@ -77,8 +77,10 @@ function BanReligion()
 	local religionWarLevel = GetData("#religionWarLevel")
 	
 	if religionWarLevel == 2 then
-		return
+		--return
 	end
+	
+	GetSettlement("", "CityAlias")
 	
 	-- for each building of the empire
 	religionwar_BuildingCheck()
@@ -91,15 +93,19 @@ function BanReligion()
 end
 
 function BuildingCheck()
-	local buildingCount = ScenarioGetObjects("cl_Building", 9999, "BuildingList")
+	-- Find churches in the city
+	local buildingCount  
+	if SimGetReligion("") == 0 then
+		buildingCount = CityGetBuildings("CityAlias",GL_BUILDING_CLASS_WORKSHOP, GL_BUILDING_TYPE_CHURCH_EV,-1,-1,FILTER_IGNORE,"cityChurchList")
+	else
+		buildingCount = CityGetBuildings("CityAlias",GL_BUILDING_CLASS_WORKSHOP, GL_BUILDING_TYPE_CHURCH_CATH,-1,-1,FILTER_IGNORE,"cityChurchList")
+	end
+	
+	-- Burn them
 	for building=0,buildingCount-1 do
-		local buildingAlias = "BuildingList"..building
-		BuildingGetCity(buildingAlias, "BuildingCity")
+		local buildingAlias = "cityChurchList"..building
 		
-		-- check if the city is a church in the city and from a different religion
-		if AliasExists(buildingAlias) and GetID("BuildingCity") == GetSettlementID("") 
-		and (BuildingGetType(buildingAlias) == 19 and SimGetReligion("") == 0)
-		or (BuildingGetType(buildingAlias) == 20 and SimGetReligion("") == 1) then
+		if AliasExists(buildingAlias) then
       		SetState(buildingAlias,STATE_BURNING,true)
       		CreateScriptcall("DestroyBuilding",2,"Measures/Mods/ReligionWar.lua","DestroyBuilding",buildingAlias,nil)
 		end
@@ -108,7 +114,6 @@ end
 
 function CitizenCheck()
 	-- variables
-	GetSettlement("", "CityAlias")
 	if not GetOutdoorLocator("MapExit1",1,"Away") then
 		if not GetOutdoorLocator("MapExit2",1,"Away") then
 		    if not GetOutdoorLocator("MapExit3",1,"Away") then	
