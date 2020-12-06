@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
---- Main Body
+--- Main Body 
 ----------------------------------------------------------------------------------
 -- Setup / Termin / Einladung
 function Start()
@@ -1546,23 +1546,11 @@ function Go()
 			if SentenceLevel<1 then
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+0",GetID("accused"),PenaltyValue)
 			elseif SentenceLevel==1 then
-				PenaltyValue = SimGetWealth("accused")/12
-				if PenaltyValue <= 0 then
-					PenaltyValue = 250
-				end
-				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+1",GetID("accused"),PenaltyValue)
 				PenaltyType = PENALTY_MONEY
-			elseif SentenceLevel==2 then
+			elseif SentenceLevel==2 or SentenceLevel==3 then
 				PenaltyValue = 8
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+2",GetID("accused"),PenaltyValue)
 				PenaltyType = PENALTY_PILLORY
-			elseif SentenceLevel==3 then
-				PenaltyValue = SimGetWealth("accused")/5
-				if PenaltyValue <= 0 then
-					PenaltyValue = 1500
-				end
-				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+4",GetID("accused"),PenaltyValue)
-				PenaltyType = PENALTY_MONEY
 			elseif SentenceLevel==4 then
 				PenaltyType = PENALTY_TITLE
 				if (SimGetOfficeID("accused")~=-1) then
@@ -1574,6 +1562,7 @@ function Go()
 					CityRemoveApplicant("homecity","accused") --lscht auch eine Bewerbung
 				elseif (GetNobilityTitle("accused")>1) then
 					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+5",GetID("accused"))
+					SetNobilityTitle("accused", 2, true)
 				else
 					MsgSay("judge","@L_NEWSTUFF_NOTITLEPENALTY_+0")
 					PlayAnimationNoWait("judge", "sit_talk")
@@ -1596,15 +1585,20 @@ function Go()
 				--mission_ScoreAccuse("accuser")
 			end
 
+			-- money penalty
+			if SentenceLevel>0 then
+				trial_GetMoneyPenalty(SentenceLevel, SeverityOfLaw)
+			end
+			
 			DecisionForFinalComment = 1
 			PlayAnimationNoWait("judge", "talk_sit_short")
 			MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_EXECUTE_+0")
-
+			
 			if PenaltyType>-1 then
 				CityAddPenalty("settlement","accused",PenaltyType,PenaltyValue)
 				xp_ChargeCharacter("accuser", SentenceLevel)
 			end
-
+			
 		else -- gerichtskosten trt die anklage
 			trial_PlayRelevantJuryAni("judge",0)
 			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY"..GenderType,GetID("accused"))
@@ -2226,3 +2220,91 @@ function FugitiveExpires()
 		PenaltyReset("Penalty", 0)
    end
 end
+
+function GetMoneyPenalty(SentenceLevel, SeverityOfLaw)
+	local moneyPenaltyValue = 0
+	local buildingCount = DynastyGetBuildingCount("accused")
+	
+	-- Calculate the fine
+	if SimGetWealth("accused") > 0 then
+		moneyPenaltyValue = 1/2 * (SeverityOfLaw + 1) * SentenceLevel / 6 * (SimGetWealth("accused") + buildingCount * (1000 + Rand(1000)))
+	else 
+		moneyPenaltyValue = 1/2 * (SeverityOfLaw + 1) * SentenceLevel / 6 * buildingCount * (1000 + Rand(1000))
+	end
+	
+	-- judge speaks
+	PlayAnimationNoWait("judge", "talk_sit_short")
+	if (moneyPenaltyValue < 1500) then
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+1",GetID("accused"),moneyPenaltyValue)
+	else
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+4",GetID("accused"),moneyPenaltyValue)
+	end
+	
+	if (SimGetWealth("accused") > moneyPenaltyValue) then
+		-- have enough money to pay the fine
+		CityAddPenalty("settlement","accused",PENALTY_MONEY,moneyPenaltyValue)
+	else
+		-- not enought money to pay the fine, get 6h to find the money or buildings would be seized
+		PlayAnimationNoWait("judge", "talk_sit_short")
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+8",GetID("accused"),moneyPenaltyValue)
+		CreateScriptcall("TakeFineOrSeize",6,"Cutscenes/Trial.lua","TakeFineOrSeize","accused","accuser",moneyPenaltyValue)
+	end
+end
+
+function TakeFineOrSeize(moneyPenaltyValue)
+	GetSettlement("", "settlement")
+	
+	if (SimGetWealth("") > moneyPenaltyValue) then
+		-- pay the fine
+		CityAddPenalty("settlement","",PENALTY_MONEY,moneyPenaltyValue)
+	else
+	
+		-- Seize of properties
+		moneyPenaltyValue = trial_SeizeProperties(moneyPenaltyValue)
+
+        if (moneyPenaltyValue < 0) then
+        	-- seize resolves the debt
+        	CityAddPenalty("settlement","",PENALTY_MONEY,SimGetWealth(""))
+        	CreditMoney("",-moneyPenaltyValue,"Seize rest")
+        	feedback_MessagePolitics("","@L_LAWSUIT_7_BUILDINGSEIZE_HEAD_+0",
+						"@L_LAWSUIT_7_BUILDINGSEIZE_BODY_+0",GetID(""))
+        else 
+        	-- seize didn t resolve the debt => sentenced to death
+        	feedback_MessagePolitics("","@L_LAWSUIT_7_BUILDINGSEIZE_HEAD_+1",
+						"@L_LAWSUIT_7_BUILDINGSEIZE_BODY_+1",GetID(""))
+			CityAddPenalty("settlement","",PENALTY_MONEY,SimGetWealth(""))
+			SetProperty("","ExecutedBy",GetID("Destination"))
+			CityAddPenalty("settlement","",PENALTY_DEATH,0)
+        end
+	end
+end
+
+function SeizeProperties(moneyPenaltyValue)
+
+	-- we create a random sim for giving the buildings to
+	CityGetRandomBuilding("settlement",-1,-1,-1,-1,FILTER_IGNORE,"RandomBuilding")
+	GetLocatorByName("RandomBuilding", "Entry1", "RandomPos")	
+	SimCreate(900,"RandomPos","RandomPos","NewOwner")
+	
+	-- look for each building
+	GetDynasty("", "Dyn")
+	local BldCount = DynastyGetBuildingCount("Dyn")
+	for i=0, BldCount - 1 do
+    	if DynastyGetBuilding2("Dyn", i, "building") then
+    		
+    		-- we seize the building
+    		local buildingPrice = BuildingGetBuyPrice("building")
+			BuildingSetOwner("building","NewOwner")
+			BuildingSetForSale("building", true)
+    		
+    		moneyPenaltyValue = moneyPenaltyValue - buildingPrice / 2
+    		
+    		-- enough building were seized
+    		if (moneyPenaltyValue < 0) then
+    			return moneyPenaltyValue
+    		end
+    	end
+    end
+    
+    return moneyPenaltyValue
+ end
