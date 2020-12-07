@@ -41,9 +41,9 @@ end
 function ReligionSchism()
 	local religionWarLevel = GetData("#religionWarLevel")
 	
-	--if religionWarLevel == 1 then
-	--	return
-	--end
+	if religionWarLevel == 1 then
+		return
+	end
 	
 	local hasNotSent = true
 	
@@ -77,7 +77,7 @@ function BanReligion()
 	local religionWarLevel = GetData("#religionWarLevel")
 	
 	if religionWarLevel == 2 then
-		--return
+		return
 	end
 	
 	GetSettlement("", "CityAlias")
