@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
---- Main Body 
+--- Main Body
 ----------------------------------------------------------------------------------
 -- Setup / Termin / Einladung
 function Start()
@@ -531,69 +531,69 @@ end
 
 function ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
 	--anklaeger
---	trial_Cam("TrialMainCam")
---	AlignTo("accuser","accused")
---	AlignTo("accused","accuser")
---
---
---	trial_Cam("Accuserback")
---	CutsceneCameraBlend("",10,2)
---	trial_Cam("TrailCenter")
---
---	PlayAnimationNoWait("accuser", "point_at")
---	PlayAnimationNoWait("accused", "shake_head")
---	if EvidenceType==1	then
---		-- 1: Sabotage
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SABOTAGE"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==4 then
---		-- 4: bribery
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_BRIBERY"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==6 then
---		-- 6: blackmail
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_BLACKMAIL"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==7 then
---		-- 7: slugging
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SLUGGING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==10 then
---		-- 10: calumny
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_CALUMNY"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==11 then
---		-- 11: poison
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_POISON"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==12 then
---		-- 12: raiding
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_RAIDING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==13 then
---		-- 13: revolt
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_REVOLT"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==14 then
---		-- 14: marauding
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_MARAUDING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==15 then
---		-- 15: abduction
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_ABDUCTION"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==16 then
---		-- 16: murder
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_MURDER"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==17 then
---		-- 17: collected evidence
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SHARED"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==18 then
---		-- 18: Attack civilian
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SLUGGING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==19 then
---		-- 19 : attack cart
---		MsgSay("accuser","@L_NEWSTUFF_CARTATTACK"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	elseif EvidenceType==20 then
---		-- 20 : theft
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_THEFT"..GenderType,GetID("accused"),VictimID,EvidenceTime)
---	else
---		-- DEBUG: invalid case
---		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_INVALID")
---	end
---
---	AlignTo("accuser","judge")
---	AlignTo("accused","judge")
+	trial_Cam("TrialMainCam")
+	AlignTo("accuser","accused")
+	AlignTo("accused","accuser")
+
+
+	trial_Cam("Accuserback")
+	CutsceneCameraBlend("",10,2)
+	trial_Cam("TrailCenter")
+
+	PlayAnimationNoWait("accuser", "point_at")
+	PlayAnimationNoWait("accused", "shake_head")
+	if EvidenceType==1	then
+		-- 1: Sabotage
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SABOTAGE"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==4 then
+		-- 4: bribery
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_BRIBERY"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==6 then
+		-- 6: blackmail
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_BLACKMAIL"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==7 then
+		-- 7: slugging
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SLUGGING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==10 then
+		-- 10: calumny
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_CALUMNY"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==11 then
+		-- 11: poison
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_POISON"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==12 then
+		-- 12: raiding
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_RAIDING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==13 then
+		-- 13: revolt
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_REVOLT"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==14 then
+		-- 14: marauding
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_MARAUDING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==15 then
+		-- 15: abduction
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_ABDUCTION"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==16 then
+		-- 16: murder
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_MURDER"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==17 then
+		-- 17: collected evidence
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SHARED"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==18 then
+		-- 18: Attack civilian
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_SLUGGING"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==19 then
+		-- 19 : attack cart
+		MsgSay("accuser","@L_NEWSTUFF_CARTATTACK"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	elseif EvidenceType==20 then
+		-- 20 : theft
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_THEFT"..GenderType,GetID("accused"),VictimID,EvidenceTime)
+	else
+		-- DEBUG: invalid case
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_C_CHARGES_INVALID")
+	end
+
+	AlignTo("accuser","judge")
+	AlignTo("accused","judge")
 
 	local QualityType
 
@@ -624,14 +624,14 @@ function ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,Ge
 	else
 		QualityType = "_100QUALITY"
 	end
---	CutsceneCameraBlend("",0.01,0)
---	trial_Cam("TrialMainCam")
---	trial_RandomVisitorComment("@L_LAWSUIT_4_ACCUSAL_F_AUDIENCE_STANDARD")
---	trial_Cam("JudgeFromBelowCam")
---
---	trial_ModifyTotalEvidenceValue(EvidenceValue)
---	trial_PlayRelevantJuryAni("judge",EvidenceStrength)
---	MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_COMMENTS"..QualityType)
+	CutsceneCameraBlend("",0.01,0)
+	trial_Cam("TrialMainCam")
+	trial_RandomVisitorComment("@L_LAWSUIT_4_ACCUSAL_F_AUDIENCE_STANDARD")
+	trial_Cam("JudgeFromBelowCam")
+
+	trial_ModifyTotalEvidenceValue(EvidenceValue)
+	trial_PlayRelevantJuryAni("judge",EvidenceStrength)
+	MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_COMMENTS"..QualityType)
 
 end
 
@@ -739,11 +739,284 @@ function Go()
 	SetData("TotalEvidenceValue",0)
 	SetData("AccuserSentence",-1) 
 
-	-- opening the trial
-	trial_TrialOpening()
 
-	-- check if one of main protagonist is not here
-	trial_CheckSomeoneIsMissing()
+
+	if trial_SimIsPresent("judge")==1 then
+		local time = PlayAnimationNoWait("judge", "sit_judge_hammer")
+		Sleep(1.5)
+		CarryObject("judge","Handheld_Device/Anim_judge_hammer.nif",false)
+		Sleep(0.6)
+		for i=0,12 do
+			PlaySound3DVariation("judge","Locations/hammer")
+			Sleep(0.3)
+		end
+		Sleep(time - 7)
+		CarryObject("judge","",false)
+		Sleep(1)
+		PlayAnimationNoWait("judge", "talk_sit_short")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_START")
+	else
+		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_START")
+	end
+	--the fine, judge has to pay when he forgets the court
+	local fine = 1000 + GetMoney("judge")/25
+	local lNumCrimes = CutsceneCollectEvidences("","accuser","accused")
+	local RawPenalty = 0
+	for iC = 0,lNumCrimes-1 do
+		RawPenalty = RawPenalty + GetData("evidence"..iC.."value")
+	end
+	local FugitiveYears = math.floor(RawPenalty/6 + 1)
+	if FugitiveYears > 6 then 
+		FugitiveYears = 6
+	end
+
+	local Options = FindNode("\\Settings\\Options")
+	local YearsPerRound = Options:GetValueInt("YearsPerRound")
+	local FugitiveHours = FugitiveYears * 24 / YearsPerRound
+
+	--judge is dead
+	if trial_SimIsPresent("judge")==2 then
+		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_+0")
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end	
+		EndCutscene("")
+	end
+
+	--accuser is dead
+	if trial_SimIsPresent("accuser")==2 then
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_+0")
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+        EndCutscene("")
+	end
+
+	--accused dead
+	if trial_SimIsPresent("accused")==2 then
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_+0")
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end	
+		EndCutscene("")
+	end
+	
+	--judge is lost and jailed somewhere or knocked unconscious by the accused's henchmen
+	if trial_SimIsPresent("judge")==0 and GetState("judge",STATE_HIJACKED) or GetState("judge",STATE_UNCONSCIOUS) then
+		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER")
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+1",GetID("judge"))
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("accuser"))
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("accused"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("assessor1"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("assessor2"))
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end
+		EndCutscene("")
+	end
+
+	--accused has immunity
+	if GetImpactValue("accused","HaveImmunity")==1 and GetImpactValue("accused","HasRepealedImmunity") < 1 then
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
+		BuildingFindSimByProperty("courtbuilding","BUILDING_NPC", 1,"usher")
+		MsgSay("usher","@L_LAWSUIT_1_INSTALL_USHER_IMMUNITY_+0",GetID("accused"))
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end	
+		EndCutscene("")
+	end
+	--accuser is lost and jailed somewhere or knock unconscious by the accused's henchmen
+	if trial_SimIsPresent("accuser")==0 and GetState("accuser",STATE_HIJACKED) or GetState("accuser",STATE_UNCONSCIOUS) then --State pregnant is fix for dumb npcs that dont time having children properly allowing human players to get off easy
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER")
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+0",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+1",GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("judge"),GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("accused"),GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("assessor1"),GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("assessor2"),GetID("accuser"),GetID("accused"))
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end
+		EndCutscene("")
+	end
+
+	--accused is lost and jailed somewhere
+	if trial_SimIsPresent("accused")==0 and GetState("accused",STATE_HIJACKED) then
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER")
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+0",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+1",GetID("accused"))
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end
+		EndCutscene("")
+	end
+
+	--judge is not in here
+	if trial_SimIsPresent("judge")==0 then
+		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER",GetID("judge"),fine)
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+0",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+1",GetID("judge"),fine)
+		CityAddPenalty("settlement","judge",PENALTY_MONEY,2500)
+		CreditMoney("settlement",2500,"CostAdministration")
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end
+		EndCutscene("")
+	end
+
+	--accuser is not in here
+	if trial_SimIsPresent("accuser")==0 then --This is a fix for dumb npc's that allow human player to get off easy because they don't time their children right
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER",GetID("accuser"),GetID("accused"))
+		CutsceneCollectEvidences("","accuser","accused",true)		-- mark collected evidences as used		
+		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+0",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+1",GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
+		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
+						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
+		if GetImpactValue("accused","IsCharged")==1 then
+		    RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end	
+		EndCutscene("")
+	end
+	--accused is not in here
+	if trial_SimIsPresent("accused")==0 then
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER",GetID("accused"),FugitiveYears)
+		
+
+		if (RawPenalty<16) then
+			-- give the accused a chance to surrender himself or pay a fee
+			CreateCutscene("queries","myquery")
+			CopyAliasToCutscene("accused","myquery","Sim")
+			CopyAliasToCutscene("accuser","myquery","Accuser")
+			CopyAliasToCutscene("assessor1","myquery","Assessor1")
+			CopyAliasToCutscene("assessor2","myquery","Assessor2")
+			CopyAliasToCutscene("judge","myquery","Judge")
+			CopyAliasToCutscene("settlement","myquery","settlement")
+			SetData("RawPenalty",RawPenalty)
+			SetData("FugitiveYears",FugitiveYears)
+			CutsceneSetData("myquery","RawPenalty")
+			CutsceneSetData("myquery","FugitiveYears")
+			CutsceneCallScheduled("myquery","DecideFugitive")
+		else 
+			-- punish him
+			CityAddPenalty("settlement","accused",PENALTY_FUGITIVE,FugitiveYears)
+			AddImpact("accused","REVOLT",1,FugitiveYears)
+			local outlawed = 1
+			if HasProperty("accused", "Outlawed") then
+				outlawed = outlawed + GetProperty("accused", "Outlawed")
+			end
+			SetProperty("accused", "Outlawed", outlawed)
+			SetProperty("accused", GetName("Settlement").."Start", GetRound())
+			SetProperty("accused", GetName("Settlement").."FugitiveHours", FugitiveYears)
+			CreateScriptcall("Fugitive_End",FugitiveYears,"Cutscenes/Trial.lua","FugitiveExpires","accused","accused","settlement")
+			feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+0",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+1",GetID("accused"),FugitiveYears)
+			feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
+			feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
+			feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
+			feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
+							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
+		end
+		SetNobilityTitle("accused", 2, true)
+		GetNearestSettlement("judge","TrialCity")
+		CityRemoveFromOffice("accused","TrialCity")
+		if GetImpactValue("accused","IsCharged")==1 then
+			RemoveImpact("accused","IsCharged")
+		end
+		if GetImpactValue("accuser","HasCharged")==1 then
+			RemoveImpact("accuser","HasCharged")
+		end	
+		EndCutscene("")
+	end
 
 	--get rhetoric and gender from accuser and accused
 	local AccuserRhetoric = (GetSkillValue("accuser",RHETORIC))
@@ -751,12 +1024,12 @@ function Go()
 	local AccuserGender = (SimGetGender("accuser"))
 	local AccusedGender = (SimGetGender("accused"))
 
+
 	Sleep(1)
 
 	trial_Cam("JudgeFromBelowCam")
-	-- put in comment to make procedure quicker
-	-- PlayAnimationNoWait("judge", "sit_talk")
-	-- MsgSay("judge","@L_LAWSUIT_3_INTRO_EVERYONE_ABORD_1")
+	PlayAnimationNoWait("judge", "sit_talk")
+	MsgSay("judge","@L_LAWSUIT_3_INTRO_EVERYONE_ABORD_1")
 	PlayAnimationNoWait("judge", "sit_talk")
 	MsgSay("judge","@L_LAWSUIT_3_INTRO_EVERYONE_ABORD_2",GetID("accuser"),GetID("accused"))
 	StopAnimation("judge")
@@ -770,7 +1043,6 @@ function Go()
 
 	--combine textlabel by checking rhetoric skill and gender for text
 	local RhethoricType
-	local RhethoricReplace
 	if AccuserRhetoric < 4 then
 		RhethoricReplace = "_DUMB"
 	elseif AccuserRhetoric < 7 then
@@ -796,10 +1068,9 @@ function Go()
 		AlignmentReplace = "_EVIL"
 	end
 
-	-- put in comment to go quicker in trial
-	-- camera_CutsceneDialogCam("","accuser",0,0)
-	-- trial_PlayRelevantTalkAni("accuser")
-	-- MsgSay("accuser"," @L_LAWSUIT_4_ACCUSAL_A_HELLO"..RhethoricReplace..AlignmentReplace)
+	camera_CutsceneDialogCam("","accuser",0,0)
+	trial_PlayRelevantTalkAni("accuser")
+	MsgSay("accuser"," @L_LAWSUIT_4_ACCUSAL_A_HELLO"..RhethoricReplace..AlignmentReplace)
 
 	if AccuserRhetoric < 5 then
 		RhethoricReplace = "_DUMB"
@@ -814,13 +1085,580 @@ function Go()
 		EvidenceReplace = "_HIGHEVIDENCE"
 	end
 
-	-- Look at evidences
 	if NumEvidences==0 then
-		-- no evidence
-		trial_NoEvidence()
+		trial_Cam("TrialMainCam")
+		local TrialFee = 1000
+		PlayAnimationNoWait("accuser", "cogitate")
+		MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_NOEVIDENCE_ACCUSER")
+		PlayAnimationNoWait("judge", "sit_no")
+		MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_NOEVIDENCE_JUDGE",TrialFee)
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
+		CreditMoney("accuser",-TrialFee,"CostAdministration")
+		CreditMoney("settlement",TrialFee,"CostAdministration")
 	else
-		-- has evidences
-		trial_LookAtEvidences(NumEvidences)
+		MsgSay("accuser"," @L_LAWSUIT_4_ACCUSAL_B_INTRO"..RhethoricReplace..EvidenceReplace..GenderType)
+
+		local EvidenceType		= GetData("evidence0type")
+		local VictimID			= GetData("evidence0victim")
+		local EvidenceStrength  = GetData("evidence0quality")
+		local EvidenceValue		= GetData("evidence0value")
+		local EvidenceTime		= GetData("evidence0time") --???
+
+		if GetImpactValue("accused","EvidenceSuppression")==1 then		-- Impact: Heiligenschein
+			EvidenceStrength = 0
+		end
+
+		trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
+
+		if GetImpactValue("accused","EvidenceSuppression")==1 then		-- Impact: Heiligenschein
+			camera_CutsceneDialogCam("","accused",0,0)
+			EvidenceStrength = 0
+			GetPosition("accused", "ParticleSpawnPos")
+			StartSingleShotParticle("particles/absolvesinner.nif", "ParticleSpawnPos",1.4,4)
+			MsgSay("accused","@L_LAWSUIT_4_ACCUSAL_G_ACCUSED_HALO")
+		end
+
+		if NumEvidences>1 then
+			local QualityType
+			if EvidenceStrength<34 then
+				QualityType = "_LOWQUALITY"
+			elseif EvidenceStrength<67 then
+				QualityType = "_MEDIUMQUALITY"
+			else
+				QualityType = "_HIGHQUALITY"
+			end
+
+			trial_Cam("TrialMainCam")
+			MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_CONTINUE"..QualityType)
+
+			EvidenceType     = GetData("evidence1type")
+			VictimID	 = GetData("evidence1victim")
+			EvidenceStrength = GetData("evidence1quality")
+			EvidenceValue    = GetData("evidence1value")
+			EvidenceTime	 = GetData("evidence1time") --???
+			trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
+
+			if (NumEvidences>=3) then
+				EvidenceType     = GetData("evidence2type")
+				VictimID	 = GetData("evidence2victim")
+				EvidenceStrength = GetData("evidence2quality")
+				EvidenceValue    = GetData("evidence2value")
+				EvidenceTime	 = GetData("evidence2time") --???
+			end
+			
+			if NumEvidences==3 then
+				trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
+			else
+				local NumRest = 0+ NumEvidences - 2
+				local NumReplace
+				if NumRest < 3 then
+					NumReplace = "_TWOEVIDENCES"
+				elseif NumRest < 6 then
+					NumReplace = "_SOMEEVIDENCES"
+				else
+					NumReplace = "_MANYEVIDENCES"
+				end
+
+				trial_Cam("TrialMainCam")
+				MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_E_THEREST"..NumReplace..GenderType)
+
+				local QualityType
+				if EvidenceStrength<51 then
+					QualityType = "_25QUALITY"
+				elseif EvidenceStrength<76 then
+					QualityType = "_50QUALITY"
+				elseif EvidenceStrength<100 then
+					QualityType = "_75QUALITY"
+				else
+					QualityType = "_100QUALITY"
+				end
+				trial_Cam("JudgeFromBelowCam")
+				trial_PlayRelevantJuryAni("judge",EvidenceStrength)
+				MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_COMMENTS"..QualityType)
+			end
+		end
+		trial_Cam("TrialMainCam")
+		trial_RandomVisitorComment("@L_LAWSUIT_4_ACCUSAL_F_AUDIENCE_STANDARD")
+		
+		local AcusdTitle = GetNobilityTitle("accused")
+		local AcusrTitle = GetNobilityTitle("accuser")
+		GetDynasty("accused","accuseddynasty")
+		GetDynasty("accuser","accuserdynasty")
+		if GetImpactValue("accuseddynasty","BeFromNobleBlood")~=0 then
+			if AcusdTitle > AcusrTitle then
+				PlayAnimationNoWait("judge", "sit_yes")
+				MsgSay("judge","@L_PRIVILEGES_130_BEFROMNOBLEBLOOD_LAWSUIT_JUDGE",GetID("accused"))
+				if GetImpactValue("accuserdynasty","BeFromNobleBlood")~=0 then
+					trial_ModifyTotalEvidenceValue(-3)
+				else
+					trial_ModifyTotalEvidenceValue(-5)
+				end
+			elseif AcusedTitle == AcusrTitle then
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_EQUALTITLE_+0",GetID("accused"),GetID("accuser"))
+			else
+				PlayAnimationNoWait("judge", "sit_yes")
+				MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_GREATERTITLE_+0",GetID("accused"),GetID("accuser"))
+				trial_ModifyTotalEvidenceValue(3)
+			end
+		elseif GetImpactValue("accuserdynasty","BeFromNobleBlood")~=0 then
+			PlayAnimationNoWait("judge", "sit_yes")
+			MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_ACCUSERTITLE_+0",GetID("accuser"),GetID("accused"))
+			trial_ModifyTotalEvidenceValue(5)
+		end
+		
+		if GetImpactValue("accuser","AimForInquisitionalProceeding")~=0 then
+			trial_ModifyTotalEvidenceValue(3)
+			PlayAnimationNoWait("judge", "sit_talk")
+			MsgSay("judge","@L_PRIVILEGES_113_AIMFORINQUISITIONALPROCEEDING_LAWSUIT_JUDGE",GetID("accused"))
+		end
+
+
+		local TEV = GetData("TotalEvidenceValue")
+
+		-- Der Richter kommentiert die angewendete Hte der Rechtssprechung und dert den TEV entsprechend
+		local SeverityOfLaw = GetProperty("settlement","SeverityOfLaw")
+		local LawReplace
+		if SeverityOfLaw==0 then
+			LawReplace = "_LIBERAL"
+			trial_ModifyTotalEvidenceValue(-5)
+		elseif SeverityOfLaw==1 then
+			LawReplace = "_NORMAL"
+		else
+			LawReplace = "_HARD"
+			trial_ModifyTotalEvidenceValue(8)
+		end
+
+		if (GetNobilityTitle("accused")>=NOBILITY_LANDGRAF) then
+			PlayAnimationNoWait("judge", "sit_talk")
+			MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD",GetID("accused"))
+			trial_ModifyTotalEvidenceValue(-3)
+		end
+		PlayAnimationNoWait("judge", "sit_talk")
+		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_LAW"..LawReplace)
+
+		-- Klger darf Strafma hlen
+		trial_Cam("JudgeFromBelowCam")
+		PlayAnimationNoWait("judge", "talk_sit_short")
+		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_TO_ACCUSER")
+
+
+		trial_Cam("TrialMainCam")
+		local AccuserSentence = MsgSayInteraction("accuser","accuser",0,
+			-- PanelParam
+			"@B[1,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+1]"..
+			"@B[2,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+2]"..
+			"@B[3,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+3]"..
+			"@B[4,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+4]"..
+			"@B[5,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+5]"..
+			"@B[6,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+6]",
+			trial_AccuserDecideSentence, --AIFunc
+			"@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+0",GetID("accused")) --Message Text
+
+		-- Berechne default-Strafma
+		local SentenceLevel = GetData("TotalEvidenceValue") / 3
+		SetData("DefaultSentence",math.floor(SentenceLevel))	-- for judge AI func
+		camera_CutsceneDialogCam("","accuser",0,0)
+		local SentenceAnnouncer = "accuser"
+		
+		if AccuserSentence=="C" then	
+			trial_PlayRelevantTalkAni("accuser")
+			MsgSay("accuser","@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_NOCOMMENT_+0")
+
+			SentenceLevel = MsgSayInteraction("judge","judge",0,
+			-- PanelParam
+			"@B[1,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+1]"..
+			"@B[2,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+2]"..
+			"@B[3,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+3]"..
+			"@B[4,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+4]"..
+			"@B[5,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+5]"..
+			"@B[6,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+6]",
+			trial_JudgeDecideSentence, --AIFunc
+			"@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+0",GetID("accused")) --Message Text
+			if not (SentenceLevel>=1 and SentenceLevel<=6) then
+				SentenceLevel = trial_GetSubjectiveSentence("judge")/6+1
+			end
+		else
+			SentenceLevel = AccuserSentence
+		end
+
+		if (SentenceLevel<1) then
+			SentenceLevel = 1
+		elseif (SentenceLevel>6) then
+			SentenceLevel = 6
+		end
+			
+		PlayAnimationNoWait(SentenceAnnouncer, "talk")
+		if AccuserSentence==1 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_MONEY"..GenderType)
+			SentenceLevel = 1
+		elseif AccuserSentence==2 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_PILLORY"..GenderType)
+			SentenceLevel = 2
+		elseif AccuserSentence==3 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_MOREMONEY"..GenderType)
+			SentenceLevel = 3
+		elseif AccuserSentence==4 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_TITLE"..GenderType)
+			SentenceLevel = 4
+		elseif AccuserSentence==5 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_PRISON"..GenderType)
+			SentenceLevel = 5
+		elseif AccuserSentence==6 then
+			MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_DEATH"..GenderType)
+			SentenceLevel = 6
+		end
+		SetData("AccuserSentence",SentenceLevel)
+
+		-- Angeklagter soll Stellung nehmen
+		local confession = 1
+
+		trial_UpdatePanelTrial(0)
+
+		trial_Cam("TrialMainCam")
+		PlayAnimationNoWait("judge", "talk_sit_short")
+		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_TO_DEFENDER"..GenderType,GetID("accused"))
+
+		local AccusedStatement = MsgSayInteraction("accused","accused",0,
+			"@B[1,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+1]"..
+			"@B[2,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+2]"..
+			"@B[3,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+3]",
+			trial_AccusedDecideConfess,
+			"@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+0",GetID("accused"))
+		local DecisionReplacement
+		
+		if AccusedStatement==1 then -- unschuldig
+			DecisionReplacement = "_NOTGUILTY"
+			confession = 0
+			if GetSkillValue("accused",RHETORIC) > GetSkillValue("judge",EMPATHY) then --Bug fixed!
+				trial_ModifyTotalEvidenceValue(-5) 
+				PlayAnimationNoWait("judge", "nod")
+			else
+				trial_ModifyTotalEvidenceValue(5) 
+			end
+			
+		elseif AccusedStatement==2 then -- nichts sagen
+			DecisionReplacement = "_STAYQUIET"
+			confession = 1
+		elseif AccusedStatement==3 then --schuldig
+			DecisionReplacement = "_GUILTY"
+			trial_ModifyTotalEvidenceValue(-3)
+			confession = 2
+		else
+			DecisionReplacement = "_STAYQUIET" -- default (?)
+			confession = 1
+		end
+		camera_CutsceneDialogCam("","accused",0,0)
+		if (confession == 0) then
+			PlayAnimationNoWait("accused", "shake_head")
+		elseif (confession == 1) then
+			PlayAnimationNoWait("accused", "cogitate")
+		elseif (confession == 2) then
+			PlayAnimationNoWait("accused", "nod")
+		end
+		MsgSay("accused","@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SPEAKS"..DecisionReplacement)
+
+		trial_Cam("JudgeFromBelowCam")
+		PlayAnimationNoWait("judge", "sit_talk_short")
+		MsgSay("judge", "@L_SESSION_3_ELECT_THINKBREAK")
+		trial_Cam("TrialMainCam")
+		CarryObject("judge","Handheld_Device/Anim_ink_feather.nif",false)
+		PlayAnimation("judge", "sit_write_in")
+		LoopAnimation("judge","sit_write_loop",-1)
+
+		--accused und accuser dfen bestechen
+
+		local SleepTime = 30
+		local Actions = 5
+
+		local TargetArray = {"judge","accuser","accused","assessor1","assessor2"}
+		local TargetCount = 5
+		local AITargetArray = {"accuser","accused"}
+		local AITargetCount = 5
+		
+		for AISim = 1, TargetCount do
+			if HasProperty(TargetArray[AISim],"BUILDING_NPC") then
+				if GetState(TargetArray[AISim],STATE_TOWNNPC) then
+					SetState(TargetArray[AISim],STATE_TOWNNPC,false)
+					SetProperty(TargetArray[AISim],"townnpc","townnpc")
+				end
+			end
+		end
+
+		if trial_HumanPlayerWantsInteraction() then
+			CutsceneSetTimeBar("",SleepTime)
+		else
+			SleepTime = 1
+		end	
+
+		trial_MeasureBar(true)
+
+		for i=1,Actions do
+			for AISim = 1, AITargetCount do
+				trial_RunAIPlan(AITargetArray[AISim])
+			end
+			Sleep(SleepTime/Actions)
+		end
+		trial_MeasureBar(false)
+		
+		if CutsceneLocalPlayerIsWatching("") then
+			HudCancelUserSelection()
+		end
+		
+		PlayAnimation("judge", "sit_write_out")
+		CarryObject("judge","",false)
+		StopAnimation("judge")
+		for AISim = 1, TargetCount do
+			if HasProperty(TargetArray[AISim],"EX_BUILDING_NPC") then
+				if HasProperty(TargetArray[AISim],"townnpc") then
+					SetState(TargetArray[AISim],STATE_TOWNNPC,true)
+					RemoveProperty(TargetArray[AISim],"townnpc")
+				end
+			end
+		end		
+
+		Sleep(0.5)
+		RemoveAllObjectDependendImpacts("accuser", "")  
+
+		trial_Cam("TrialMainCam")
+
+		-- Urteilsfindung
+		local DecisionTextLabel, AnnouncementLabel
+
+		trial_UpdatePanelTrial(0)
+
+		if confession==2 then
+			-- "Das gericht wird jetzt entscheiden, ob das vom Klger geforderte Strafma angemessen ist."
+			trial_PlayRelevantJuryAni("judge",60)
+			MsgSay("judge","@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_INTRO")
+			DecisionTextLabel = "@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_SCREENPLAYER_"
+			AnnouncementLabel = "@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_ANNOUNCEMENTS_"
+		else
+			trial_PlayRelevantJuryAni("judge",60)
+			MsgSay("judge","@L_LAWSUIT_6_DECISION_A_GUILTYQ_INTRO")
+			DecisionTextLabel = "@L_LAWSUIT_6_DECISION_A_GUILTYQ_SCREENPLAYER_"
+			AnnouncementLabel = "@L_LAWSUIT_6_DECISION_A_GUILTYQ_ANNOUNCEMENTS_"
+		end
+
+		-- Entscheidungen Jury
+		local conviction_cnt = 0
+		--richter und beisitzer drfen sich entscheiden, wenn sie spieler sind
+		SetData("DecisionParam","judge")
+		SetData("JudgeDecision",-1)
+		
+		local JudgeDecision = MsgSayInteraction("judge","judge",0,
+			"@B[1,"..DecisionTextLabel.."+1]"..
+			"@B[2,"..DecisionTextLabel.."+2]",
+			trial_ConvictionDecision,
+			""..DecisionTextLabel.."+0",GetID("judge"))
+
+		if JudgeDecision == "C" then
+			JudgeDecision = trial_ConvictionDecision()
+		end
+		if JudgeDecision == 1 then
+			conviction_cnt = conviction_cnt+1
+			trial_PlayRelevantJuryAni("judge",100)
+			MsgSay("judge",""..AnnouncementLabel.."+0")
+		else
+			trial_PlayRelevantJuryAni("judge",0)
+			MsgSay("judge",""..AnnouncementLabel.."+1")
+		end
+		
+		SetData("JudgeDecision",JudgeDecision)
+
+		--assessor1
+		SetData("DecisionParam","assessor1")
+		local Assessor1Decision = MsgSayInteraction("assessor1","assessor1",0,
+			"@B[1,"..DecisionTextLabel.."+1]"..
+			"@B[2,"..DecisionTextLabel.."+2]",
+			trial_ConvictionDecision,
+			""..DecisionTextLabel.."+0",GetID("assessor1"))
+
+		if Assessor1Decision == "C" then
+			Assessor1Decision = trial_ConvictionDecision()
+		end
+		if Assessor1Decision == 1 then
+			conviction_cnt = conviction_cnt+1
+			trial_PlayRelevantJuryAni("assessor1",100)
+			MsgSay("assessor1",""..AnnouncementLabel.."+0")
+		else
+			trial_PlayRelevantJuryAni("assessor1",0)
+			MsgSay("assessor1",""..AnnouncementLabel.."+1")
+		end
+
+		--assessor2
+		SetData("DecisionParam","assessor2")
+		local Assessor2Decision = MsgSayInteraction("assessor2","assessor2",0,
+			"@B[1,"..DecisionTextLabel.."+1]"..
+			"@B[2,"..DecisionTextLabel.."+2]",
+			trial_ConvictionDecision,
+			""..DecisionTextLabel.."+0",GetID("assessor2"))
+
+		if Assessor2Decision == "C" then
+			Assessor2Decision = trial_ConvictionDecision()
+		end
+		if Assessor2Decision == 1 then
+			conviction_cnt = conviction_cnt+1
+			trial_PlayRelevantJuryAni("assessor2",100)
+			MsgSay("assessor2",""..AnnouncementLabel.."+0")
+		else
+			trial_PlayRelevantJuryAni("assessor2",0)
+			MsgSay("assessor2",""..AnnouncementLabel.."+1")
+		end
+
+		SetData("judgedecision",-1)
+		SetData("assessor1decision",-1)
+		SetData("assessor2decision",-1)
+
+		local TrialCosts = 250 + GetNobilityTitle("accused") * 250
+		local DecisionForFinalComment = 0
+		trial_Cam("JudgeFromBelowCam")
+		-- Urteilsverkndung--------------------------------------------
+
+--		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_+0") -- Rausgenommen weil keine Speech aufnahme..
+		if confession==2 or conviction_cnt>=2 then
+			if confession==2 and conviction_cnt<2 then
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD"..GenderType)
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+0")
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+1")
+				SentenceLevel = SentenceLevel - 1
+			else
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY"..GenderType,GetID("accused"))
+				if conviction_cnt==2 then
+					PlayAnimationNoWait("judge", "sit_talk")
+					MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_HALF")
+					SentenceLevel = SentenceLevel - 1;
+				else
+					PlayAnimationNoWait("judge", "sit_talk")
+					MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_FULL")
+				end
+			end
+
+			local PenaltyType = -1
+			local PenaltyValue = 0
+
+			PlayAnimationNoWait("judge", "sit_talk")
+			if SentenceLevel<1 then
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+0",GetID("accused"),PenaltyValue)
+			elseif SentenceLevel==1 then
+				PenaltyValue = SimGetWealth("accused")/12
+				if PenaltyValue <= 0 then
+					PenaltyValue = 250
+				end
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+1",GetID("accused"),PenaltyValue)
+				PenaltyType = PENALTY_MONEY
+			elseif SentenceLevel==2 then
+				PenaltyValue = 8
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+2",GetID("accused"),PenaltyValue)
+				PenaltyType = PENALTY_PILLORY
+			elseif SentenceLevel==3 then
+				PenaltyValue = SimGetWealth("accused")/5
+				if PenaltyValue <= 0 then
+					PenaltyValue = 1500
+				end
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+4",GetID("accused"),PenaltyValue)
+				PenaltyType = PENALTY_MONEY
+			elseif SentenceLevel==4 then
+				PenaltyType = PENALTY_TITLE
+				if (SimGetOfficeID("accused")~=-1) then
+					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+3",GetID("accused"))
+					RemoveAllObjectDependendImpacts( "accused", "Office" )
+					GetHomeBuilding("accused","home")
+					BuildingGetCity("home","homecity")				
+					CityRemoveFromOffice("homecity","accused")
+					CityRemoveApplicant("homecity","accused") --lscht auch eine Bewerbung
+				elseif (GetNobilityTitle("accused")>1) then
+					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+5",GetID("accused"))
+				else
+					MsgSay("judge","@L_NEWSTUFF_NOTITLEPENALTY_+0")
+					PlayAnimationNoWait("judge", "sit_talk")
+					MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"))
+					PenaltyType = PENALTY_PRISON
+					local YearsPerRound = Options:GetValueInt("YearsPerRound")
+					PenaltyValue = 96 / YearsPerRound
+				end
+			elseif SentenceLevel==5 then
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"),PenaltyValue)
+				PenaltyType = PENALTY_PRISON
+				local YearsPerRound = Options:GetValueInt("YearsPerRound")
+				PenaltyValue = 96 / YearsPerRound
+			elseif SentenceLevel==6 then
+				PlayAnimationNoWait("judge", "sit_talk")
+				MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+7",GetID("accused"),PenaltyValue)
+				PenaltyType = PENALTY_DEATH
+				SetProperty("accused","ExecutedBy",GetID("accuser"))
+				--mission_ScoreAccuse("accuser")
+			end
+
+			DecisionForFinalComment = 1
+			PlayAnimationNoWait("judge", "talk_sit_short")
+			MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_EXECUTE_+0")
+
+			if PenaltyType>-1 then
+				CityAddPenalty("settlement","accused",PenaltyType,PenaltyValue)
+				xp_ChargeCharacter("accuser", SentenceLevel)
+			end
+
+		else -- gerichtskosten trt die anklage
+			trial_PlayRelevantJuryAni("judge",0)
+			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY"..GenderType,GetID("accused"))
+			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY_TOBOTH",TrialCosts)
+			if conviction_cnt==0 then
+				TrialCosts = GetMoney("accuser")/5 --20%
+				if TrialCosts<1000 then TrialCosts=1000 end
+			elseif conviction_cnt==1 then
+				TrialCosts = GetMoney("accuser")/40 --2.5 %
+				if TrialCosts<500 then TrialCosts=500
+				elseif TrialCosts>5000 then TrialCosts=5000 end
+			else
+				TrialCosts = 0 --darf nicht passieren
+			end				
+			CreditMoney("settlement",TrialCosts,"CostAdministration")
+			CreditMoney("accuser",-TrialCosts,"CostAdministration")
+			DecisionForFinalComment = 0
+			xp_ChargeCharacter("accused", SentenceLevel)
+		end
+		trial_Cam("TrialMainCam")
+		local time = PlayAnimationNoWait("judge", "sit_judge_hammer")
+		Sleep(1.5)
+		CarryObject("judge","Handheld_Device/Anim_judge_hammer.nif",false)
+		Sleep(0.6)
+		for i=0,12 do
+			PlaySound3DVariation("judge","Locations/hammer")
+			Sleep(0.3)
+		end
+		Sleep(time - 7)
+		CarryObject("judge","",false)
+		Sleep(1)
+		PlayAnimationNoWait("judge", "talk_sit_short")
+		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
+
+		--Reactions
+		if DecisionForFinalComment == 1 then
+			camera_CutsceneDialogCam("","accused",0,0)
+			PlayAnimationNoWait("accused", "shake_head")
+			MsgSay("accused","@L_LAWSUIT_6_DECISION_D_REACTIONS_GUILTY")
+			if DynastyIsPlayer("accused") then
+				gameplayformulas_StartHighPriorMusic(MUSIC_NEGATIVE_EVENT)
+			elseif DynastyIsPlayer("accuser") then
+				gameplayformulas_StartHighPriorMusic(MUSIC_POSITIVE_EVENT)
+			end
+		else
+			camera_CutsceneDialogCam("","accuser",0,0)
+			PlayAnimationNoWait("accuser", "shake_head")
+			MsgSay("accuser","@L_LAWSUIT_6_DECISION_D_REACTIONS_NOTGUILTY")
+			if DynastyIsPlayer("accused") then
+				gameplayformulas_StartHighPriorMusic(MUSIC_POSITIVE_EVENT)
+			elseif DynastyIsPlayer("accuser") then
+				gameplayformulas_StartHighPriorMusic(MUSIC_NEGATIVE_EVENT)
+			end			
+		end
 	end
 
 	--Fertig
@@ -836,451 +1674,7 @@ function Go()
 	EndCutscene("")
 end
 
-function LookAtEvidences(NumEvidences)
-	local maxEvidence = NumEvidences
-	if maxEvidence > 3 then
-		maxEvidence = 2
-	end
-	
-		local EvidenceType		
-		local VictimID		
-		local EvidenceStrength  
-		local EvidenceValue		
-		local EvidenceTime		
-		
-	for i = 0, maxEvidence do
-		 EvidenceType		= GetData("evidence"..i.."type")
-		 VictimID			= GetData("evidence"..i.."victim")
-		 EvidenceStrength  = GetData("evidence"..i.."quality")
-		 EvidenceValue		= GetData("evidence"..i.."value")
-		 EvidenceTime		= GetData("evidence"..i.."time")
-		
-		trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
-	end
-	
-	if GetImpactValue("accused","EvidenceSuppression")==1 then		-- Impact: Heiligenschein
-		camera_CutsceneDialogCam("","accused",0,0)
-		EvidenceStrength = 0
-		GetPosition("accused", "ParticleSpawnPos")
-		StartSingleShotParticle("particles/absolvesinner.nif", "ParticleSpawnPos",1.4,4)
-		MsgSay("accused","@L_LAWSUIT_4_ACCUSAL_G_ACCUSED_HALO")
-    end
-    	
-    MsgSay("accuser"," @L_LAWSUIT_4_ACCUSER_ACCUSEOFCRIMES", "accused", NumEvidences)
-    
-	-- put in comment to go quicker during trials
-	-- MsgSay("accuser"," @L_LAWSUIT_4_ACCUSAL_B_INTRO"..RhethoricReplace..EvidenceReplace..GenderType)
---	local EvidenceType		= GetData("evidence0type")
---	local VictimID			= GetData("evidence0victim")
---	local EvidenceStrength  = GetData("evidence0quality")
---	local EvidenceValue		= GetData("evidence0value")
---	local EvidenceTime		= GetData("evidence0time") --???
---
---	if GetImpactValue("accused","EvidenceSuppression")==1 then		-- Impact: Heiligenschein
---		EvidenceStrength = 0
---	end
---
---	trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
---
---	if GetImpactValue("accused","EvidenceSuppression")==1 then		-- Impact: Heiligenschein
---		camera_CutsceneDialogCam("","accused",0,0)
---		EvidenceStrength = 0
---		GetPosition("accused", "ParticleSpawnPos")
---		StartSingleShotParticle("particles/absolvesinner.nif", "ParticleSpawnPos",1.4,4)
---		MsgSay("accused","@L_LAWSUIT_4_ACCUSAL_G_ACCUSED_HALO")
---	end
---
---	if NumEvidences>1 then
---		local QualityType
---		if EvidenceStrength<34 then
---			QualityType = "_LOWQUALITY"
---		elseif EvidenceStrength<67 then
---			QualityType = "_MEDIUMQUALITY"
---		else
---			QualityType = "_HIGHQUALITY"
---		end
---
---		trial_Cam("TrialMainCam")
---		MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_CONTINUE"..QualityType)
---
---		EvidenceType     = GetData("evidence1type")
---		VictimID	 = GetData("evidence1victim")
---		EvidenceStrength = GetData("evidence1quality")
---		EvidenceValue    = GetData("evidence1value")
---		EvidenceTime	 = GetData("evidence1time") --???
---		trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
---
---		if (NumEvidences>=3) then
---			EvidenceType     = GetData("evidence2type")
---			VictimID	 = GetData("evidence2victim")
---			EvidenceStrength = GetData("evidence2quality")
---			EvidenceValue    = GetData("evidence2value")
---			EvidenceTime	 = GetData("evidence2time") --???
---		end
---		
---		if NumEvidences==3 then
---			trial_ProduceEvidence(EvidenceType,VictimID,EvidenceStrength,EvidenceValue,GenderType,accused,EvidenceTime)
---		else
---			local NumRest = 0+ NumEvidences - 2
---			local NumReplace
---			if NumRest < 3 then
---				NumReplace = "_TWOEVIDENCES"
---			elseif NumRest < 6 then
---				NumReplace = "_SOMEEVIDENCES"
---			else
---				NumReplace = "_MANYEVIDENCES"
---			end
---
---			trial_Cam("TrialMainCam")
---			MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_E_THEREST"..NumReplace..GenderType)
---
---			local QualityType
---			if EvidenceStrength<51 then
---				QualityType = "_25QUALITY"
---			elseif EvidenceStrength<76 then
---				QualityType = "_50QUALITY"
---			elseif EvidenceStrength<100 then
---				QualityType = "_75QUALITY"
---			else
---				QualityType = "_100QUALITY"
---			end
---			trial_Cam("JudgeFromBelowCam")
---			trial_PlayRelevantJuryAni("judge",EvidenceStrength)
---			MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_D_JUDGE_COMMENTS"..QualityType)
---		end
---	end
-	-- put in comment for quicker trial
-	--trial_Cam("TrialMainCam")
-	--trial_RandomVisitorComment("@L_LAWSUIT_4_ACCUSAL_F_AUDIENCE_STANDARD")
-
-	-- Take titles in consideration	
-	trial_TitlesConsideration()
-
-	local TEV = GetData("TotalEvidenceValue")
-
-	-- Der Richter kommentiert die angewendete Hte der Rechtssprechung und dert den TEV entsprechend
-	local SeverityOfLaw = GetProperty("settlement","SeverityOfLaw")
-	local LawReplace = trial_LawSeverityConsideration(SeverityOfLaw)
-
-	if (GetNobilityTitle("accused")>=NOBILITY_LANDGRAF) then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD",GetID("accused"))
-		trial_ModifyTotalEvidenceValue(-3)
-	end
-	
-	-- Put in comment for quickness
-	--PlayAnimationNoWait("judge", "sit_talk")
-	--MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_LAW"..LawReplace)
-
-	-- Klger darf Strafma hlen
-	--trial_Cam("JudgeFromBelowCam")
-	--PlayAnimationNoWait("judge", "talk_sit_short")
-	--MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_TO_ACCUSER")
-
-	local SentenceLevel =  trial_AccuserChooseSentence()
-
-	-- Angeklagter soll Stellung nehmen
-	local confession = 1
-
-	trial_UpdatePanelTrial(0)
-
-	-- put in comment for quickness
-	--trial_Cam("TrialMainCam")
-	--PlayAnimationNoWait("judge", "talk_sit_short")
-	--MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_TO_DEFENDER"..GenderType,GetID("accused"))
-
-	local AccusedStatement = MsgSayInteraction("accused","accused",0,
-		"@B[1,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+1]"..
-		"@B[2,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+2]"..
-		"@B[3,@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+3]",
-		trial_AccusedDecideConfess,
-		"@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SCREENPLAYER_+0",GetID("accused"))
-	local DecisionReplacement
-	
-	if AccusedStatement==1 then -- unschuldig
-		DecisionReplacement = "_NOTGUILTY"
-		confession = 0
-		if GetSkillValue("accused",RHETORIC) > GetSkillValue("judge",EMPATHY) then --Bug fixed!
-			trial_ModifyTotalEvidenceValue(-5) 
-			-- put in comment for quickness
-			--PlayAnimationNoWait("judge", "nod")
-		else
-			trial_ModifyTotalEvidenceValue(5) 
-		end
-		
-	elseif AccusedStatement==2 then -- nichts sagen
-		DecisionReplacement = "_STAYQUIET"
-		confession = 1
-	elseif AccusedStatement==3 then --schuldig
-		DecisionReplacement = "_GUILTY"
-		trial_ModifyTotalEvidenceValue(-3)
-		confession = 2
-	else
-		DecisionReplacement = "_STAYQUIET" -- default (?)
-		confession = 1
-	end
-	camera_CutsceneDialogCam("","accused",0,0)
-	if (confession == 0) then
-		PlayAnimationNoWait("accused", "shake_head")
-	elseif (confession == 1) then
-		PlayAnimationNoWait("accused", "cogitate")
-	elseif (confession == 2) then
-		PlayAnimationNoWait("accused", "nod")
-	end
-	MsgSay("accused","@L_LAWSUIT_5_DEFENSE_B_DEFENDER_SPEAKS"..DecisionReplacement)
-
-	trial_Cam("JudgeFromBelowCam")
-	PlayAnimationNoWait("judge", "sit_talk_short")
-	MsgSay("judge", "@L_SESSION_3_ELECT_THINKBREAK")
-	trial_Cam("TrialMainCam")
-	CarryObject("judge","Handheld_Device/Anim_ink_feather.nif",false)
-	PlayAnimation("judge", "sit_write_in")
-	LoopAnimation("judge","sit_write_loop",-1)
-
-	--accused und accuser dfen bestechen
-
-	local SleepTime = 30
-	local Actions = 5
-
-	local TargetArray = {"judge","accuser","accused","assessor1","assessor2"}
-	local TargetCount = 5
-	local AITargetArray = {"accuser","accused"}
-	local AITargetCount = 5
-	
-	for AISim = 1, TargetCount do
-		if HasProperty(TargetArray[AISim],"BUILDING_NPC") then
-			if GetState(TargetArray[AISim],STATE_TOWNNPC) then
-				SetState(TargetArray[AISim],STATE_TOWNNPC,false)
-				SetProperty(TargetArray[AISim],"townnpc","townnpc")
-			end
-		end
-	end
-
-	if trial_HumanPlayerWantsInteraction() then
-		CutsceneSetTimeBar("",SleepTime)
-	else
-		SleepTime = 1
-	end	
-
-	trial_MeasureBar(true)
-
-	for i=1,Actions do
-		for AISim = 1, AITargetCount do
-			trial_RunAIPlan(AITargetArray[AISim])
-		end
-		Sleep(SleepTime/Actions)
-	end
-	trial_MeasureBar(false)
-	
-	if CutsceneLocalPlayerIsWatching("") then
-		HudCancelUserSelection()
-	end
-	
-	PlayAnimation("judge", "sit_write_out")
-	CarryObject("judge","",false)
-	StopAnimation("judge")
-	for AISim = 1, TargetCount do
-		if HasProperty(TargetArray[AISim],"EX_BUILDING_NPC") then
-			if HasProperty(TargetArray[AISim],"townnpc") then
-				SetState(TargetArray[AISim],STATE_TOWNNPC,true)
-				RemoveProperty(TargetArray[AISim],"townnpc")
-			end
-		end
-	end		
-
-	Sleep(0.5)
-	RemoveAllObjectDependendImpacts("accuser", "")  
-
-	trial_Cam("TrialMainCam")
-
-	-- Urteilsfindung
-	local DecisionTextLabel, AnnouncementLabel
-
-	trial_UpdatePanelTrial(0)
-
-	if confession==2 then
-		-- "Das gericht wird jetzt entscheiden, ob das vom Klger geforderte Strafma angemessen ist."
-		trial_PlayRelevantJuryAni("judge",60)
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_INTRO")
-		DecisionTextLabel = "@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_SCREENPLAYER_"
-		AnnouncementLabel = "@L_LAWSUIT_6_DECISION_A_APPROPRIATEQ_ANNOUNCEMENTS_"
-	else
-		trial_PlayRelevantJuryAni("judge",60)
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_A_GUILTYQ_INTRO")
-		DecisionTextLabel = "@L_LAWSUIT_6_DECISION_A_GUILTYQ_SCREENPLAYER_"
-		AnnouncementLabel = "@L_LAWSUIT_6_DECISION_A_GUILTYQ_ANNOUNCEMENTS_"
-	end
-
-	-- Entscheidungen Jury
-	local conviction_cnt = 0
-	--richter und beisitzer drfen sich entscheiden, wenn sie spieler sind
-	SetData("DecisionParam","judge")
-	SetData("JudgeDecision",-1)
-	
-	local JudgeDecision = MsgSayInteraction("judge","judge",0,
-		"@B[1,"..DecisionTextLabel.."+1]"..
-		"@B[2,"..DecisionTextLabel.."+2]",
-		trial_ConvictionDecision,
-		""..DecisionTextLabel.."+0",GetID("judge"))
-
-	if JudgeDecision == "C" then
-		JudgeDecision = trial_ConvictionDecision()
-	end
-	if JudgeDecision == 1 then
-		conviction_cnt = conviction_cnt+1
-		trial_PlayRelevantJuryAni("judge",100)
-		MsgSay("judge",""..AnnouncementLabel.."+0")
-	else
-		trial_PlayRelevantJuryAni("judge",0)
-		MsgSay("judge",""..AnnouncementLabel.."+1")
-	end
-	
-	SetData("JudgeDecision",JudgeDecision)
-
-	--assessor1
-	SetData("DecisionParam","assessor1")
-	local Assessor1Decision = MsgSayInteraction("assessor1","assessor1",0,
-		"@B[1,"..DecisionTextLabel.."+1]"..
-		"@B[2,"..DecisionTextLabel.."+2]",
-		trial_ConvictionDecision,
-		""..DecisionTextLabel.."+0",GetID("assessor1"))
-
-	if Assessor1Decision == "C" then
-		Assessor1Decision = trial_ConvictionDecision()
-	end
-	if Assessor1Decision == 1 then
-		conviction_cnt = conviction_cnt+1
-		trial_PlayRelevantJuryAni("assessor1",100)
-		MsgSay("assessor1",""..AnnouncementLabel.."+0")
-	else
-		trial_PlayRelevantJuryAni("assessor1",0)
-		MsgSay("assessor1",""..AnnouncementLabel.."+1")
-	end
-
-	--assessor2
-	SetData("DecisionParam","assessor2")
-	local Assessor2Decision = MsgSayInteraction("assessor2","assessor2",0,
-		"@B[1,"..DecisionTextLabel.."+1]"..
-		"@B[2,"..DecisionTextLabel.."+2]",
-		trial_ConvictionDecision,
-		""..DecisionTextLabel.."+0",GetID("assessor2"))
-
-	if Assessor2Decision == "C" then
-		Assessor2Decision = trial_ConvictionDecision()
-	end
-	if Assessor2Decision == 1 then
-		conviction_cnt = conviction_cnt+1
-		trial_PlayRelevantJuryAni("assessor2",100)
-		MsgSay("assessor2",""..AnnouncementLabel.."+0")
-	else
-		trial_PlayRelevantJuryAni("assessor2",0)
-		MsgSay("assessor2",""..AnnouncementLabel.."+1")
-	end
-
-	SetData("judgedecision",-1)
-	SetData("assessor1decision",-1)
-	SetData("assessor2decision",-1)
-
-	local TrialCosts = 250 + GetNobilityTitle("accused") * 250
-	local DecisionForFinalComment = 0
-	trial_Cam("JudgeFromBelowCam")
-	-- Urteilsverkndung--------------------------------------------
-
---		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_+0") -- Rausgenommen weil keine Speech aufnahme..
-	if confession==2 or conviction_cnt>=2 then
-		if confession==2 and conviction_cnt<2 then
---			PlayAnimationNoWait("judge", "sit_talk")
---			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD"..GenderType)
---			PlayAnimationNoWait("judge", "sit_talk")
---			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+0")
---			PlayAnimationNoWait("judge", "sit_talk")
---			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+1")
-			SentenceLevel = SentenceLevel - 1
-		else
---			PlayAnimationNoWait("judge", "sit_talk")
---			MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY"..GenderType,GetID("accused"))
-			if conviction_cnt==2 then
---				PlayAnimationNoWait("judge", "sit_talk")
---				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_HALF")
-				SentenceLevel = SentenceLevel - 1;
-			else
---				PlayAnimationNoWait("judge", "sit_talk")
---				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_FULL")
-			end
-		end
-
-		local PenaltyType, PenaltyValue = trial_JudgeChooseSentence(SentenceLevel)
-
-		-- money penalty
-		if SentenceLevel>0 then
-			trial_GetMoneyPenalty(SentenceLevel, SeverityOfLaw)
-		end
-		
-		DecisionForFinalComment = 1
-		-- PlayAnimationNoWait("judge", "talk_sit_short")
-		-- MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_EXECUTE_+0")
-		
-		if PenaltyType>-1 then
-			CityAddPenalty("settlement","accused",PenaltyType,PenaltyValue)
-			xp_ChargeCharacter("accuser", SentenceLevel)
-		end
-		
-	else -- gerichtskosten trt die anklage
-		trial_PlayRelevantJuryAni("judge",0)
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY"..GenderType,GetID("accused"))
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_NOTGUILTY_TOBOTH",TrialCosts)
-		if conviction_cnt==0 then
-			TrialCosts = GetMoney("accuser")/5 --20%
-			if TrialCosts<1000 then TrialCosts=1000 end
-		elseif conviction_cnt==1 then
-			TrialCosts = GetMoney("accuser")/40 --2.5 %
-			if TrialCosts<500 then TrialCosts=500
-			elseif TrialCosts>5000 then TrialCosts=5000 end
-		else
-			TrialCosts = 0 --darf nicht passieren
-		end				
-		CreditMoney("settlement",TrialCosts,"CostAdministration")
-		CreditMoney("accuser",-TrialCosts,"CostAdministration")
-		DecisionForFinalComment = 0
-		xp_ChargeCharacter("accused", SentenceLevel)
-	end
-	
-	--trial_Cam("TrialMainCam")
-	--local time = PlayAnimationNoWait("judge", "sit_judge_hammer")
-	--Sleep(1.5)
-	--CarryObject("judge","Handheld_Device/Anim_judge_hammer.nif",false)
-	--Sleep(0.6)
-	--for i=0,12 do
-	--	PlaySound3DVariation("judge","Locations/hammer")
-	--	Sleep(0.3)
-	--end
-	--Sleep(time - 7)
-	--CarryObject("judge","",false)
-	Sleep(1)
-	PlayAnimationNoWait("judge", "talk_sit_short")
-	MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
-
-	--Reactions
-	if DecisionForFinalComment == 1 then
-		--camera_CutsceneDialogCam("","accused",0,0)
-		--PlayAnimationNoWait("accused", "shake_head")
-		--MsgSay("accused","@L_LAWSUIT_6_DECISION_D_REACTIONS_GUILTY")
-		if DynastyIsPlayer("accused") then
-			gameplayformulas_StartHighPriorMusic(MUSIC_NEGATIVE_EVENT)
-		elseif DynastyIsPlayer("accuser") then
-			gameplayformulas_StartHighPriorMusic(MUSIC_POSITIVE_EVENT)
-		end
-	else
-		--camera_CutsceneDialogCam("","accuser",0,0)
-		--PlayAnimationNoWait("accuser", "shake_head")
-		--MsgSay("accuser","@L_LAWSUIT_6_DECISION_D_REACTIONS_NOTGUILTY")
-		if DynastyIsPlayer("accused") then
-			gameplayformulas_StartHighPriorMusic(MUSIC_POSITIVE_EVENT)
-		elseif DynastyIsPlayer("accuser") then
-			gameplayformulas_StartHighPriorMusic(MUSIC_NEGATIVE_EVENT)
-		end			
-	end
-end
+-- Ende
 
 function StopAllMeasures()
 	BuildingGetRoom("courtbuilding", "Judge", "judgeroom")
@@ -1298,176 +1692,7 @@ function StopAllMeasures()
 	end
 end
 
-function JudgeChooseSentence(SentenceLevel)
-	local PenaltyType = -1
-	local PenaltyValue = 0
 
-	PlayAnimationNoWait("judge", "sit_talk")
-	if SentenceLevel<1 then
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+0",GetID("accused"),PenaltyValue)
-	elseif SentenceLevel==1 then
-		PenaltyType = PENALTY_MONEY
-	elseif SentenceLevel==2 or SentenceLevel==3 then
-		PenaltyValue = 8
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+2",GetID("accused"),PenaltyValue)
-		PenaltyType = PENALTY_PILLORY
-	elseif SentenceLevel==4 then
-		PenaltyType = PENALTY_TITLE
-		if (SimGetOfficeID("accused")~=-1) then
-			MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+3",GetID("accused"))
-			RemoveAllObjectDependendImpacts( "accused", "Office" )
-			GetHomeBuilding("accused","home")
-			BuildingGetCity("home","homecity")				
-			CityRemoveFromOffice("homecity","accused")
-			CityRemoveApplicant("homecity","accused") --lscht auch eine Bewerbung
-		elseif (GetNobilityTitle("accused")>1) then
-			MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+5",GetID("accused"))
-			SetNobilityTitle("accused", 2, true)
-		else
-			MsgSay("judge","@L_NEWSTUFF_NOTITLEPENALTY_+0")
-			PlayAnimationNoWait("judge", "sit_talk")
-			MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"))
-			PenaltyType = PENALTY_PRISON
-			local YearsPerRound = Options:GetValueInt("YearsPerRound")
-			PenaltyValue = 96 / YearsPerRound
-		end
-	elseif SentenceLevel==5 then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+6",GetID("accused"),PenaltyValue)
-		PenaltyType = PENALTY_PRISON
-		local YearsPerRound = Options:GetValueInt("YearsPerRound")
-		PenaltyValue = 96 / YearsPerRound
-	elseif SentenceLevel==6 then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+7",GetID("accused"),PenaltyValue)
-		PenaltyType = PENALTY_DEATH
-		SetProperty("accused","ExecutedBy",GetID("accuser"))
-		--mission_ScoreAccuse("accuser")
-	end
-	
-	return PenaltyType, PenaltyValue
-end
-
-function AccuserChooseSentence()
-	trial_Cam("TrialMainCam")
-	local AccuserSentence = MsgSayInteraction("accuser","accuser",0,
-		-- PanelParam
-		"@B[1,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+1]"..
-		"@B[2,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+2]"..
-		"@B[3,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+3]"..
-		"@B[4,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+4]"..
-		"@B[5,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+5]"..
-		"@B[6,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+6]",
-		trial_AccuserDecideSentence, --AIFunc
-		"@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+0",GetID("accused")) --Message Text
-
-	-- Berechne default-Strafma
-	local SentenceLevel = GetData("TotalEvidenceValue") / 3
-	SetData("DefaultSentence",math.floor(SentenceLevel))	-- for judge AI func
-	camera_CutsceneDialogCam("","accuser",0,0)
-	local SentenceAnnouncer = "accuser"
-	
-	if AccuserSentence=="C" then	
-		trial_PlayRelevantTalkAni("accuser")
-		MsgSay("accuser","@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_NOCOMMENT_+0")
-
-		SentenceLevel = MsgSayInteraction("judge","judge",0,
-		-- PanelParam
-		"@B[1,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+1]"..
-		"@B[2,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+2]"..
-		"@B[3,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+3]"..
-		"@B[4,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+4]"..
-		"@B[5,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+5]"..
-		"@B[6,@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+6]",
-		trial_JudgeDecideSentence, --AIFunc
-		"@L_LAWSUIT_5_DEFENSE_A_SCREENPLAYER_ACCUSER_+0",GetID("accused")) --Message Text
-		if not (SentenceLevel>=1 and SentenceLevel<=6) then
-			SentenceLevel = trial_GetSubjectiveSentence("judge")/6+1
-		end
-	else
-		SentenceLevel = AccuserSentence
-	end
-
-	if (SentenceLevel<1) then
-		SentenceLevel = 1
-	elseif (SentenceLevel>6) then
-		SentenceLevel = 6
-	end
-		
-	PlayAnimationNoWait(SentenceAnnouncer, "talk")
-	if AccuserSentence==1 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_MONEY"..GenderType)
-		SentenceLevel = 1
-	elseif AccuserSentence==2 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_PILLORY"..GenderType)
-		SentenceLevel = 2
-	elseif AccuserSentence==3 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_MOREMONEY"..GenderType)
-		SentenceLevel = 3
-	elseif AccuserSentence==4 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_TITLE"..GenderType)
-		SentenceLevel = 4
-	elseif AccuserSentence==5 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_PRISON"..GenderType)
-		SentenceLevel = 5
-	elseif AccuserSentence==6 then
-		MsgSay(SentenceAnnouncer,"@L_LAWSUIT_5_DEFENSE_A_SPEAK_ACCUSER_DEATH"..GenderType)
-		SentenceLevel = 6
-	end
-	SetData("AccuserSentence",SentenceLevel)
-	
-	return SentenceLevel
-end
-
-function LawSeverityConsideration(SeverityOfLaw)
-	local LawReplace
-	if SeverityOfLaw==0 then
-		LawReplace = "_LIBERAL"
-		trial_ModifyTotalEvidenceValue(-5)
-	elseif SeverityOfLaw==1 then
-		LawReplace = "_NORMAL"
-	else
-		LawReplace = "_HARD"
-		trial_ModifyTotalEvidenceValue(8)
-	end
-	
-	return LawReplace
-end
-
-function TitlesConsideration()
-	local AcusdTitle = GetNobilityTitle("accused")
-	local AcusrTitle = GetNobilityTitle("accuser")
-	GetDynasty("accused","accuseddynasty")
-	GetDynasty("accuser","accuserdynasty")
-	if GetImpactValue("accuseddynasty","BeFromNobleBlood")~=0 then
-		if AcusdTitle > AcusrTitle then
-			PlayAnimationNoWait("judge", "sit_yes")
-			MsgSay("judge","@L_PRIVILEGES_130_BEFROMNOBLEBLOOD_LAWSUIT_JUDGE",GetID("accused"))
-			if GetImpactValue("accuserdynasty","BeFromNobleBlood")~=0 then
-				trial_ModifyTotalEvidenceValue(-3)
-			else
-				trial_ModifyTotalEvidenceValue(-5)
-			end
-		elseif AcusedTitle == AcusrTitle then
-			PlayAnimationNoWait("judge", "sit_talk")
-			MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_EQUALTITLE_+0",GetID("accused"),GetID("accuser"))
-		else
-			PlayAnimationNoWait("judge", "sit_yes")
-			MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_GREATERTITLE_+0",GetID("accused"),GetID("accuser"))
-			trial_ModifyTotalEvidenceValue(3)
-		end
-	elseif GetImpactValue("accuserdynasty","BeFromNobleBlood")~=0 then
-		PlayAnimationNoWait("judge", "sit_yes")
-		MsgSay("judge","@L_LAWSUIT_5_DEFENSE_A_NOBLEFROMBLOOD_ACCUSERTITLE_+0",GetID("accuser"),GetID("accused"))
-		trial_ModifyTotalEvidenceValue(5)
-	end
-	
-	if GetImpactValue("accuser","AimForInquisitionalProceeding")~=0 then
-		trial_ModifyTotalEvidenceValue(3)
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_PRIVILEGES_113_AIMFORINQUISITIONALPROCEEDING_LAWSUIT_JUDGE",GetID("accused"))
-	end
-end
 ----------------------------------------------------------------------------------
 --- Helper functions
 ----------------------------------------------------------------------------------
@@ -2000,390 +2225,4 @@ function FugitiveExpires()
         --PenaltyFinish("Penalty") -- Maybe to unsecure
 		PenaltyReset("Penalty", 0)
    end
-end
-
-function GetMoneyPenalty(SentenceLevel, SeverityOfLaw)
-	local moneyPenaltyValue = 0
-	local buildingCount = DynastyGetBuildingCount("accused")
-	
-	-- Calculate the fine
-	if SimGetWealth("accused") > 0 then
-		moneyPenaltyValue = 1/2 * (SeverityOfLaw + 1) * SentenceLevel / 6 * (SimGetWealth("accused") + buildingCount * (1000 + Rand(1000)))
-	else 
-		moneyPenaltyValue = 1/2 * (SeverityOfLaw + 1) * SentenceLevel / 6 * buildingCount * (1000 + Rand(1000))
-	end
-	
-	-- judge speaks
-	PlayAnimationNoWait("judge", "talk_sit_short")
-	if (moneyPenaltyValue < 1500) then
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+1",GetID("accused"),moneyPenaltyValue)
-	else
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+4",GetID("accused"),moneyPenaltyValue)
-	end
-	
-	if (SimGetWealth("accused") > moneyPenaltyValue) then
-		-- have enough money to pay the fine
-		CityAddPenalty("settlement","accused",PENALTY_MONEY,moneyPenaltyValue)
-	else
-		-- not enought money to pay the fine, get 6h to find the money or buildings would be seized
-		PlayAnimationNoWait("judge", "talk_sit_short")
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_ANNOUNCEMENT_+8",GetID("accused"),moneyPenaltyValue)
-		CreateScriptcall("TakeFineOrSeize",6,"Cutscenes/Trial.lua","TakeFineOrSeize","accused","accuser",moneyPenaltyValue)
-	end
-end
-
-function TakeFineOrSeize(moneyPenaltyValue)
-	GetSettlement("", "settlement")
-	
-	if (SimGetWealth("") > moneyPenaltyValue) then
-		-- pay the fine
-		CityAddPenalty("settlement","",PENALTY_MONEY,moneyPenaltyValue)
-	else
-	
-		-- Seize of properties
-		moneyPenaltyValue = trial_SeizeProperties(moneyPenaltyValue)
-
-        if (moneyPenaltyValue < 0) then
-        	-- seize resolves the debt
-        	CityAddPenalty("settlement","",PENALTY_MONEY,SimGetWealth(""))
-        	CreditMoney("",-moneyPenaltyValue,"Seize rest")
-        	feedback_MessagePolitics("","@L_LAWSUIT_7_BUILDINGSEIZE_HEAD_+0",
-						"@L_LAWSUIT_7_BUILDINGSEIZE_BODY_+0",GetID(""))
-        else 
-        	-- seize didn t resolve the debt => sentenced to death
-        	feedback_MessagePolitics("","@L_LAWSUIT_7_BUILDINGSEIZE_HEAD_+1",
-						"@L_LAWSUIT_7_BUILDINGSEIZE_BODY_+1",GetID(""))
-			CityAddPenalty("settlement","",PENALTY_MONEY,SimGetWealth(""))
-			SetProperty("","ExecutedBy",GetID("Destination"))
-			CityAddPenalty("settlement","",PENALTY_DEATH,0)
-        end
-	end
-end
-
-function SeizeProperties(moneyPenaltyValue)
-
-	-- we create a random sim for giving the buildings to
-	CityGetRandomBuilding("settlement",-1,-1,-1,-1,FILTER_IGNORE,"RandomBuilding")
-	GetLocatorByName("RandomBuilding", "Entry1", "RandomPos")	
-	SimCreate(900,"RandomPos","RandomPos","NewOwner")
-	
-	-- look for each building
-	GetDynasty("", "Dyn")
-	local BldCount = DynastyGetBuildingCount("Dyn")
-	for i=0, BldCount - 1 do
-    	if DynastyGetBuilding2("Dyn", i, "building") then
-    		
-    		-- we seize the building
-    		local buildingPrice = BuildingGetBuyPrice("building")
-			BuildingSetOwner("building","NewOwner")
-			BuildingSetForSale("building", true)
-    		
-    		moneyPenaltyValue = moneyPenaltyValue - buildingPrice / 2
-    		
-    		-- enough building were seized
-    		if (moneyPenaltyValue < 0) then
-    			return moneyPenaltyValue
-    		end
-    	end
-    end
-    
-    return moneyPenaltyValue
- end
- 
- function TrialOpening()
- if trial_SimIsPresent("judge")==1 then
-		local time = PlayAnimationNoWait("judge", "sit_judge_hammer")
-		Sleep(1.5)
-		CarryObject("judge","Handheld_Device/Anim_judge_hammer.nif",false)
-		Sleep(0.6)
-		for i=0,12 do
-			PlaySound3DVariation("judge","Locations/hammer")
-			Sleep(0.3)
-		end
-		Sleep(time - 7)
-		CarryObject("judge","",false)
-		Sleep(1)
-		PlayAnimationNoWait("judge", "talk_sit_short")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_START")
-	else
-		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_START")
-	end
-end
-
- function CheckSomeoneIsMissing()
- --judge is dead
-	if trial_SimIsPresent("judge")==2 then
-		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_+0")
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_JUDGE_MSG_BODY")
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end	
-		EndCutscene("")
-	end
-
-	--accuser is dead
-	if trial_SimIsPresent("accuser")==2 then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_+0")
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSER_MSG_BODY")
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-        EndCutscene("")
-	end
-
-	--accused dead
-	if trial_SimIsPresent("accused")==2 then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_+0")
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_HEAD",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_DEAD_ACCUSED_MSG_BODY")
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end	
-		EndCutscene("")
-	end
-	
-	--judge is lost and jailed somewhere or knocked unconscious by the accused's henchmen
-	if trial_SimIsPresent("judge")==0 and GetState("judge",STATE_HIJACKED) or GetState("judge",STATE_UNCONSCIOUS) then
-		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER")
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+1",GetID("judge"))
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("accuser"))
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("accused"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("assessor1"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+3",GetID("assessor2"))
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end
-		EndCutscene("")
-	end
-
-	--accused has immunity
-	if GetImpactValue("accused","HaveImmunity")==1 and GetImpactValue("accused","HasRepealedImmunity") < 1 then
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_RICHTER_MESSAGES_+0","@L_NEWSTUFF_TRIALCANCELLED_IMMUNITY_+0",GetID("accused"))
-		BuildingFindSimByProperty("courtbuilding","BUILDING_NPC", 1,"usher")
-		MsgSay("usher","@L_LAWSUIT_1_INSTALL_USHER_IMMUNITY_+0",GetID("accused"))
-		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end	
-		EndCutscene("")
-	end
-	
-	--accuser is lost and jailed somewhere or knock unconscious by the accused's henchmen
-	if trial_SimIsPresent("accuser")==0 and GetState("accuser",STATE_HIJACKED) or GetState("accuser",STATE_UNCONSCIOUS) then --State pregnant is fix for dumb npcs that dont time having children properly allowing human players to get off easy
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER")
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+0",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+1",GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("judge"),GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("accused"),GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("assessor1"),GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_KLAEGER_MESSAGES_+3",GetID("assessor2"),GetID("accuser"),GetID("accused"))
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end
-		EndCutscene("")
-	end
-
-	--accused is lost and jailed somewhere
-	if trial_SimIsPresent("accused")==0 and GetState("accused",STATE_HIJACKED) then
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER")
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+0",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+1",GetID("accused"))
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ENTFUEHRT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"))
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end
-		EndCutscene("")
-	end
-
-	--judge is not in here
-	if trial_SimIsPresent("judge")==0 then
-		-- fine judge ll have to pay
-		local fine = 1000 + GetMoney("judge")/25
-		MsgSay("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER",GetID("judge"),fine)
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+0",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+1",GetID("judge"),fine)
-		CityAddPenalty("settlement","judge",PENALTY_MONEY,2500)
-		CreditMoney("settlement",2500,"CostAdministration")
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_RICHTER_MESSAGES_+3",GetID("judge"))
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end
-		EndCutscene("")
-	end
-
-	--accuser is not in here
-	if trial_SimIsPresent("accuser")==0 then --This is a fix for dumb npc's that allow human player to get off easy because they don't time their children right
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER",GetID("accuser"),GetID("accused"))
-		CutsceneCollectEvidences("","accuser","accused",true)		-- mark collected evidences as used		
-		feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+0",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+1",GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
-		feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+2",
-						"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_KLAEGER_MESSAGES_+3",GetID("accuser"),GetID("accused"))
-		if GetImpactValue("accused","IsCharged")==1 then
-		    RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end	
-		EndCutscene("")
-	end
-	
-	--accused is not in here
-	if trial_SimIsPresent("accused")==0 then
-	
-    	local lNumCrimes = CutsceneCollectEvidences("","accuser","accused")
-    	local RawPenalty = 0
-    	for iC = 0,lNumCrimes-1 do
-    		RawPenalty = RawPenalty + GetData("evidence"..iC.."value")
-    	end
-    	local FugitiveYears = math.floor(RawPenalty/6 + 1)
-    	if FugitiveYears > 6 then 
-    		FugitiveYears = 6
-    	end
-    
-    	local Options = FindNode("\\Settings\\Options")
-    	local YearsPerRound = Options:GetValueInt("YearsPerRound")
-    	local FugitiveHours = FugitiveYears * 24 / YearsPerRound
-	
-		PlayAnimationNoWait("judge", "sit_talk")
-		MsgSay("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER",GetID("accused"),FugitiveYears)
-		
-
-		if (RawPenalty<16) then
-			-- give the accused a chance to surrender himself or pay a fee
-			CreateCutscene("queries","myquery")
-			CopyAliasToCutscene("accused","myquery","Sim")
-			CopyAliasToCutscene("accuser","myquery","Accuser")
-			CopyAliasToCutscene("assessor1","myquery","Assessor1")
-			CopyAliasToCutscene("assessor2","myquery","Assessor2")
-			CopyAliasToCutscene("judge","myquery","Judge")
-			CopyAliasToCutscene("settlement","myquery","settlement")
-			SetData("RawPenalty",RawPenalty)
-			SetData("FugitiveYears",FugitiveYears)
-			CutsceneSetData("myquery","RawPenalty")
-			CutsceneSetData("myquery","FugitiveYears")
-			CutsceneCallScheduled("myquery","DecideFugitive")
-		else 
-			-- punish him
-			CityAddPenalty("settlement","accused",PENALTY_FUGITIVE,FugitiveYears)
-			AddImpact("accused","REVOLT",1,FugitiveYears)
-			local outlawed = 1
-			if HasProperty("accused", "Outlawed") then
-				outlawed = outlawed + GetProperty("accused", "Outlawed")
-			end
-			SetProperty("accused", "Outlawed", outlawed)
-			SetProperty("accused", GetName("Settlement").."Start", GetRound())
-			SetProperty("accused", GetName("Settlement").."FugitiveHours", FugitiveYears)
-			CreateScriptcall("Fugitive_End",FugitiveYears,"Cutscenes/Trial.lua","FugitiveExpires","accused","accused","settlement")
-			feedback_MessagePolitics("accused","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+0",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+1",GetID("accused"),FugitiveYears)
-			feedback_MessagePolitics("accuser","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
-			feedback_MessagePolitics("judge","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
-			feedback_MessagePolitics("assessor1","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
-			feedback_MessagePolitics("assessor2","@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+2",
-							"@L_LAWSUIT_3_INTRO_PERSON_NOT_PRESENT_ANGEKLAGTER_MESSAGES_+3",GetID("accused"),FugitiveYears)
-		end
-		SetNobilityTitle("accused", 2, true)
-		GetNearestSettlement("judge","TrialCity")
-		CityRemoveFromOffice("accused","TrialCity")
-		if GetImpactValue("accused","IsCharged")==1 then
-			RemoveImpact("accused","IsCharged")
-		end
-		if GetImpactValue("accuser","HasCharged")==1 then
-			RemoveImpact("accuser","HasCharged")
-		end	
-		EndCutscene("")
-	end
-end
-
-function NoEvidence()
-	trial_Cam("TrialMainCam")
-	local TrialFee = 1000
-	PlayAnimationNoWait("accuser", "cogitate")
-	MsgSay("accuser","@L_LAWSUIT_4_ACCUSAL_NOEVIDENCE_ACCUSER")
-	PlayAnimationNoWait("judge", "sit_no")
-	MsgSay("judge","@L_LAWSUIT_4_ACCUSAL_NOEVIDENCE_JUDGE",TrialFee)
-	PlayAnimationNoWait("judge", "sit_talk")
-	MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
-	CreditMoney("accuser",-TrialFee,"CostAdministration")
-	CreditMoney("settlement",TrialFee,"CostAdministration")
 end
