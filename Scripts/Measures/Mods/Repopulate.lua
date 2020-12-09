@@ -77,11 +77,11 @@ end
 
 function SetEarlyHours()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 2 and GetGametime() <= 3 do
+		while GetGametime() >= 3 and GetGametime() <= 2 do
 			Sleep(30)
 		end
 	end
-	CreateScriptcall("RepeatRepopulate",24,"Measures/Mods/Repopulate.lua","Repeat","",nil)
+	CreateScriptcall("RepeatRepopulate",23,"Measures/Mods/Repopulate.lua","Repeat","",nil)
 end
 
 function FamilyCheck()
@@ -348,11 +348,11 @@ end
 
 function MarketItemCountCheck()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 3 and GetGametime() <= 4 do
+		while GetGametime() >= 4 and GetGametime() <= 3 do
 			Sleep(30)
 		end
 	end
-	CreateScriptcall("MarketHelper",24,"Measures/Mods/Repopulate.lua","MarketItemCountCheck","",nil)
+	CreateScriptcall("MarketHelper",23,"Measures/Mods/Repopulate.lua","MarketItemCountCheck","",nil)
 	
 	local Market = Find("", "__F((Object.GetObjectsOfWorld(Building))AND(Object.IsType(14)))","Merchant", -1) --returns all Markets in the current game
 	local idx
@@ -409,20 +409,20 @@ function AIHospitalCheck()
 	if not HasProperty("","FirstRun") then
 		repopulate_CleanUp()
 	else
-		while GetGametime() >= 3 and GetGametime() <= 4 do
+		while GetGametime() >= 4 and GetGametime() <= 3 do
 			Sleep(30)
 		end
-		CreateScriptcall("HospitalChecker",24,"Measures/Mods/Repopulate.lua","AIHospitalCheck","",nil)
+		CreateScriptcall("HospitalChecker",23,"Measures/Mods/Repopulate.lua","AIHospitalCheck","",nil)
 	end
 end
 
 function PoisonWell()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 4 and GetGametime() <= 5 do
+		while GetGametime() >= 5 and GetGametime() <= 4 do
 			Sleep(30)
 		end
 	end
-	CreateScriptcall("PoisonWell",24,"Measures/Mods/Repopulate.lua","PoisonWell","",nil)
+	CreateScriptcall("PoisonWell",23,"Measures/Mods/Repopulate.lua","PoisonWell","",nil)
 	
 	local AlchemistShop = Find("", "__F((Object.GetObjectsOfWorld(Building))AND(Object.IsType(16)))","Alchemy", -1) --returns all townhalls in the current game
 	local idx
@@ -456,11 +456,11 @@ end
 
 function NewKingMeasures()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 3 and GetGametime() <= 4 do
-			Sleep(30)
+		while GetGametime() >= 4 and GetGametime() <= 3 do
+			Sleep(40)
 		end
 	end
-	CreateScriptcall("NewKingMeasures",24,"Measures/Mods/Repopulate.lua","NewKingMeasures","",nil)
+	CreateScriptcall("NewKingMeasures",23,"Measures/Mods/Repopulate.lua","NewKingMeasures","",nil)
 
 	Sleep(2)
 	if find_King("King") then
@@ -528,11 +528,11 @@ end
 
 function NewEmperorMeasures()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 3 and GetGametime() <= 4 do
-			Sleep(30)
+		while GetGametime() >= 4 and GetGametime() <= 3 do
+			Sleep(45)
 		end
 	end
-	CreateScriptcall("NewEmperorMeasures",24,"Measures/Mods/Repopulate.lua","NewEmperorMeasures","",nil)
+	CreateScriptcall("NewEmperorMeasures",23,"Measures/Mods/Repopulate.lua","NewEmperorMeasures","",nil)
 
 	Sleep(2)
 	if find_Emperor("Emperor") then
@@ -634,11 +634,11 @@ end
 
 function NewPopeMeasures()
 	if HasProperty("","FirstRun") then
-		while GetGametime() >= 3 and GetGametime() <= 4 do
-			Sleep(30)
+		while GetGametime() >= 4 and GetGametime() <= 3 do
+			Sleep(50)
 		end
 	end
-	CreateScriptcall("NewPopeMeasures",24,"Measures/Mods/Repopulate.lua","NewPopeMeasures","",nil)
+	CreateScriptcall("NewPopeMeasures",23,"Measures/Mods/Repopulate.lua","NewPopeMeasures","",nil)
 	
 	Sleep(2)
 	if find_Pope("Pope") then
