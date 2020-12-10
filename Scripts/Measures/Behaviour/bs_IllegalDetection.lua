@@ -1,5 +1,9 @@
 function Run()
 	
+	if SimGetAge("") < GL_AGE_FOR_GROWNUP then
+		return "-Flee"
+	end
+	
 	if IsType("","Cart") then
 		Sleep(2)
 		return "-"
@@ -486,7 +490,7 @@ function Run()
 		end
 		
 		if Status < DIP_NEUTRAL then
-			return
+			return ""
 			--return ""   --this might be needed again if this measure is too disruptive
 		end
 		
