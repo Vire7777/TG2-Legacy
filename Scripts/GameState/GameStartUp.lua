@@ -5,7 +5,7 @@ function Init()
 	this:AttachModule("WorldSessionCtrl", "cl_WorldSessionController")
 	this:AttachModule("TextSystem","cl_TextSystemModule")
 	
-	this:SetValueInt("GameMode",1)
+	this:SetValueInt("GameMode",2)
 	this:SetValueString("SessionType", "LOCALHOST")
 	
 	InputCtrl = FindNode("\\Application\\Game\\InputCtrl")
