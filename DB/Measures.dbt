@@ -587,4 +587,6 @@ Data:
 15029   "ms_MedicalTreatmentTarget.lua"   ""   "MedicalTreatmentTarget"   41   "hud/buttons/btn_MedicalTreatment.tga"   0   5   0   ""   ""   39   1   0   "none"   0   0   |
 15030   "Mods\PlaceBounty.lua"   "-"   "PlaceBounty"   999   "hud/buttons/btn_039_blackmailCharacter.tga"   0   5   0   ""   ""   0   12   12   "none"   0   0   |
 15031   "Mods\SellMagicBeans.lua"   "-"   "SellMagicBeans"   999   "hud/buttons/btn_MagicBeans.tga"   0   5   13   ""   ""   0   12   0   "particles/radius.nif"   15   0   |
+15032   "Mods\Taxes.lua"   "-"   "ShowCivilTaxes"   999   "hud/buttons/btn_ShowCivilTaxes.tga"   0   2   0   ""   ""   0   0   0   "none"   0   0   |
+15033   "Mods\ManageWages.lua"   "-"   "ManageWages"   999   "hud/buttons/btn_ManageWages.tga"   0   4   0   ""   ""   0   0   0   "none"   0   0   |
 20000   "ms_run.lua"   "-"   "run"   10   "hud/buttons/btn_Sim_WalkTo.tga"   0   4   0   ""   ""   0   0   0   "none"   0   0   |

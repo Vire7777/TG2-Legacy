@@ -63,12 +63,73 @@ function Run()
 		repopulate_BuildingCheck()
 		Sleep(2)
 		repopulate_InitiateOnce() --This MUST be last so that the cleanup function will not be called when this file is called the first time!!!! I added clean up funtion to all the automated functions but they are only automated after the first call!!!!
+		Sleep(2)
+		repopulate_PlayerTaxes()
+		Sleep(2)
+		repopulate_ManageWorkerWages()
 	end
+	
 	SetState("", STATE_LOCKED, false)
 end
 
 function CleanUp()
 	
+end
+
+function ManageWorkerWages()
+	repopulate_FindPlayerDynasties()
+	
+	for dynNb=0,ListSize("DynToCheck")-1 do
+		ListGetElement("DynToCheck",dynNb,"Dyn")
+		DynastyGetMember("Dyn", 0, "Sim")
+		CreateScriptcall("ManageWorkerWages",0,"Measures/Mods/ManageWages.lua","ManageWorkerWages","Sim","",0)--18.9
+	end
+end
+
+function PlayerTaxes()
+	repopulate_FindPlayerDynasties()
+	
+	for dynNb=0,ListSize("DynToCheck")-1 do
+		ListGetElement("DynToCheck",dynNb,"Dyn")
+		DynastyGetMember("Dyn", 0, "Sim")
+		
+		-- init the attached property if tax was paid
+		if (GetProperty("Dyn", "CIVILTAXES_ISPAID") == nil) then
+    		SetProperty("Dyn", "CIVILTAXES_ISPAID", 0)
+		end
+		
+		CreateScriptcall("CivilTaxCollection",0,"Measures/Mods/Taxes.lua","CivilTaxCollection","Sim","",0)
+	end
+end
+
+function FindPlayerDynasties()
+	-- If list already exist, we return
+	if (ListSize("DynToCheck") > 0) then
+		return
+	end
+
+	-- Create new list of players	
+	ListNew("DynToCheck")
+
+	local SimCount = ScenarioGetObjects("cl_Sim", 99999, "SimList")
+	for sim=0,SimCount-1 do
+		local SimAlias = "SimList"..sim
+		if GetDynasty(SimAlias,"PlayerDyn") then
+			if DynastyIsPlayer("PlayerDyn") then
+				local notFound = true
+				for j=0,ListSize("DynToCheck") do
+					ListGetElement("DynToCheck",j,"CheckedDyn")
+					if (GetID("CheckedDyn") == GetID("PlayerDyn")) then
+						notFound = false
+					end
+				end
+				
+				if (notFound) then
+					ListAdd("DynToCheck", "PlayerDyn")
+				end
+			end
+		end
+	end
 end
 
 function Repeat() --This is the function in the Scriptcall code and is the meat behind the Run() function constantly repeating

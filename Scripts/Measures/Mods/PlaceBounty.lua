@@ -91,7 +91,7 @@ function toto()
   
   -- Finally create the impact on the target
   AddImpact("Destination","BountyHunt",BountyPower,duration)
-  SetState("",STATE_CONTAMINATED,true)
+  SetState("Destination",STATE_CONTAMINATED,true)
   
   -- You did it
   feedback_MessageCharacter("",

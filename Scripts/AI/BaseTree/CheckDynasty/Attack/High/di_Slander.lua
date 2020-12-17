@@ -14,7 +14,7 @@ function Weight()
 	end
 	BuildingGetCity("MyHouse","MyCity") 
     CityGetDynastyCharList("MyCity","EnemyList") 
-	for i=0,ListSize("EnemyList") do
+	for i=0,ListSize("EnemyList")-1 do
 		ListGetElement("EnemyList",i,"Friends")
 		if DynastyGetDiplomacyState("SIM","Friends") ~= DIP_FOE then
 			ListRemove("EnemyList","Friends")

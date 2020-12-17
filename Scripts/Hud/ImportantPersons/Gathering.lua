@@ -48,8 +48,9 @@ function ImportantPersonsSetupSections()
 	CreateImportantPersonSection("DuellGegner", "@L_IMPORTANTPERSONS_TOPICS_+5")
 	CreateImportantPersonSection("ProcessMember", "@L_IMPORTANTPERSONS_TOPICS_+6")
 	CreateImportantPersonSection("OfficeSession", "@L_IMPORTANTPERSONS_TOPICS_+7")
-  CreateImportantPersonSection("GuildMasters", "@L_IMPORTANTPERSONS_TOPICS_+11")
-
+ 	CreateImportantPersonSection("GuildMasters", "@L_IMPORTANTPERSONS_TOPICS_+11")
+	CreateImportantPersonSection("Debtors", "@L_IMPORTANTPERSONS_TOPICS_+12")
+	
 	-- gunst
 	--CreateImportantPersonSection("TopCandidates", "@L_IMPORTANTPERSONS_TOPICS_+12") This doesn t refer to nothing so i put it in comment for the moment
 	CreateImportantPersonSection("Alliance", "@L_IMPORTANTPERSONS_TOPICS_+3")
@@ -144,6 +145,50 @@ function ImportantPersonsGather_TopTenCLs()
 --	end
 end
 
+function ImportantPersonsGather_Debtors()
+	-- make list of debtors
+	ListNew("Debtors")
+	local nbSims = ScenarioGetObjects("cl_Sim", 9999, "SimAr")
+	for i=0, nbSims-1 do
+		local SimAlias = "SimAr"..i
+		local GBankName = GetProperty(SimAlias, "SchuldenGeb")
+		if (GBankName ~= nil) then
+			ListAdd("Debtors", SimAlias)
+		end
+	end
+	
+	-- if no debtors, we finish
+	if (ListSize("Debtors")==0) then
+		MsgQuick("", "no debtor")
+		return
+	end
+	
+	-- if debtors, find our banks
+	GetDynasty("", "Dyn")
+	local bldCount = DynastyGetBuildingCount("Dyn")
+	for i=0, bldCount - 1 do
+    	if DynastyGetBuilding2("Dyn", i, "Check") then
+    		if (BuildingGetType("Check") == GL_BUILDING_TYPE_BANKHOUSE) then
+    			local BankName = GetID("Check")
+    			
+    			-- for each bank, look if the debtors are in debt with this bank
+            	for j=0, ListSize("Debtors")-1 do
+            		local SimAlias = ListGetElement("Debtors", j, "Sim")
+            		local GBankName = GetProperty("Sim", "SchuldenGeb")
+            		if BankName == GBankName then
+            		
+            			-- if same bank then add them in the list
+            			MsgQuick("", "Found")
+            			SetImportantPersonToSection(GetID(SimAlias), "Debtors", GetDynastyID(""))
+            		end
+        		end
+			end
+    	end
+    end
+    
+    -- delete the list
+    ListClear("Debtors")
+end
 
 function ImportantPersonsGather_GuildMasters()
   GetSettlement("", "City")

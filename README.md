@@ -9,6 +9,10 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
+- [Add] New visuals
+- [Add] new songs
+- [Add] In your book, if you own a bank, you can see who are the debtors
+- [Add] New civil taxes (these taxes have to be paid once a turn at 7 am or before manually and are based on your title, buildings, etc... be afraid not to pay them or you could be seized, going to jail or die
 - [Add] Patron and peasants can become quaksalver and try selling magic beans (if you have a farm)
 - [Add] Religion wars
 - [Add] You can bounty hunt people in mercenary camp
