@@ -7,9 +7,9 @@ function Run()
 	if not GetInsideBuilding("", "HomeBuilding") then
 		return
 	end
-	chr_GainXP("",10000) -- this will add 10.000 XP edit this to your liking (best set to 5000)
-  SetNobilityTitle("",14,true) -- this will give you the highest title (14), edit this if you want a lower title
-  CreditMoney("",1000000,"IncomeOther")
+	--chr_GainXP("",10000) -- this will add 10.000 XP edit this to your liking (best set to 5000)
+	--SetNobilityTitle("",14,true) -- this will give you the highest title (14), edit this if you want a lower title
+	--CreditMoney("",1000000,"IncomeOther")
   
 	local TimeToStudy = duration
 	SetData("TimeToStudy",TimeToStudy)
