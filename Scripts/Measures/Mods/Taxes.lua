@@ -69,6 +69,12 @@ function PayTaxes(dueTaxes)
 end
 
 function TakeFineOrSeize(dueTaxes)
+  if (GetProperty("Dyn", "CIVILTAXES_ISPAID") == 1) then
+    -- your cursor for the next turn tax is put to is not paid
+    SetProperty("Dyn", "CIVILTAXES_ISPAID", 0)
+    return
+  end
+  
 	-- pay the finelocal 
 	local simMoney = GetMoney("")
 	dueTaxes = 1 + dueTaxes - 1
