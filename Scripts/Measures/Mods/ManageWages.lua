@@ -56,19 +56,19 @@ function ManageWorkerWages()
 	local totalWagesBack = 0
 	
 	local buildingCount = DynastyGetBuildingCount2("Dyn")
-	for i = 0, buildingCount - 1 do
-		DynastyGetBuilding2("Dyn", 1, "Building")
+	for buildingnum = 0, buildingCount - 1 do
+		DynastyGetBuilding2("Dyn", buildingnum, "Building")
 		if (BuildingGetClass("Building") == GL_BUILDING_CLASS_WORKSHOP) then
-		
+
     		-- calculate the wages for this building
     		local dueWages = managewages_CalculateWages()
-    
+			
     		-- Find how much you get back
     		local wageChoiceNb = GetProperty("Building", "WageChoice")
 
     		local buildingWagesBack = managewages_CalculateMoneyBack(dueWages, wageChoiceNb)
     		totalWagesBack = totalWagesBack + buildingWagesBack
-    		
+
     		-- Change the worker view about you
     		managewages_ChangeWorkersFavor(wageChoiceNb)
     	end
@@ -80,7 +80,7 @@ function ManageWorkerWages()
 	end
 	
 	-- Launch again
-	CreateScriptcall("ManageWorkerWages",1,"Measures/Mods/ManageWages.lua","ManageWorkerWages","","",0)
+	CreateScriptcall("ManageWorkerWages",24,"Measures/Mods/ManageWages.lua","ManageWorkerWages","","",0)
 end
 
 function CalculateMoneyBack(dueWages, wageChoiceNb)
@@ -101,17 +101,14 @@ function ChangeWorkersFavor(wageChoiceNb)
 
 		-- fine each worker
     	local workerCount = BuildingGetWorkerCount("Building")
-    	MsgQuick("",workerCount)
     	for workerNum = 0, workerCount - 1 do
-    		BuildingGetWorker("Building", workerNum, "Worker")
-    		MsgQuick("","worker numer")
-    		MsgQuick("",workerNum)
-    		local workerLevel = SimGetLevel("Worker")
     		
-    		-- each worker ll like you less
+    		-- find the worker
+    		BuildingGetWorker("Building", workerNum, "Worker")
+    		local workerLevel = SimGetLevel("Worker")
+        
+    		-- each worker will like you less
     		local changeFavor = -1*(Rand(maxFavor) + maxFavor) / workerLevel
-    		MsgQuick("","Favor")
-    		MsgQuick("",changeFavor)
     		chr_ModifyFavor("Worker","",changeFavor)
     	end
 	end
