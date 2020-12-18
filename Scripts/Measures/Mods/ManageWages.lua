@@ -34,7 +34,9 @@ function Run()
 		"@L_MANAGEWAGES_INFORMATION_BODY",
 		GetID("Sim"),dueWages, wageChoice)
 			
-	SetProperty("Building", "WageChoice", result)
+	if (result == 0 or result == 1 or result == 2) then
+		SetProperty("Building", "WageChoice", result)
+	end
 end	
 
 function CalculateWages()

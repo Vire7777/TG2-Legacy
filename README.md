@@ -9,6 +9,7 @@ In Progress
 - Dynasty AI are voting against own dynasty in officesesstion
 - Waylay issues
 - Watch tower balancing
+- [Add] New micro management of your buildings, you can choose paying only halg the wages or none or all
 - [Add] New visuals
 - [Add] new songs
 - [Add] In your book, if you own a bank, you can see who are the debtors
