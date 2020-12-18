@@ -97,10 +97,10 @@ function Run()
 	PlaySound3D("","Locations/tavern/tavern_aah_01.wav",1)
 	Sleep(1)
 		
-	local playTimes = {2.21, 1.24, 1.5, 1.58, 3.07, 4.32}
+	local playTimes = {2.21, 1.24, 1.5, 2.01, 1.58, 2.55, 3.07, 4.32}
 	local timeToPlay = 0
 	
-	local randomTheater = Rand(3)
+	local randomTheater = Rand(4)
 	if Gender == 0 then
 		timeToPlay = playTimes[randomTheater]
 		PlaySound3D("", "theater/leg_TheaterSketch_Female_0"..randomTheater..".ogg", 1)
@@ -123,8 +123,8 @@ function Run()
 			
 			-- Start the next dance
 			--ActName = arrangetheatershow_FindAnimation()
-			local anims = {"devotion", "curtsy", "giggle", "cogitate", "threat", "talk", "knee_pray"}
-			local animNumber = Rand(7)
+			local anims = {"devotion", "curtsy", "giggle", "cogitate", "threat", "talk", "knee_pray", "preach", "shake_head", "nod", "giggle"}
+			local animNumber = Rand(11)
 
 			ActName = anims[animNumber]
 			

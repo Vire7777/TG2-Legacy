@@ -67,6 +67,8 @@ function Run()
 		repopulate_PlayerTaxes()
 		Sleep(2)
 		repopulate_ManageWorkerWages()
+		Sleep(2)
+		--repopulate_RandomEvents()
 	end
 	
 	SetState("", STATE_LOCKED, false)
@@ -76,13 +78,23 @@ function CleanUp()
 	
 end
 
+function RandomEvents()
+	repopulate_FindPlayerDynasties()
+	
+	for dynNb=0,ListSize("DynToCheck")-1 do
+		ListGetElement("DynToCheck",dynNb,"Dyn")
+		DynastyGetMember("Dyn", 0, "Sim")
+		CreateScriptcall("MephistoEvent",0,"Measures/Mods/RandomEvents.lua","MephistoEvent","Sim","",0)--18.9
+	end
+end
+
 function ManageWorkerWages()
 	repopulate_FindPlayerDynasties()
 	
 	for dynNb=0,ListSize("DynToCheck")-1 do
 		ListGetElement("DynToCheck",dynNb,"Dyn")
 		DynastyGetMember("Dyn", 0, "Sim")
-		CreateScriptcall("ManageWorkerWages",18.9,"Measures/Mods/ManageWages.lua","ManageWorkerWages","Sim","",0)--18.9
+		CreateScriptcall("ManageWorkerWages",18.5,"Measures/Mods/ManageWages.lua","ManageWorkerWages","Sim","",0)--18.9
 	end
 end
 
