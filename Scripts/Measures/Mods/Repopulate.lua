@@ -34,6 +34,12 @@ function Run()
 			end
 		end
 	else --this else will only be read once when the button is first pushed
+		repopulate_PlayerTaxes()
+		Sleep(2)
+		repopulate_ManageWorkerWages()
+		Sleep(2)
+		repopulate_RandomEvents()
+		Sleep(2)
 		repopulate_SetEarlyHours() 
 		Sleep(2)
 		repopulate_FamilyCheck()
@@ -64,11 +70,6 @@ function Run()
 		Sleep(2)
 		repopulate_InitiateOnce() --This MUST be last so that the cleanup function will not be called when this file is called the first time!!!! I added clean up funtion to all the automated functions but they are only automated after the first call!!!!
 		Sleep(2)
-		repopulate_PlayerTaxes()
-		Sleep(2)
-		repopulate_ManageWorkerWages()
-		Sleep(2)
-		--repopulate_RandomEvents()
 	end
 	
 	SetState("", STATE_LOCKED, false)
@@ -84,7 +85,7 @@ function RandomEvents()
 	for dynNb=0,ListSize("DynToCheck")-1 do
 		ListGetElement("DynToCheck",dynNb,"Dyn")
 		DynastyGetMember("Dyn", 0, "Sim")
-		CreateScriptcall("MephistoEvent",0,"Measures/Mods/RandomEvents.lua","MephistoEvent","Sim","",0)--18.9
+		--CreateScriptcall("MephistoEvent",0,"Measures/Mods/RandomEvents.lua","MephistoEvent","Sim","",0)--18.9
 	end
 end
 
@@ -109,8 +110,9 @@ function PlayerTaxes()
 		if (GetProperty("Dyn", "CIVILTAXES_ISPAID") == nil) then
     		SetProperty("Dyn", "CIVILTAXES_ISPAID", 0)
 		end
-		
-		CreateScriptcall("CivilTaxCollection",0,"Measures/Mods/Taxes.lua","CivilTaxCollection","Sim","",0)
+		feedback_MessagePolitics("","@L_CIVILTAXES_WARNING_HEAD",
+    			"@L_CIVILTAXES_WARNING_BODY")
+		CreateScriptcall("CivilTaxCollection",24,"Measures/Mods/Taxes.lua","CivilTaxCollection","Sim","",0)
 	end
 end
 
