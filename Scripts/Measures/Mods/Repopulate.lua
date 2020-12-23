@@ -95,7 +95,7 @@ function ManageWorkerWages()
 	for dynNb=0,ListSize("DynToCheck")-1 do
 		ListGetElement("DynToCheck",dynNb,"Dyn")
 		DynastyGetMember("Dyn", 0, "Sim")
-		CreateScriptcall("ManageWorkerWages",18.5,"Measures/Mods/ManageWages.lua","ManageWorkerWages","Sim","",0)--18.9
+		CreateScriptcall("ManageWorkerWages",18,"Measures/Mods/ManageWages.lua","ManageWorkerWages","Sim","",0)--18.9
 	end
 end
 
